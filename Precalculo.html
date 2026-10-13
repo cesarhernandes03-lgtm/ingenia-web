@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- Barra de Navegación (Igual que en inicio) -->
+    <!-- Barra de Navegación -->
     <nav class="navbar" id="navbar">
         <div class="logo-container">
             <a href="index.html">
@@ -18,7 +18,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Volver al Inicio</a></li>
-            <li><a href="#temario" class="btn-solid" style="margin-top: 0;">Ver Temario</a></li>
+            <li><a href="#temario" class="btn-solid">Ver Temario</a></li>
         </ul>
     </nav>
 
@@ -69,21 +69,46 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Puedes agregar más módulos copiando el bloque "accordion-item" -->
         </div>
     </section>
 
-    <!-- Script para la animación del acordeón -->
+    <!-- Pie de Página (Footer) -->
+    <footer id="contacto" class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="footer-logo-text">Ingenia y Aprende</h3>
+                <p>Educación para estudiantes de ingeniería enfocada en el razonamiento y la aplicación real.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#temario">Temario</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <ul class="social-links">
+                    <li><a href="http://www.youtube.com/@IngeniaAprende-e6x" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.tiktok.com/@ingenia_aprende?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.instagram.com/ingeniayaprende?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61585189825325" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ingenia y Aprende. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interacción y Animaciones -->
     <script>
+        // === 1. LÓGICA DEL ACORDEÓN ===
         const accordions = document.querySelectorAll('.accordion-header');
 
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
-                // Alternar la clase activa
                 this.classList.toggle('active');
-                
-                // Animar el ícono (+ a x)
                 const icon = this.querySelector('.icon');
                 if (this.classList.contains('active')) {
                     icon.style.transform = 'rotate(45deg)';
@@ -91,7 +116,6 @@
                     icon.style.transform = 'rotate(0)';
                 }
 
-                // Desplegar suavemente el contenido
                 const content = this.nextElementSibling;
                 if (content.style.maxHeight) {
                     content.style.maxHeight = null;
@@ -99,6 +123,23 @@
                     content.style.maxHeight = content.scrollHeight + "px";
                 }
             });
+        });
+
+        // === 2. ANIMACIÓN DE ENTRADA AL HACER SCROLL ===
+        const animatedElements = document.querySelectorAll('.course-header, .accordion-item, .site-footer');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        animatedElements.forEach((el) => {
+            observer.observe(el);
         });
     </script>
 </body>

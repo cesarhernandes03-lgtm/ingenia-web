@@ -624,3 +624,24 @@ body {
     color: #000000;
     font-weight: 600;
 }
+/* Corrección de color para el botón en la barra de navegación */
+.nav-links .btn-solid {
+    color: #ffffff !important;
+    padding: 8px 18px;
+    margin-top: 0;
+    border-radius: 6px;
+}
+
+/* Animaciones de scroll para la página de curso */
+.course-header, 
+.accordion-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.course-header.visible, 
+.accordion-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
