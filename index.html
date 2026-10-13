@@ -12,12 +12,24 @@
 <body>
 
     <!-- Barra de Navegación -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="logo-container">
-            <img src="LOGO INGENIA Y APRENDE.png" alt="Logo Ingenia y Aprende" class="logo">
+            <a href="#inicio">
+                <img src="LOGO INGENIA Y APRENDE.png" alt="Logo Ingenia y Aprende" class="logo">
+            </a>
         </div>
-        <ul class="nav-links">
+
+        <!-- Botón Hamburguesa para pantallas pequeñas -->
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Enlaces de navegación -->
+        <ul class="nav-links" id="nav-menu">
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#beneficios">Pilares</a></li>
             <li><a href="#cursos">Cursos</a></li>
             <li><a href="#comunidad">Comunidad</a></li>
             <li><a href="#contacto" class="btn-outline">Contacto</a></li>
@@ -150,6 +162,34 @@
         // Le decimos al observador que vigile cada uno de los elementos
         animatedElements.forEach((el) => {
             observer.observe(el);
+        });
+        // === INTERACTIVIDAD DEL MENÚ ===
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        // Sombra / Ajuste al hacer scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Abrir/Cerrar menú móvil
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar el menú al hacer clic en cualquier opción
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
         });
     </script>
 </body>
