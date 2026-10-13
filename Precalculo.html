@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precálculo | Ingenia y Aprende</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de Navegación (Igual que en inicio) -->
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="LOGO INGENIA Y APRENDE.png" alt="Logo Ingenia y Aprende" class="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Volver al Inicio</a></li>
+            <li><a href="#temario" class="btn-solid" style="margin-top: 0;">Ver Temario</a></li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado del Curso -->
+    <header class="course-header">
+        <div class="hero-content">
+            <span class="tag">Curso Básico</span>
+            <h1>Dominando el <br><span>Precálculo</span></h1>
+            <p>Construye bases matemáticas inquebrantables. Aprende a razonar antes de memorizar fórmulas para dominar el cálculo diferencial e integral.</p>
+        </div>
+    </header>
+
+    <!-- Sección del Temario (Acordeón) -->
+    <section id="temario" class="syllabus-section">
+        <div class="section-title">
+            <h2>Plan de Estudios</h2>
+            <p>Haz clic en cada módulo para desplegar los temas.</p>
+        </div>
+
+        <div class="accordion-container">
+            <!-- Módulo 0 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Módulo 0: Fundamentos y Nivelación
+                    <span class="icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="topic-list">
+                        <li>Leyes de los signos y jerarquía de operaciones</li>
+                        <li>Manejo avanzado de fracciones</li>
+                        <li>Leyes de los exponentes y radicales</li>
+                        <li>Productos notables y factorización esencial</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Módulo 1 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Módulo 1: Introducción a las Funciones
+                    <span class="icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="topic-list">
+                        <li>¿Qué es realmente una función? (Concepto y gráficas)</li>
+                        <li>Dominio y Rango: Cómo encontrarlos sin sufrir</li>
+                        <li>Funciones lineales y cuadráticas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Puedes agregar más módulos copiando el bloque "accordion-item" -->
+        </div>
+    </section>
+
+    <!-- Script para la animación del acordeón -->
+    <script>
+        const accordions = document.querySelectorAll('.accordion-header');
+
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                // Alternar la clase activa
+                this.classList.toggle('active');
+                
+                // Animar el ícono (+ a x)
+                const icon = this.querySelector('.icon');
+                if (this.classList.contains('active')) {
+                    icon.style.transform = 'rotate(45deg)';
+                } else {
+                    icon.style.transform = 'rotate(0)';
+                }
+
+                // Desplegar suavemente el contenido
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

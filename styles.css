@@ -542,3 +542,85 @@ body {
         font-size: 1.2rem;
     }
 }
+/* === PÁGINA DE CURSO INDIVIDUAL === */
+.course-header {
+    padding: 100px 20px 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #fafafa;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* === ACORDEÓN DE TEMARIO === */
+.syllabus-section {
+    padding: 80px 10%;
+    background-color: #ffffff;
+}
+
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Botón principal del módulo */
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 25px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.accordion-header:hover {
+    color: #555555;
+}
+
+/* Ícono de + que se convierte en x */
+.accordion-header .icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.4s ease;
+}
+
+/* Contenedor oculto de los temas */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* Animación súper fluida */
+}
+
+/* Lista de temas */
+.topic-list {
+    list-style: none;
+    padding: 0 0 25px 15px;
+}
+
+.topic-list li {
+    color: #555555;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Flechita minimalista para cada tema */
+.topic-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-weight: 600;
+}
