@@ -42,12 +42,12 @@
             <!-- Módulo 0 -->
             <div class="accordion-item">
                 <button class="accordion-header">
-                    Módulo 0: Fundamentos Matematicos
+                    Módulo 0: Fundamentos Matemáticos
                     <span class="icon">+</span>
                 </button>
                 <div class="accordion-content">
                     <ul class="topic-list">
-                        <li>Operaciones básicas con números naturales,enteros y decimales. </li>
+                        <li>Operaciones básicas con números naturales, enteros y decimales.</li>
                         <li>Jerarquía de operaciones y uso de paréntesis.</li>
                         <li>Fracciones: simplificación, suma, resta, multiplicación y división.</li>
                         <li>Números positivos y negativos.</li>
@@ -107,17 +107,21 @@
 
     <!-- Scripts de Interacción y Animaciones -->
     <script>
-        // === 1. LÓGICA DEL ACORDEÓN ===
+        // === 1. LÓGICA DEL ACORDEÓN INTERACTIVO ===
         const accordions = document.querySelectorAll('.accordion-header');
 
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
+                const parentItem = this.parentElement;
+                
                 this.classList.toggle('active');
+                parentItem.classList.toggle('active');
+                
                 const icon = this.querySelector('.icon');
                 if (this.classList.contains('active')) {
-                    icon.style.transform = 'rotate(45deg)';
+                    icon.style.transform = 'rotate(45deg) scale(1.1)';
                 } else {
-                    icon.style.transform = 'rotate(0)';
+                    icon.style.transform = 'rotate(0) scale(1)';
                 }
 
                 const content = this.nextElementSibling;
@@ -129,7 +133,17 @@
             });
         });
 
-        // === 2. ANIMACIÓN DE ENTRADA AL HACER SCROLL ===
+        // === 2. SELECCIÓN DE TEMAS INDIVIDUALES ===
+        const topics = document.querySelectorAll('.topic-list li');
+
+        topics.forEach(topic => {
+            topic.addEventListener('click', function() {
+                topics.forEach(t => t.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // === 3. ANIMACIÓN AL HACER SCROLL ===
         const animatedElements = document.querySelectorAll('.course-header, .accordion-item, .site-footer');
 
         const observer = new IntersectionObserver((entries) => {
