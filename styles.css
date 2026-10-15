@@ -1038,3 +1038,128 @@ body {
     color: #000000;
     font-weight: 600;
 }
+/* === LISTA DE EJEMPLOS "POR EJEMPLO:" (SOLO HTML + CSS) === */
+
+.examples-list-container {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 35px 0;
+}
+
+.examples-header {
+    margin-bottom: 20px;
+}
+
+.examples-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.examples-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: -0.5px;
+}
+
+.examples-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.example-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 18px 22px;
+    /* Transición suave para todos los efectos hover */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Animación al pasar el ratón (Hover) */
+.example-item:hover {
+    transform: translateX(8px); /* Se desliza a la derecha */
+    border-color: #000000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.example-num {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #777777;
+    background-color: #f4f4f5;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* El círculo del número se pinta de negro al hacer hover */
+.example-item:hover .example-num {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.example-content {
+    flex-grow: 1;
+}
+
+.example-title {
+    display: block;
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+.example-desc {
+    font-size: 0.95rem;
+    color: #555555;
+    margin: 0 !important;
+    line-height: 1.5;
+}
+
+/* Formato para operaciones matemáticas dentro del texto */
+.example-desc code {
+    background-color: #f4f4f5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.example-arrow {
+    font-size: 1.2rem;
+    color: #cccccc;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* La flecha avanza a la derecha */
+.example-item:hover .example-arrow {
+    color: #000000;
+    transform: translateX(4px);
+}
