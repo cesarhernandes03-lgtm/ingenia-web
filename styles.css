@@ -1163,3 +1163,114 @@ body {
     color: #000000;
     transform: translateX(4px);
 }
+/* === TARJETA MATEMÁTICA MINIMALISTA E INTERACTIVA === */
+
+.math-card-container {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 35px 0;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.math-card-container:hover {
+    transform: translateY(-4px);
+    border-color: #000000;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.math-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.math-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Botón de copiar fórmula */
+.copy-math-btn {
+    background: transparent;
+    border: 1px solid #eaeaea;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #555555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-math-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.math-intro-text {
+    font-size: 1.05rem;
+    color: #333333;
+    margin-bottom: 18px;
+}
+
+/* Contenedor central de la fórmula */
+.math-formula-box {
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.math-card-container:hover .math-formula-box {
+    background-color: #f4f4f5;
+}
+
+.math-formula-box .katex {
+    font-size: 1.6rem !important; /* Tamaño legible y destacado */
+    color: #000000;
+}
+
+/* Pie explicativo */
+.math-card-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px dashed #eaeaea;
+}
+
+.info-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #f4f4f5;
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: serif;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.math-card-footer p {
+    font-size: 0.9rem;
+    color: #666666;
+    margin: 0 !important;
+    line-height: 1.5;
+}

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Motor KaTeX para renderizar fórmulas matemáticas en alta definición -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operaciones Básicas | Precálculo | Ingenia y Aprende</title>
@@ -166,12 +170,49 @@
                 <!-- ESCRIBE TU TEXTO AQUÍ -->
                 Los números no se representan de la misma manera. Por eso, antes de realizar cualquier operación, hay que conocer sus principales caracteristicas y clasificaciones. 
             </p>
+             <!-- BLOQUE 1: CONCEPTO O TEORÍA -->
+        <section class="lesson-section animate-on-scroll">
+            <h2>1.1 Números naturales</h2>
+            <p>
+                <!-- ESCRIBE TU TEXTO AQUÍ -->
+                Los números naturales se se utilizan para contar elementos y expresar cantidades enteras <strong>no negativas.</strong>
+                
+            </p>
+            <!-- TARJETA MATEMÁTICA INTERACTIVA -->
+<div class="math-card-container animate-on-scroll">
+    <div class="math-card-header">
+        <span class="math-badge">Formulas del curso</span>
+        <button class="copy-math-btn" onclick="copyFormula('\\mathbb{N} = \\{0, 1, 2, 3, 4, 5, \\dots\\}', this)" title="Copiar LaTeX">
+            <span class="btn-text">Copiar LaTeX</span>
+        </button>
+    </div>
+
+    <p class="math-intro-text">En la convención que utilizaremos en este curso:</p>
+
+    <!-- Expresión Matemática Renderizada -->
+    <div class="math-formula-box">
+        <span class="formula-display">$$\mathbb{N} = \{0, 1, 2, 3, 4, 5, \dots\}$$</span>
+    </div>
+
+    <!-- Explicación minimalista al pie -->
+    <div class="math-card-footer">
+        <span class="info-icon">i</span>
+       <p>Incluimos el <strong>0</strong> dentro del conjunto de números naturales (\(\mathbb{N}\)) para facilitar su aplicación en programación, teoría de conjuntos y ciencias de la computación.</p>
+    </div>
+</div>
+            <div id="card-naturales" style="text-align:center; font-family: Georgia, serif; padding:24px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.08); max-width:600px; margin:auto;">
+  
+  
             <!-- Tarjeta resaltada de Nota o Regla Importante -->
             <div class="callout-box">
-                <h4>💡 Regla Clave</h4>
-                <p><strong>Signos iguales:</strong> se suman y conservan el signo. <br><strong>Signos diferentes:</strong> se restan y se conserva el signo del número con mayor valor absoluto.</p>
+                <h4>En este curso utilizaremos:</h4>
+                <div id="card-naturales" style="text-align:center; font-family: Georgia, serif; padding:24px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.08); max-width:600px; margin:auto;">
+  
+</p>
             </div>
         </section>
+        <div id="card-naturales" style="text-align:center; font-family: Georgia, serif; padding:24px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.08); max-width:600px; margin:auto;">
+  
 
         <!-- BLOQUE 2: GRID DE CONCEPTOS CLAVE / PROPIEDADES -->
         <section class="lesson-section animate-on-scroll">
@@ -279,6 +320,23 @@
         animatedElements.forEach((el) => {
             observer.observe(el);
         });
+       // === 2. FUNCIONALIDAD PARA COPIAR FÓRMULA LATEX ===
+        function copyFormula(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const btnText = btn.querySelector('.btn-text');
+                const originalText = btnText.textContent;
+                
+                btnText.textContent = '¡Copiado!';
+                btn.style.backgroundColor = '#000000';
+                btn.style.color = '#ffffff';
+
+                setTimeout(() => {
+                    btnText.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                }, 2000);
+            });
+        }
     </script>
 </body>
 </html> 
