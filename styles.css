@@ -1274,3 +1274,216 @@ body {
     margin: 0 !important;
     line-height: 1.5;
 }
+/* === GRID DE CARACTERÍSTICAS INTERACTIVAS Y PRO === */
+
+.pro-features-section {
+    max-width: 820px;
+    margin: 50px auto;
+}
+
+.pro-features-header {
+    margin-bottom: 30px;
+}
+
+.pro-features-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: -0.5px;
+    margin-top: 8px;
+}
+
+.pro-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta base */
+.pro-feature-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 28px 24px;
+    overflow: hidden;
+
+    /* Transición fluida para todos los cambios */
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+/* Línea de acento superior que se expande en hover */
+.pro-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #000000;
+    transition: width 0.35s ease;
+}
+
+/* Interacción al pasar el mouse */
+.pro-feature-card:hover {
+    transform: translateY(-6px);
+    border-color: #000000;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+}
+
+.pro-feature-card:hover::before {
+    width: 100%;
+}
+
+/* Encabezado interno de la tarjeta */
+.pro-feature-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.pro-feature-num {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #777777;
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.pro-feature-card:hover .pro-feature-num {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.pro-feature-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #888888;
+}
+
+.pro-feature-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.pro-feature-card p {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 22px !important;
+}
+
+/* Pie de la tarjeta con badge */
+.pro-feature-footer {
+    padding-top: 14px;
+    border-top: 1px dashed #f0f0f0;
+}
+
+.pro-feature-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333333;
+    background-color: #fafafa;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.pro-feature-card:hover .pro-feature-tag {
+    background-color: #f4f4f5;
+}
+/* === LISTA DE CARACTERÍSTICAS MINIMALISTA E INTERACTIVA === */
+
+.minimal-features-container {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 32px 35px;
+    margin: 35px 0;
+    max-width: 820px;
+}
+
+.features-title-box h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: -0.5px;
+    margin-top: 6px;
+    margin-bottom: 24px;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.interactive-bullets-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 16px 20px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.bullet-item:hover {
+    transform: translateX(6px); /* Desplazamiento sutil a la derecha */
+    border-color: #000000;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Puntos indicadores interactivos */
+.bullet-icon {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* El punto se convierte en rombo negro al hacer hover */
+.bullet-item:hover .bullet-icon {
+    background-color: #000000;
+    transform: scale(1.2) rotate(45deg);
+}
+
+.bullet-text {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.bullet-text strong {
+    color: #000000;
+    font-weight: 600;
+}
