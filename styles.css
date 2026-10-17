@@ -1487,3 +1487,146 @@ body {
     color: #000000;
     font-weight: 600;
 }
+/* === TARJETAS DE EJEMPLOS APLICADOS === */
+
+.applied-examples-section {
+    max-width: 820px;
+    margin: 45px auto;
+}
+
+.applied-examples-header {
+    margin-bottom: 25px;
+}
+
+.applied-examples-header h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: -0.5px;
+    margin-top: 6px;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.applied-examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+}
+
+/* Tarjeta principal */
+.applied-example-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+/* Elevación e interacción hover */
+.applied-example-card:hover {
+    transform: translateY(-5px);
+    border-color: #000000;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.card-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.example-number-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.example-category {
+    font-size: 0.8rem;
+    color: #777777;
+    font-weight: 500;
+}
+
+.applied-example-card .example-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+}
+
+.applied-example-card .example-description {
+    font-size: 0.98rem;
+    color: #444444;
+    line-height: 1.6;
+    margin-bottom: 20px !important;
+}
+
+/* Caja matemática central */
+.example-math-display {
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 14px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.applied-example-card:hover .example-math-display {
+    background-color: #f4f4f5;
+    border-color: #e4e4e7;
+}
+
+.example-math-display .katex {
+    font-size: 1.35rem !important;
+    color: #000000;
+}
+
+/* Pie de la tarjeta y conclusión */
+.example-conclusion-box {
+    padding-top: 16px;
+    border-top: 1px dashed #eaeaea;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.example-conclusion-box p {
+    font-size: 0.95rem;
+    color: #333333;
+    margin: 0 !important;
+}
+
+.natural-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #000000;
+    background-color: #f4f4f5;
+    border: 1px solid #e4e4e7;
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.applied-example-card:hover .natural-tag {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
