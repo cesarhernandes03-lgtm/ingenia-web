@@ -1630,3 +1630,45 @@ body {
     color: #ffffff;
     border-color: #000000;
 }
+/* === CAJA DE REFLEXIÓN / NOTA DE TRANSICIÓN === */
+
+.insight-box {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    border-left: 4px solid #000000; /* Línea de acento lateral negra */
+    border-radius: 0 10px 10px 0;
+    padding: 24px 28px;
+    margin: 30px auto;
+    max-width: 820px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.insight-box:hover {
+    transform: translateX(4px);
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.insight-header {
+    margin-bottom: 12px;
+}
+
+.insight-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #000000;
+}
+
+.insight-text {
+    font-size: 1.02rem;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0 !important;
+}
+
+.insight-text strong {
+    color: #000000;
+    font-weight: 600;
+}
