@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <!-- Motor KaTeX para renderizar fórmulas matemáticas en alta definición -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operaciones Básicas | Precálculo | Ingenia y Aprende</title>
@@ -34,372 +36,509 @@
             <span class="tag">Tema 0.1</span>
             <h1>Operaciones básicas con números naturales, enteros y decimales</h1>
             <p class="lesson-intro">
-                <!-- ESCRIBE AQUÍ LA INTRODUCCIÓN GENERAL DEL TEMA -->
                 En este tema exploraremos las operaciones fundamentales, reconocer los tipos de números, realizar las cuatro operaciones esenciales, entender las reglas de los signos y la resolucion de problemas paso a paso.
-
             </p>
         </div>
     </header>
+
     <!-- Sección de Objetivos de Aprendizaje -->
-        <section class="objectives-container animate-on-scroll">
-            <div class="objectives-header">
-                <span class="objectives-badge">Lo que vas a lograr</span>
-                <h2>Objetivos de aprendizaje</h2>
-            </div>
-            
-            <div class="objectives-grid">
-                <!-- Objetivo 1 -->
-                <div class="objective-card">
-                    <div class="objective-icon">✓</div>
-                    <div class="objective-text">
-                        <strong>Identificar</strong> números naturales, enteros y decimales.
-                    </div>
-                </div>
-
-                <!-- Objetivo 2 -->
-                <div class="objective-card">
-                    <div class="objective-icon">✓</div>
-                    <div class="objective-text">
-                        <strong>Comprender</strong> el significado de las diferentes operaciones de la suma, resta, multiplicación y división.
-                    </div>
-                </div>
-
-                <!-- Objetivo 3 -->
-                <div class="objective-card">
-                    <div class="objective-icon">✓</div>
-                    <div class="objective-text">
-                        <strong>Resolver</strong> operaciones con números positivos y negativos, aplicando la Ley de los Signos.
-                    </div>
-                </div>
-
-                <!-- Objetivo 4 -->
-                <div class="objective-card">
-                    <div class="objective-icon">✓</div>
-                    <div class="objective-text">
-                        <strong>Operar</strong> con números decimales sin perder la ubicación del punto decimal.
-                    </div>
-                </div>
-
-                <!-- Objetivo 5 -->
-                <div class="objective-card">
-                    <div class="objective-icon">✓</div>
-                    <div class="objective-text">
-                        <strong>Interpretar</strong> resultados para comprobar si son verificables y coherentes.
-                    </div>
-                </div>
-
-                <!-- Objetivo 6 -->
-                <div class="objective-card">
-                    <div class="objective-icon">✓</div>
-                    <div class="objective-text">
-                        <strong>Aplicar</strong> las operaciones en contextos reales, en la vida cotidiana y en problemas de Ingeniería.
-                    </div>
+    <section class="objectives-container animate-on-scroll">
+        <div class="objectives-header">
+            <span class="objectives-badge">Lo que vas a lograr</span>
+            <h2>Objetivos de aprendizaje</h2>
+        </div>
+        
+        <div class="objectives-grid">
+            <!-- Objetivo 1 -->
+            <div class="objective-card">
+                <div class="objective-icon">✓</div>
+                <div class="objective-text">
+                    <strong>Identificar</strong> números naturales, enteros y decimales.
                 </div>
             </div>
-        </section>
+
+            <!-- Objetivo 2 -->
+            <div class="objective-card">
+                <div class="objective-icon">✓</div>
+                <div class="objective-text">
+                    <strong>Comprender</strong> el significado de las diferentes operaciones de la suma, resta, multiplicación y división.
+                </div>
+            </div>
+
+            <!-- Objetivo 3 -->
+            <div class="objective-card">
+                <div class="objective-icon">✓</div>
+                <div class="objective-text">
+                    <strong>Resolver</strong> operaciones con números positivos y negativos, aplicando la Ley de los Signos.
+                </div>
+            </div>
+
+            <!-- Objetivo 4 -->
+            <div class="objective-card">
+                <div class="objective-icon">✓</div>
+                <div class="objective-text">
+                    <strong>Operar</strong> con números decimales sin perder la ubicación del punto decimal.
+                </div>
+            </div>
+
+            <!-- Objetivo 5 -->
+            <div class="objective-card">
+                <div class="objective-icon">✓</div>
+                <div class="objective-text">
+                    <strong>Interpretar</strong> resultados para comprobar si son verificables y coherentes.
+                </div>
+            </div>
+
+            <!-- Objetivo 6 -->
+            <div class="objective-card">
+                <div class="objective-icon">✓</div>
+                <div class="objective-text">
+                    <strong>Aplicar</strong> las operaciones en contextos reales, en la vida cotidiana y en problemas de Ingeniería.
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contenido Principal de la Lección -->
     <main class="lesson-container">
 
-        <!-- BLOQUE 1: CONCEPTO O TEORÍA -->
+        <!-- BLOQUE 1: ¿QUÉ SON LOS NÚMEROS? -->
         <section class="lesson-section animate-on-scroll">
-            <h2>1. ¿Qué son los números?</h2>
+            <h2>¿Qué son los números?</h2>
             <p>
-                <!-- ESCRIBE TU TEXTO AQUÍ -->
-                Los números son herramientas  que utilizamos para contar objetos, representar cantidades, medición de maginitudes, comparación de valores y describir fenómenos.
+                Los números son herramientas que utilizamos para contar objetos, representar cantidades, medición de maginitudes, comparación de valores y describir fenómenos.
             </p>
+
             <!-- CONTENEDOR DE EJEMPLOS "POR EJEMPLO:" -->
-<div class="examples-list-container animate-on-scroll">
-    <div class="examples-header">
-        <span class="examples-badge">Por ejemplo:</span>
-        <h3>Aplicaciones prácticas</h3>
-    </div>
+            <div class="examples-list-container animate-on-scroll">
+                <div class="examples-header">
+                    <span class="examples-badge">Por ejemplo:</span>
+                    <h3>Aplicaciones prácticas</h3>
+                </div>
 
-    <ul class="examples-list">
-        <!-- Ejemplo 1 -->
-        <li class="example-item">
-            <span class="example-num">01</span>
-            <div class="example-content">
-                <strong class="example-title">5 estudiantes</strong>
-                <p class="example-desc">
-                    Representa una  <strong>cantidad</strong> de  <strong>personas.</strong> 
-                </p>
+                <ul class="examples-list">
+                    <!-- Ejemplo 1 -->
+                    <li class="example-item">
+                        <span class="example-num">01</span>
+                        <div class="example-content">
+                            <strong class="example-title">5 estudiantes</strong>
+                            <p class="example-desc">
+                                Representa una <strong>cantidad</strong> de <strong>personas.</strong> 
+                            </p>
+                        </div>
+                        <span class="example-arrow">→</span>
+                    </li>
+
+                    <!-- Ejemplo 2 -->
+                    <li class="example-item">
+                        <span class="example-num">02</span>
+                        <div class="example-content">
+                            <strong class="example-title">12.5 litros</strong>
+                            <p class="example-desc">
+                                Representa una <strong>cantidad</strong> de <strong>volumen.</strong> 
+                            </p>
+                        </div>
+                        <span class="example-arrow">→</span>
+                    </li>
+
+                    <!-- Ejemplo 3 -->
+                    <li class="example-item">
+                        <span class="example-num">03</span>
+                        <div class="example-content">
+                            <strong class="example-title">-8°C</strong>
+                            <p class="example-desc">
+                                Representa una <strong>cantidad</strong> de <strong>temperatura</strong> bajo cero.
+                            </p>
+                        </div>
+                        <span class="example-arrow">→</span>
+                    </li>
+
+                    <!-- Ejemplo 4 -->
+                    <li class="example-item">
+                        <span class="example-num">04</span>
+                        <div class="example-content">
+                            <strong class="example-title">0.25</strong>
+                            <p class="example-desc">
+                                Representa una <strong>cuarta</strong> parte de una <strong>unidad.</strong>
+                            </p>
+                        </div>
+                        <span class="example-arrow">→</span>
+                    </li>
+                </ul>
             </div>
-            <span class="example-arrow">→</span>
-        </li>
 
-        <!-- Ejemplo 2 -->
-        <li class="example-item">
-            <span class="example-num">02</span>
-            <div class="example-content">
-                <strong class="example-title">12.5 litros</strong>
-                <p class="example-desc">
-                    Representa una  <strong>cantidad</strong> de  <strong>volumen.</strong> 
-                </p>
-            </div>
-            <span class="example-arrow">→</span>
-        </li>
-
-        <!-- Ejemplo 3 -->
-        <li class="example-item">
-            <span class="example-num">03</span>
-            <div class="example-content">
-                <strong class="example-title">-8°C</strong>
-                <p class="example-desc">
-                    Representa una  <strong>cantidad</strong> de  <strong>temperatura</strong> bajo cero.
-                </p>
-            </div>
-            <span class="example-arrow">→</span>
-        </li>
-
-        <!-- Ejemplo 4 -->
-        <li class="example-item">
-            <span class="example-num">04</span>
-            <div class="example-content">
-                <strong class="example-title">0.25</strong>
-                <p class="example-desc">
-                    Representa una  <strong>cuarta</strong> parte de una  <strong>unidad.</strong>
-                </p>
-            </div>
-            <span class="example-arrow">→</span>
-        </li>
-    </ul>
-</div>
-
-<p>
-                <!-- ESCRIBE TU TEXTO AQUÍ -->
+            <p>
                 Los números no se representan de la misma manera. Por eso, antes de realizar cualquier operación, hay que conocer sus principales caracteristicas y clasificaciones. 
             </p>
-             <!-- BLOQUE 1: CONCEPTO O TEORÍA -->
+        </section>
+
+        <!-- BLOQUE 1.1: NÚMEROS NATURALES -->
         <section class="lesson-section animate-on-scroll">
             <h2>1.1 Números naturales</h2>
             <p>
-                <!-- ESCRIBE TU TEXTO AQUÍ -->
-                Los números naturales se se utilizan para contar elementos y expresar cantidades enteras <strong>no negativas.</strong>
-                
+                Los números naturales se utilizan para contar elementos y expresar cantidades enteras <strong>no negativas.</strong>
             </p>
+            
             <!-- TARJETA MATEMÁTICA INTERACTIVA -->
-<div class="math-card-container animate-on-scroll">
-    <div class="math-card-header">
-        <span class="math-badge">Números Naturales</span>
-        <button class="copy-math-btn" onclick="copyFormula('\\mathbb{N} = \\{0, 1, 2, 3, 4, 5, \\dots\\}', this)" title="Copiar LaTeX">
-            <span class="btn-text">Copiar LaTeX</span>
-        </button>
-    </div>
-    
+            <div class="math-card-container animate-on-scroll">
+                <div class="math-card-header">
+                    <span class="math-badge">Números Naturales</span>
+                    <button class="copy-math-btn" onclick="copyFormula('\\mathbb{N} = \\{0, 1, 2, 3, 4, 5, \\dots\\}', this)" title="Copiar LaTeX">
+                        <span class="btn-text">Copiar LaTeX</span>
+                    </button>
+                </div>
 
-    <p class="math-intro-text">En la convención que utilizaremos en este curso:</p>
+                <p class="math-intro-text">En la convención que utilizaremos en este curso:</p>
 
-    <!-- Expresión Matemática Renderizada -->
-    <div class="math-formula-box">
-        <span class="formula-display">$$\mathbb{N} = \{0, 1, 2, 3, 4, 5, \dots\}$$</span>
-    </div>
+                <!-- Expresión Matemática Renderizada -->
+                <div class="math-formula-box">
+                    <span class="formula-display">$$\mathbb{N} = \{0, 1, 2, 3, 4, 5, \dots\}$$</span>
+                </div>
 
-    <!-- Explicación minimalista al pie -->
-    <div class="math-card-footer">
-        <span class="info-icon">i</span>
-       <p>Incluimos el <strong>0</strong> dentro del conjunto de números naturales (\(\mathbb{N}\)) para facilitar su aplicación en programación, teoría de conjuntos y ciencias de la computación.</p>
-    </div>
-</div>
-<!-- LISTA DE CARACTERÍSTICAS MINIMALISTA -->
-<section class="minimal-features-container animate-on-scroll">
-    <div class="features-title-box">
-        <span class="objectives-badge">Propiedades Clave</span>
-        <h2>Características</h2>
-    </div>
-
-    <ul class="interactive-bullets-list">
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                No tienen parte decimal.
+                <!-- Explicación minimalista al pie -->
+                <div class="math-card-footer">
+                    <span class="info-icon">i</span>
+                    <p>Incluimos el <strong>0</strong> dentro del conjunto de números naturales (\(\mathbb{N}\)) para facilitar su aplicación en programación, teoría de conjuntos y ciencias de la computación.</p>
+                </div>
             </div>
-        </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                No son negativos.
-            </div>
-        </li>
+            <!-- LISTA DE CARACTERÍSTICAS MINIMALISTA -->
+            <div class="minimal-features-container animate-on-scroll">
+                <div class="features-title-box">
+                    <span class="objectives-badge">Propiedades Clave</span>
+                    <h2>Características</h2>
+                </div>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                Aumentan de uno en uno.
-            </div>
-        </li>
+                <ul class="interactive-bullets-list">
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            No tienen parte decimal.
+                        </div>
+                    </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                <strong>Son infinitos:</strong> siempre existe un natural mayor que cualquier otro natural.
-            </div>
-        </li>
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            No son negativos.
+                        </div>
+                    </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                La suma y la multiplicación de dos naturales <strong>siempre producen otro natural</strong>.
-            </div>
-        </li>
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Aumentan de uno en uno.
+                        </div>
+                    </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                La resta y la división <strong>no siempre</strong> producen un número natural.
-            </div>
-        </li>
-    </ul>
-</section>    
-            </div>
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            <strong>Son infinitos:</strong> siempre existe un natural mayor que cualquier otro natural.
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            La suma y la multiplicación de dos naturales <strong>siempre producen otro natural</strong>.
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            La resta y la división <strong>no siempre</strong> producen un número natural.
+                        </div>
+                    </li>
+                </ul>
+            </div>    
+
             <!-- SECCIÓN DE EJEMPLOS APLICADOS -->
-<section class="applied-examples-section animate-on-scroll">
-    <div class="applied-examples-header">
-        <span class="objectives-badge">Casos prácticos</span>
-        <h2>Ejemplos:</h2>
-    </div>
+            <div class="applied-examples-section animate-on-scroll">
+                <div class="applied-examples-header">
+                    <span class="objectives-badge">Casos prácticos</span>
+                    <h2>Ejemplos:</h2>
+                </div>
 
-    <div class="applied-examples-grid">
-        <!-- EJEMPLO 1 -->
-        <article class="applied-example-card">
-            <div class="card-top-bar">
-                <span class="example-number-badge">Ejemplo 01</span>
-                <span class="example-category">Suma / Conteo</span>
+                <div class="applied-examples-grid">
+                    <!-- EJEMPLO 1 -->
+                    <article class="applied-example-card">
+                        <div class="card-top-bar">
+                            <span class="example-number-badge">Ejemplo 01</span>
+                            <span class="example-category">Suma / Conteo</span>
+                        </div>
+
+                        <h3 class="example-title">Conteo de Materiales</h3>
+                        <p class="example-description">
+                            En un laboratorio hay 7 matraces y llegan otros 4.
+                        </p>
+
+                        <div class="example-math-display">
+                            <span class="math-expr">$$7 + 4 = 11$$</span>
+                        </div>
+
+                        <div class="example-conclusion-box">
+                            <p>Hay 11 matraces en total.</p>
+                            <span class="natural-tag">Resultado: Número Natural (\(\mathbb{N}\))</span>
+                        </div>
+                    </article>
+
+                    <!-- EJEMPLO 2 -->
+                    <article class="applied-example-card">
+                        <div class="card-top-bar">
+                            <span class="example-number-badge">Ejemplo 02</span>
+                            <span class="example-category">División / Reparto</span>
+                        </div>
+
+                        <h3 class="example-title">Reparto de Materiales</h3>
+                        <p class="example-description">
+                            Un almacén tiene 12 recipientes y se distribuyen en grupos de 3. ¿Cuántos grupos se forman?
+                        </p>
+
+                        <div class="example-math-display">
+                            <span class="math-expr">$$12 \div 3 = 4$$</span>
+                        </div>
+
+                        <div class="example-conclusion-box">
+                            <p>Se forman 4 grupos completos.</p>
+                            <span class="natural-tag">Resultado: Número Natural (\(\mathbb{N}\))</span>
+                        </div>
+                    </article>
+                </div>
             </div>
 
-            <h3 class="example-title">Conteo de Materiales</h3>
-            <p class="example-description">
-                En un laboratorio hay 7 matraces y llegan otros 4.
-            </p>
-
-            <div class="example-math-display">
-                <span class="math-expr">$$7 + 4 = 11$$</span>
+            <!-- CAJA DE REFLEXIÓN / OBSERVACIÓN CLAVE -->
+            <div class="insight-box animate-on-scroll">
+                <div class="insight-header">
+                    <span class="insight-badge">Observación clave</span>
+                </div>
+                <p class="insight-text">
+                    Observa que, si tuviéramos 7 recipientes y quisiéramos repartirlos en grupos de 3, la división no daría un número natural. Esto nos llevaría a otra clase de números.
+                </p>
             </div>
+        </section>
 
-            <div class="example-conclusion-box">
-                <p>Hay 11 matraces en total.</p>
-                <span class="natural-tag">Resultado: Número Natural (\(\mathbb{N}\))</span>
-            </div>
-        </article>
-
-        <!-- EJEMPLO 2 -->
-        <article class="applied-example-card">
-            <div class="card-top-bar">
-                <span class="example-number-badge">Ejemplo 02</span>
-                <span class="example-category">División / Reparto</span>
-            </div>
-
-            <h3 class="example-title">Reparto de Materiales</h3>
-            <p class="example-description">
-                Un almacén tiene 12 recipientes y se distribuyen en grupos de 3. ¿Cuántos grupos se forman?
-            </p>
-
-            <div class="example-math-display">
-                <span class="math-expr">$$12 \div 3 = 4$$</span>
-            </div>
-
-            <div class="example-conclusion-box">
-                <p>Se forman 4 grupos completos.</p>
-                <span class="natural-tag">Resultado: Número Natural (\(\mathbb{N}\))</span>
-            </div>
-        </article>
-    </div>
-</section>
-<!-- CAJA DE REFLEXIÓN / OBSERVACIÓN CLAVE -->
-<div class="insight-box animate-on-scroll">
-    <div class="insight-header">
-        <span class="insight-badge">Observación clave</span>
-    </div>
-    <p class="insight-text">
-        Observa que, si tuviéramos 7 recipientes y quisiéramos repartirlos en grupos de 3, la división no daría un número natural. Esto nos llevaría a otra clase de números.
-    </p>
-</div>
- <!-- BLOQUE 1: CONCEPTO O TEORÍA -->
+        <!-- BLOQUE 1.2: NÚMEROS ENTEROS -->
         <section class="lesson-section animate-on-scroll">
             <h2>1.2 Números enteros</h2>
             <p>
-                <!-- ESCRIBE TU TEXTO AQUÍ -->
                 Los números enteros incluyen los naturales, <strong>el cero y los números negativos.</strong>
-                
             </p>
-        </section>
-        <!-- TARJETA MATEMÁTICA INTERACTIVA - NÚMEROS ENTEROS -->
-<div class="math-card-container animate-on-scroll">
-    <div class="math-card-header">
-        <span class="math-badge">Números Enteros</span>
-        <button class="copy-math-btn" onclick="copyFormula('\\mathbb{Z} = \\{\\dots, -3, -2, -1, 0, 1, 2, 3, \\dots\\}', this)" title="Copiar LaTeX">
-            <span class="btn-text">Copiar LaTeX</span>
-        </button>
-    </div>
 
-    <p class="math-intro-text">El símbolo \(\mathbb{Z}\) representa el conjunto de los números enteros.</p>
+            <!-- TARJETA MATEMÁTICA INTERACTIVA - NÚMEROS ENTEROS -->
+            <div class="math-card-container animate-on-scroll">
+                <div class="math-card-header">
+                    <span class="math-badge">Números Enteros</span>
+                    <button class="copy-math-btn" onclick="copyFormula('\\mathbb{Z} = \\{\\dots, -3, -2, -1, 0, 1, 2, 3, \\dots\\}', this)" title="Copiar LaTeX">
+                        <span class="btn-text">Copiar LaTeX</span>
+                    </button>
+                </div>
 
-    <!-- Expresión Matemática Renderizada -->
-    <div class="math-formula-box">
-        <span class="formula-display">$$\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}$$</span>
-    </div>
+                <p class="math-intro-text">El símbolo \(\mathbb{Z}\) representa el conjunto de los números enteros.</p>
 
-    <!-- Explicación al pie -->
-    <div class="math-card-footer">
-        <span class="info-icon">i</span>
-        <p>Los enteros negativos representan cantidades menores a cero, deudas, descensos o temperaturas bajo cero.</p>
-    </div>
-</div>
-<!-- LISTA DE CARACTERÍSTICAS MINIMALISTA -->
-<section class="minimal-features-container animate-on-scroll">
-    <div class="features-title-box">
-        <span class="objectives-badge">Propiedades Clave</span>
-        <h2>Características</h2>
-    </div>
+                <!-- Expresión Matemática Renderizada -->
+                <div class="math-formula-box">
+                    <span class="formula-display">$$\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}$$</span>
+                </div>
 
-    <ul class="interactive-bullets-list">
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                No tienen parte decimal.
+                <!-- Explicación al pie -->
+                <div class="math-card-footer">
+                    <span class="info-icon">i</span>
+                    <p>Los enteros negativos representan cantidades menores a cero, deudas, descensos o temperaturas bajo cero.</p>
+                </div>
             </div>
-        </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                Pueden ser positivos, negativos o cero.
-            </div>
-        </li>
+            <!-- LISTA DE CARACTERÍSTICAS MINIMALISTA -->
+            <div class="minimal-features-container animate-on-scroll">
+                <div class="features-title-box">
+                    <span class="objectives-badge">Propiedades Clave</span>
+                    <h2>Características</h2>
+                </div>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                El cero no es ni positivo ni negativo.
-            </div>
-        </li>
+                <ul class="interactive-bullets-list">
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            No tienen parte decimal.
+                        </div>
+                    </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                Todo entero <strong>positivo</strong> tiene su opuesto <strong>negativo</strong> y viceversa.
-            </div>
-        </li>
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Pueden ser positivos, negativos o cero.
+                        </div>
+                    </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                La suma, la resta y la multiplicación de enteros <strong>producen enteros.</strong>
-            </div>
-        </li>
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            El cero no es ni positivo ni negativo.
+                        </div>
+                    </li>
 
-        <li class="bullet-item">
-            <span class="bullet-icon"></span>
-            <div class="bullet-text">
-                La división de dos enteros <strong>no siempre</strong> producen un entero.
-            </div>
-        </li>
-    </ul>
-</section>    
-            </div>
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Todo entero <strong>positivo</strong> tiene su opuesto <strong>negativo</strong> y viceversa.
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            La suma, la resta y la multiplicación de enteros <strong>producen enteros.</strong>
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            La división de dos enteros <strong>no siempre</strong> producen un entero.
+                        </div>
+                    </li>
+                </ul>
+            </div>    
+
             <!-- SECCIÓN DE EJEMPLOS APLICADOS (NÚMEROS ENTEROS) -->
-<section class="applied-examples-section animate-on-scroll">
+            <div class="applied-examples-section animate-on-scroll">
+                <div class="applied-examples-header">
+                    <span class="objectives-badge">Casos Prácticos</span>
+                    <h2>Ejemplos:</h2>
+                </div>
+
+                <div class="applied-examples-grid">
+                    <!-- EJEMPLO 1 -->
+                    <article class="applied-example-card">
+                        <div class="card-top-bar">
+                            <span class="example-number-badge">Ejemplo 01</span>
+                            <span class="example-category">Temperatura / Enteros</span>
+                        </div>
+
+                        <h3 class="example-title">Temperatura</h3>
+                        <p class="example-description">
+                            La temperatura de un equipo está a -4°C y aumenta a 7°C.
+                        </p>
+
+                        <div class="example-math-display">
+                            <span class="math-expr">$$-4 + 7 = 3$$</span>
+                        </div>
+
+                        <div class="example-conclusion-box">
+                            <p>La temperatura final es <strong>3°C</strong>.</p>
+                            <span class="natural-tag">Resultado: Número Entero (\(\mathbb{Z}\))</span>
+                        </div>
+                    </article>
+
+                    <!-- EJEMPLO 2 -->
+                    <article class="applied-example-card">
+                        <div class="card-top-bar">
+                            <span class="example-number-badge">Ejemplo 02</span>
+                            <span class="example-category">Saldo / Finanzas</span>
+                        </div>
+
+                        <h3 class="example-title">Saldo de una cuenta</h3>
+                        <p class="example-description">
+                            Una persona tiene una deuda de 150 pesos, representada por -150 y abona 200 pesos.
+                        </p>
+
+                        <div class="example-math-display">
+                            <span class="math-expr">$$-150 + 200 = 50$$</span>
+                        </div>
+
+                        <div class="example-conclusion-box">
+                            <p>Después de pagar la deuda tiene un saldo de <strong>50 pesos a su favor</strong>, suponiendo que no existan otros cargos.</p>
+                            <span class="natural-tag">Resultado: Número Entero (\(\mathbb{Z}\))</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 1.3: NÚMEROS DECIMALES -->
+        <section class="lesson-section animate-on-scroll">
+            <h2>1.3 Números decimales</h2>
+            <p>
+                Los números decimales son aquellos que incluyen una parte fraccionaria representada por un punto decimal, que utilizaremos en la siguiente notación.
+            </p>
+
+            <!-- TARJETA DE EJEMPLOS EN PÍLDORAS INTERACTIVAS -->
+            <div class="decimal-examples-card animate-on-scroll">
+                <div class="decimal-card-header">
+                    <span class="objectives-badge">Muestra rápida</span>
+                    <h3>Ejemplos:</h3>
+                </div>
+
+                <div class="decimal-chips-row">
+                    <span class="decimal-chip">\(2.5\)</span>
+                    <span class="decimal-chip">\(0.75\)</span>
+                    <span class="decimal-chip">\(-3.2\)</span>
+                    <span class="decimal-chip">\(12.08\)</span>
+                </div>
+            </div>
+
+            <!-- NOTA Y PRÓXIMOS TEMAS -->
+            <div class="insight-box animate-on-scroll">
+                <div class="insight-header">
+                    <span class="insight-badge">📌 Nota y próximo tema</span>
+                </div>
+                <p class="insight-text" style="margin-bottom: 10px !important;">
+                    Un decimal puede ser finito, como \(0.3333...\)
+                </p>
+                <p class="insight-text">
+                    Más adelante se estudiara con mayor profundidad las fracciones y los números racionales.
+                </p>
+            </div>
+
+            <!-- LISTA DE CARACTERÍSTICAS DE LOS DECIMALES -->
+            <div class="minimal-features-container animate-on-scroll">
+                <div class="features-title-box">
+                    <span class="objectives-badge">Propiedades clave</span>
+                    <h2>Características</h2>
+                </div>
+
+                <ul class="interactive-bullets-list">
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Permiten la representar cantidades entre <strong>números enteros.</strong>
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Pueden ser <strong>positivos, negativos o cero.</strong>
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Frecuentes en <strong>mediciones, dinero, concentaciones y resultados experimentales.</strong>
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Se deben alinear correctamente los puntos decimales al <strong>sumar o restar.</strong>
+                        </div>
+                    </li>
+
+                    <li class="bullet-item">
+                        <span class="bullet-icon"></span>
+                        <div class="bullet-text">
+                            Al multiplicar o dividir, se debe controlar la posición del punto decimal.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE EJEMPLOS APLICADOS (NÚMEROS DECIMALES) -->
+<div class="applied-examples-section animate-on-scroll">
     <div class="applied-examples-header">
         <span class="objectives-badge">Casos Prácticos</span>
         <h2>Ejemplos:</h2>
@@ -410,21 +549,21 @@
         <article class="applied-example-card">
             <div class="card-top-bar">
                 <span class="example-number-badge">Ejemplo 01</span>
-                <span class="example-category">Temperatura / Enteros</span>
+                <span class="example-category">Volumen / Decimales</span>
             </div>
 
-            <h3 class="example-title">Temperatura</h3>
+            <h3 class="example-title">Medición de volumen</h3>
             <p class="example-description">
-                La temperatura de un equipo está a -4°C y aumenta a 7°C.
+                Una probeta contiene 2.5 litros y se agregan 1.25 litros.
             </p>
 
             <div class="example-math-display">
-                <span class="math-expr">$$-4 + 7 = 3$$</span>
+                <span class="math-expr">$$2.5 + 1.25 = 3.75$$</span>
             </div>
 
             <div class="example-conclusion-box">
-                <p>La temperatura final es <strong>3°C</strong>.</p>
-                <span class="natural-tag">Resultado: Número Entero (\(\mathbb{Z}\))</span>
+                <p>El volumen final es de <strong>3.75 litros</strong>.</p>
+                <span class="natural-tag">Resultado: Número Decimal</span>
             </div>
         </article>
 
@@ -432,35 +571,35 @@
         <article class="applied-example-card">
             <div class="card-top-bar">
                 <span class="example-number-badge">Ejemplo 02</span>
-                <span class="example-category">Saldo / Finanzas</span>
+                <span class="example-category">Masa / Decimales</span>
             </div>
 
-            <h3 class="example-title">Saldo de una cuenta</h3>
+            <h3 class="example-title">Masa de una muestra</h3>
             <p class="example-description">
-                Una persona tiene una deuda de 150 pesos, representada por -150 y abona 200 pesos.
+                Una muestra tiene una masa de 5.8 gramos. Se retiran 2.35 gramos.
             </p>
 
             <div class="example-math-display">
-                <span class="math-expr">$$-150 + 200 = 50$$</span>
+                <span class="math-expr">$$5.80 - 2.35 = 3.45$$</span>
             </div>
 
             <div class="example-conclusion-box">
-                <p>Después de pagar la deuda tiene un saldo de <strong>50 pesos a su favor</strong>, suponiendo que no existan otros cargos.</p>
-                <span class="natural-tag">Resultado: Número Entero (\(\mathbb{Z}\))</span>
+                <p>La masa restante es de <strong>3.45 gramos</strong>.</p>
+                <span class="natural-tag">Resultado: Número Decimal</span>
             </div>
         </article>
     </div>
+</div>
+
+<!-- BLOQUE 2: LAS CUATRO OPERACIONES FUNDAMENTALES -->
+<section class="lesson-section animate-on-scroll">
+    <h2>2. Las cuatro operaciones fundamentales</h2>
+    <p>
+        Las operaciones fundamentales son la suma, resta, multiplicación y división. Cada una representa una manera diferente de relacionar <strong>cantidades.</strong>
+    </p>
 </section>
 
-<!-- BLOQUE 1: CONCEPTO O TEORÍA -->
-        <section class="lesson-section animate-on-scroll">
-            <h2>1.3 Números decimales</h2>
-            <p>
-                <!-- ESCRIBE TU TEXTO AQUÍ -->
-                Los números decimales son aquellos que incluyen una parte fraccionaria representada por un punto decimal, que utilizaremos en la siguiente notación.
-            </p>
-        <div id="card-naturales" style="text-align:center; font-family: Georgia, serif; padding:24px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.08); max-width:600px; margin:auto;">
-  
+
 
         <!-- BLOQUE 2: GRID DE CONCEPTOS CLAVE / PROPIEDADES -->
         <section class="lesson-section animate-on-scroll">
@@ -481,7 +620,7 @@
             </div>
         </section>
 
-        <!-- BLOQUE 3: EJEMPLO PASO A PASO -->
+        <!-- BLOQUE 3: EJERCICIO RESUELTO -->
         <section class="lesson-section animate-on-scroll">
             <h2>3. Ejercicio Resuelto</h2>
             <div class="example-box">
@@ -513,7 +652,6 @@
                 <span class="nav-label">Anterior</span>
                 <span class="nav-title">← Volver al Temario</span>
             </a>
-            <!-- Cuando crees el tema 2, aquí cambias el href -->
             <a href="#" class="nav-btn next">
                 <span class="nav-label">Siguiente Tema</span>
                 <span class="nav-title">Jerarquía de operaciones →</span>
@@ -551,7 +689,7 @@
         </div>
     </footer>
 
-    <!-- Script de Animaciones -->
+    <!-- Script de Animaciones e Interacciones -->
     <script>
         const animatedElements = document.querySelectorAll('.animate-on-scroll, .site-footer');
 
@@ -568,7 +706,8 @@
         animatedElements.forEach((el) => {
             observer.observe(el);
         });
-       // === 2. FUNCIONALIDAD PARA COPIAR FÓRMULA LATEX ===
+
+        // === FUNCIONALIDAD PARA COPIAR FÓRMULA LATEX ===
         function copyFormula(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
                 const btnText = btn.querySelector('.btn-text');

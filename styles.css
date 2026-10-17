@@ -1672,3 +1672,69 @@ body {
     color: #000000;
     font-weight: 600;
 }
+/* === TARJETA DE EJEMPLOS EN PÍLDORAS / CHIPS === */
+
+.decimal-examples-card {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 30px 0;
+    max-width: 820px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.decimal-examples-card:hover {
+    border-color: #000000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.decimal-card-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 4px;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+}
+
+.decimal-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Píldora individual */
+.decimal-chip {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: default;
+}
+
+/* Animación al pasar el ratón */
+.decimal-chip:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Soporte de color blanco para KaTeX dentro del chip en hover */
+.decimal-chip .katex {
+    font-size: 1.1rem !important;
+}
+
+.decimal-chip:hover .katex {
+    color: #ffffff !important;
+}
