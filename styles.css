@@ -1738,3 +1738,101 @@ body {
 .decimal-chip:hover .katex {
     color: #ffffff !important;
 }
+/* === CORRECCIÓN: AJUSTE DE ANCHO Y DESBORDAMIENTO PARA PROPIEDADES === */
+
+.pro-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 20px;
+}
+
+/* Evita que KaTeX corte ecuaciones largas en las tarjetas */
+.pro-feature-card .example-math-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+}
+
+.pro-feature-card .example-math-display .katex {
+    font-size: 1.15rem !important; /* Tamaño óptimo para ecuaciones largas */
+}
+
+
+/* === ANIMACIONES E INTERACTIVIDAD PARA EL EJEMPLO PASO A PASO === */
+
+/* Tarjeta contenedora del ejemplo resuelto */
+.example-box {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 35px 0;
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.example-box:hover {
+    transform: translateY(-4px);
+    border-color: #000000;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+/* Lista de pasos */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Item individual de cada paso con animación al pasar el ratón */
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 18px 22px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Efecto hover: el paso avanza a la derecha y resalta */
+.step-item:hover {
+    transform: translateX(8px);
+    background-color: #ffffff;
+    border-color: #000000;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Número de paso interactivo (se invierte a negro y crece en hover) */
+.step-number {
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.step-item:hover .step-number {
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.12);
+}
+
+.step-item strong {
+    color: #000000;
+    font-size: 1.02rem;
+}
