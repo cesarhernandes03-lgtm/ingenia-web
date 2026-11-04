@@ -840,6 +840,150 @@
     </p>
 </div>
 
+<!-- SUBSECCIÓN 2.2: LA RESTA -->
+<section class="lesson-section animate-on-scroll">
+    <h2>2.2 La resta</h2>
+    <p>
+        La resta permite calcular  cuanto queda al quitar una cantidad de otra o determinar la diferencia entre dos cantidades. Se representa con el signo <strong>-</strong>.
+    </p>
+    <p>
+    </p>
+
+<!-- TARJETA MATEMÁTICA DE LA RESTA -->
+    <div class="math-card-container animate-on-scroll">
+        <div class="math-card-header">
+            <span class="math-badge">Estructura de la Resta</span>
+            <button class="copy-math-btn" onclick="copyFormula('a - b = c', this)" title="Copiar LaTeX">
+                <span class="btn-text">Copiar LaTeX</span>
+            </button>
+        </div>
+
+        <!-- Expresión Matemática Renderizada -->
+        <div class="math-formula-box">
+            <span class="formula-display">$$a - b = c$$</span>
+        </div>
+
+        <!-- Desglose de Elementos -->
+        <div class="math-card-footer" style="flex-direction: column; gap: 10px;">
+            <ul class="interactive-bullets-list" style="width: 100%;">
+                <li class="bullet-item">
+                    <span class="bullet-icon"></span>
+                    <div class="bullet-text">
+                        <strong>\(a\):</strong> Minuendo, la cantidad de lo que partimos
+                    </div>
+                </li>
+                <li class="bullet-item">
+                    <span class="bullet-icon"></span>
+                    <div class="bullet-text">
+                        <strong>\(b\):</strong> Sustraendo, la cantidad que se resta
+                    </div>
+                </li>
+                <li class="bullet-item">
+                    <span class="bullet-icon"></span>
+                    <div class="bullet-text">
+                        <strong>\(c\):</strong> Resultado
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARACIÓN INTERACTIVA: NO CONMUTATIVIDAD DE LA RESTA -->
+<div class="math-card-container animate-on-scroll">
+    <div class="math-card-header">
+        <span class="math-badge">Propiedad de la Resta</span>
+        <button class="copy-math-btn" onclick="copyFormula('9 - 4 = 5 \\quad \\text{vs} \\quad 4 - 9 = -5', this)" title="Copiar LaTeX">
+            <span class="btn-text">Copiar LaTeX</span>
+        </button>
+    </div>
+
+    <p class="math-intro-text">A diferencia de la suma, la resta no es conmutativa:</p>
+
+    <!-- Demostración visual centrada -->
+    <div class="math-formula-box" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+        <span class="formula-display">$$9 - 4 = 5$$</span>
+        <span style="font-weight: 600; color: #666666; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">Pero</span>
+        <span class="formula-display">$$4 - 9 = -5$$</span>
+    </div>
+
+    <!-- Cierre y conclusión destacada -->
+    <div class="math-card-footer">
+        <span class="info-icon">!</span>
+        <p><strong>El orden si importa.</strong></p>
+    </div>
+</div>
+
+<!-- EJEMPLO RESUELTO: RESTA DE NÚMEROS NATURALES -->
+<div class="example-box animate-on-scroll">
+    <div class="card-top-bar" style="margin-bottom: 14px;">
+        <span class="example-number-badge">Ejemplo 01</span>
+        <span class="example-category">Resta de números naturales</span>
+    </div>
+
+    <p class="example-problem">
+        Un almacén tiene <strong>452</strong> envases y entrega <strong>178</strong> ¿Cuántos quedan?
+    </p>
+
+    <!-- LISTA DE PASOS -->
+    <div class="steps-list">
+        <!-- Paso 1 -->
+        <div class="step-item">
+            <span class="step-number">1</span>
+            <div>
+                <strong>Plantear operación:</strong>
+                <div class="example-math-display" style="margin-top: 8px;">
+                    <span class="math-expr">$$452 - 178$$</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="step-item">
+            <span class="step-number">2</span>
+            <div>
+                En las unidades no se puede <strong>restar 8 de 2</strong>. Para ello debemos tomar una decena del <strong>5</strong>, de modo que el <strong>2</strong> se convertirá en <strong>12 y el 5 en 4</strong>.
+                <div class="example-math-display" style="margin-top: 8px;">
+                    <span class="math-expr">$$12 - 8 = 4$$</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="step-item">
+            <span class="step-number">3</span>
+            <div>
+                Ahora tendremos <strong>4 decenas</strong>, y no podemos <strong>restar 7</strong>. Lo cual tomaremos una <strong>centena del 4</strong>, convirtiendo las <strong>4 decenas</strong> en <strong>14 y el 4 en 3</strong>.
+                <div class="example-math-display" style="margin-top: 8px;">
+                    <span class="math-expr">$$14 - 7 = 7$$</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="step-item">
+            <span class="step-number">4</span>
+            <div>
+                <strong>Restar las centenas:</strong>
+                <div class="example-math-display" style="margin-top: 8px;">
+                    <span class="math-expr">$$3 - 1 = 2$$</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTADO FINAL -->
+    <div class="example-conclusion-box" style="margin-top: 24px;">
+        <p><strong>Resultado:</strong></p>
+        <div class="example-math-display" style="margin: 8px 0;">
+            <span class="math-expr">$$452 - 178 = 274$$</span>
+        </div>
+        <p>Quedan 274 envases.</p>
+    </div>
+</div>
+
+
+
         <!-- BLOQUE 2: GRID DE CONCEPTOS CLAVE / PROPIEDADES -->
         <section class="lesson-section animate-on-scroll">
             <h2>2. Propiedades Fundamentales</h2>
