@@ -2747,12 +2747,12 @@
     </p>
 </section>
 
-<!-- EVALUACIÓN INTERACTIVA JUGABLE -->
+<!-- EVALUACIÓN INTERACTIVA JUGABLE (RENOVADA) -->
 <div class="interactive-quiz-card animate-on-scroll" id="quizContainer">
     <!-- Encabezado -->
     <div class="quiz-header">
-        <span class="quiz-title-badge">Evaluación</span>
-        <span class="quiz-step-counter" id="quizProgressText">Pregunta 1 de 8</span>
+        <span class="quiz-title-badge">Evaluación Modular</span>
+        <span class="quiz-step-counter" id="quizProgressText">Pregunta 1 de 12</span>
     </div>
 
     <!-- Barra de Progreso -->
@@ -2760,62 +2760,93 @@
         <div class="quiz-progress-fill" id="quizProgressFill"></div>
     </div>
 
-    <!-- Contenedor dinámico de pregunta -->
-    <div id="quizContent">
+    <!-- CUERPO DE LAS PREGUNTAS (Se oculta al finalizar) -->
+    <div id="quizQuestionBody">
         <h3 class="quiz-question-title" id="questionText">Cargando pregunta...</h3>
         <div class="quiz-options-grid" id="optionsGrid"></div>
+
+        <!-- Retroalimentación y Botón de Avance -->
+        <div class="quiz-feedback-box" id="feedbackBox">
+            <span id="feedbackText"></span>
+            <button class="quiz-next-btn" id="nextBtn" style="display: none;" onclick="nextQuestion()">
+                Siguiente Pregunta →
+            </button>
+        </div>
     </div>
 
-    <!-- Retroalimentación y Botón de Avance -->
-    <div class="quiz-feedback-box" id="feedbackBox">
-        <span id="feedbackText"></span>
-        <button class="quiz-next-btn" id="nextBtn" style="display: none;" onclick="nextQuestion()">
-            Siguiente Pregunta →
-        </button>
+    <!-- PANTALLA FINAL DE COMPLETADO (Oculta por defecto) -->
+    <div id="quizCompletionBody" style="display: none;">
+        <div class="quiz-completion-card">
+            <h3> ¡Evaluación Completada!</h3>
+            <p style="color: #475569; font-size: 1.05rem; margin-top: 8px;">
+                Has respondido correctamente todas las preguntas del módulo con éxito.
+            </p>
+            <button class="quiz-restart-btn" onclick="restartQuiz()">Reiniciar Evaluación ↺</button>
+        </div>
     </div>
 </div>
 
 <script>
-// DATOS DE LAS 8 PREGUNTAS
+// BANCO DE 12 PREGUNTAS (DIFICULTAD PROGRESIVA)
 const quizData = [
     {
-        question: "1. ¿Cuál de estos números es entero negativo?",
-        options: ["3.5", "-7", "0.25", "4"],
-        correct: 1
-    },
-    {
-        question: "2. Calcula: 348 + 276",
-        options: ["514", "624", "614", "634"],
-        correct: 1
-    },
-    {
-        question: "3. Calcula: 500 − 738",
-        options: ["238", "-238", "-262", "262"],
-        correct: 1
-    },
-    {
-        question: "4. Calcula: (-8)(-6)",
-        options: ["-48", "14", "48", "-14"],
-        correct: 2
-    },
-    {
-        question: "5. Calcula: 9.6 ÷ 4",
-        options: ["2.4", "24", "0.24", "3.4"],
+        question: "1. ¿Cuál es el resultado de la suma de enteros (-15) + (-27)?",
+        options: ["-42", "42", "-12", "12"],
         correct: 0
     },
     {
-        question: "6. Resuelve: 5 + 2 × 7",
-        options: ["49", "19", "35", "14"],
+        question: "2. ¿Cuál de los siguientes números es el MAYOR?",
+        options: ["-18", "-3", "-9", "-1"],
+        correct: 3
+    },
+    {
+        question: "3. Calcula la siguiente resta con negativos: 14 - (-8)",
+        options: ["6", "-6", "22", "-22"],
+        correct: 2
+    },
+    {
+        question: "4. Resuelve la multiplicación y división de signos: (-6) × (-8) ÷ (-2)",
+        options: ["24", "-24", "48", "-48"],
         correct: 1
     },
     {
-        question: "7. ¿Cuál es el mayor número?",
-        options: ["-9", "-2", "-5", "-12"],
+        question: "5. Ordena de MENOR a MAYOR los siguientes valores: -7, 4, -12, 0, 2",
+        options: ["-12 < -7 < 0 < 2 < 4", "-7 < -12 < 0 < 2 < 4", "0 < 2 < 4 < -7 < -12", "-12 < -7 < 2 < 0 < 4"],
+        correct: 0
+    },
+    {
+        question: "6. Resuelve aplicando jerarquía de operaciones: 18 - 3 × 4 + 10 ÷ 2",
+        options: ["35", "11", "65", "14"],
         correct: 1
     },
     {
-        question: "8. Calcula: 3.75 + 2.8",
-        options: ["6.55", "6.03", "5.55", "65.5"],
+        question: "7. Calcula con paréntesis: (15 - 3 × 4) × (-5)",
+        options: ["-60", "15", "-15", "45"],
+        correct: 2
+    },
+    {
+        question: "8. ¿Cuál de las siguientes operaciones NO está definida en matemáticas?",
+        options: ["0 ÷ 12", "12 ÷ 0", "0 × 12", "0 - 12"],
+        correct: 1
+    },
+    {
+        question: "9. Resuelve con paréntesis anidados: 25 - [5 + 3 × (8 - 4)]",
+        options: ["8", "17", "264", "12"],
+        correct: 0
+    },
+    {
+        question: "10. Realiza la estimación aproximando a centenas: 398 + 504",
+        options: ["800", "900", "902", "1000"],
+        correct: 1
+    },
+    {
+        question: "11. Resuelve la combinación de potencias y signos: (-3)² - 4 × (-2)",
+        options: ["1", "-17", "17", "-1"],
+        correct: 2
+    },
+    {
+        question: "12. Evalúa la expresión fraccionaria combinada: [24 ÷ (-4) - (-10)] ÷ (-2)",
+        options: ["-2", "2", "-8", "8"],
         correct: 0
     }
 ];
@@ -2827,7 +2858,7 @@ function loadQuestion() {
     isAnswerCorrect = false;
     const currentQ = quizData[currentQuestionIndex];
     
-    // Actualizar Encabezado y Barra
+    // Actualizar Encabezado y Barra de Progreso
     document.getElementById("quizProgressText").innerText = `Pregunta ${currentQuestionIndex + 1} de ${quizData.length}`;
     const progressPercent = ((currentQuestionIndex + 1) / quizData.length) * 100;
     document.getElementById("quizProgressFill").style.width = `${progressPercent}%`;
@@ -2841,55 +2872,56 @@ function loadQuestion() {
     document.getElementById("feedbackText").innerText = "";
     document.getElementById("nextBtn").style.display = "none";
 
-    // Generar Opciones
+    // Generar Opciones Dinámicas
     const optionsGrid = document.getElementById("optionsGrid");
     optionsGrid.innerHTML = "";
 
     currentQ.options.forEach((optText, index) => {
         const btn = document.createElement("button");
         btn.className = "quiz-option-btn";
+        btn.type = "button";
         btn.innerHTML = `<span>${optText}</span> <span class="opt-status"></span>`;
         btn.onclick = () => handleOptionClick(btn, index);
         optionsGrid.appendChild(btn);
     });
 
-    // Re-renderizar MathJax/KaTeX si está disponible en la página
-    if (window.MathJax) {
-        MathJax.typesetPromise && MathJax.typesetPromise();
+    // Re-renderizar fórmulas de MathJax o KaTeX si existen en la página
+    if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise();
     }
 }
 
 function handleOptionClick(selectedBtn, selectedIndex) {
-    if (isAnswerCorrect) return; // Si ya acertó, bloquea clics extras
+    if (isAnswerCorrect) return; // Si ya se respondió correctamente, bloquear clics adicionales
 
     const currentQ = quizData[currentQuestionIndex];
     const feedbackBox = document.getElementById("feedbackBox");
     const feedbackText = document.getElementById("feedbackText");
 
     if (selectedIndex === currentQ.correct) {
-        // RESPUESTA CORRECTA
+        // RESPUESTA CORRECTA (Verde + Animación)
         isAnswerCorrect = true;
         selectedBtn.classList.remove("incorrect");
         selectedBtn.classList.add("correct");
         selectedBtn.querySelector(".opt-status").innerText = "✓";
 
         feedbackBox.className = "quiz-feedback-box visible correct";
-        feedbackText.innerText = "¡Correcto! Excelente trabajo.";
+        feedbackText.innerText = "¡Correcto! Excelente deducción.";
 
-        // Deshabilitar todas las opciones
+        // Deshabilitar todas las opciones al acertar
         const allBtns = document.querySelectorAll(".quiz-option-btn");
         allBtns.forEach(btn => btn.disabled = true);
 
         // Mostrar Botón Siguiente
         document.getElementById("nextBtn").style.display = "inline-flex";
     } else {
-        // RESPUESTA INCORRECTA
+        // RESPUESTA INCORRECTA (Rojo + Animación Shake)
         selectedBtn.classList.add("incorrect");
         selectedBtn.querySelector(".opt-status").innerText = "✕";
-        selectedBtn.disabled = true; // Deshabilita la opción errónea elegida
+        selectedBtn.disabled = true; // Deshabilitar solo la opción errónea elegida
 
         feedbackBox.className = "quiz-feedback-box visible incorrect";
-        feedbackText.innerText = "Respuesta incorrecta. Inténtalo de nuevo.";
+        feedbackText.innerText = "Incorrecto. Revisa el procedimiento e inténtalo de nuevo.";
     }
 }
 
@@ -2903,47 +2935,179 @@ function nextQuestion() {
 }
 
 function showCompletionScreen() {
-    const quizContent = document.getElementById("quizContent");
-    const feedbackBox = document.getElementById("feedbackBox");
+    // Ocultar sección de preguntas y mostrar pantalla final
+    document.getElementById("quizQuestionBody").style.display = "none";
+    document.getElementById("quizCompletionBody").style.display = "block";
     document.getElementById("quizProgressFill").style.width = "100%";
-    feedbackBox.style.display = "none";
-
-    quizContent.innerHTML = `
-        <div class="quiz-completion-card">
-            <h3>🎉 ¡Evaluación Completada!</h3>
-            <p style="color: #475569; font-size: 1.05rem;">Has respondido correctamente las 8 preguntas del módulo.</p>
-            <button class="quiz-restart-btn" onclick="restartQuiz()">Reiniciar Evaluación</button>
-        </div>
-    `;
+    document.getElementById("quizProgressText").innerText = `¡Completado! (${quizData.length}/${quizData.length})`;
 }
 
 function restartQuiz() {
+    // REINICIO COMPLETO Y REAJUSTE DE ESTADOS
     currentQuestionIndex = 0;
-    document.getElementById("feedbackBox").style.display = "flex";
+    document.getElementById("quizCompletionBody").style.display = "none";
+    document.getElementById("quizQuestionBody").style.display = "block";
     loadQuestion();
 }
 
-// Iniciar Quiz al cargar
+// Iniciar al cargar el documento
 document.addEventListener("DOMContentLoaded", loadQuestion);
 if (document.readyState === "complete" || document.readyState === "interactive") {
     loadQuestion();
 }
 </script>
 
+<!-- BLOQUE 9: RESUMEN DE LO APRENDIDO -->
+<section class="lesson-section animate-on-scroll">
+    <h2>9. Resumen de lo aprendido</h2>
 
+    <div class="summary-card-container animate-on-scroll">
+        <ul class="summary-list">
+            
+            <!-- Elemento 1 -->
+            <li class="summary-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <span class="summary-title">Números naturales</span>
+                    <p class="summary-text">
+                        Sirven para contar cantidades enteras no negativas, según la convención de este curso.
+                    </p>
+                </div>
+            </li>
 
-        <!-- NAVEGACIÓN ENTRE TEMAS (ANTERIOR / SIGUIENTE) -->
-        <nav class="lesson-nav animate-on-scroll">
-            <a href="precalculo.html" class="nav-btn prev">
-                <span class="nav-label">Anterior</span>
-                <span class="nav-title">← Volver al Temario</span>
-            </a>
-            <a href="#" class="nav-btn next">
-                <span class="nav-label">Siguiente Tema</span>
-                <span class="nav-title">Jerarquía de operaciones →</span>
-            </a>
-        </nav>
+            <!-- Elemento 2 -->
+            <li class="summary-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <span class="summary-title">Números enteros</span>
+                    <p class="summary-text">
+                        Incluyen positivos, negativos y cero; son útiles para representar diferencias, deudas y temperaturas.
+                    </p>
+                </div>
+            </li>
 
+            <!-- Elemento 3 -->
+            <li class="summary-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <span class="summary-title">Números decimales</span>
+                    <p class="summary-text">
+                        Permiten representar cantidades fraccionarias y mediciones con mayor precisión.
+                    </p>
+                </div>
+            </li>
+
+            <!-- Elemento 4 -->
+            <li class="summary-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <span class="summary-title">Operaciones fundamentales</span>
+                    <p class="summary-text">
+                        La suma combina cantidades; la resta calcula diferencias; la multiplicación relaciona factores; y la división reparte o compara cantidades.
+                    </p>
+                </div>
+            </li>
+
+            <!-- Elemento 5 -->
+            <li class="summary-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <span class="summary-title">Signos y jerarquía</span>
+                    <p class="summary-text">
+                        Las reglas de los signos dependen de la operación, y las operaciones combinadas deben seguir una jerarquía establecida.
+                    </p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</section>
+
+<!-- SECCIÓN: ¿CUÁNDO ESTES LISTO PARA AVANZAR? -->
+<section class="lesson-section animate-on-scroll">
+    <div class="readiness-card">
+        <h3 class="readiness-title">¿Cuándo estes listo para avanzar?</h3>
+        <p class="readiness-subtitle">Antes de pasar al siguiente tema del Módulo 0, comprueba que puedes:</p>
+
+        <!-- LISTA DE COMPROBACIÓN -->
+        <div class="checklist-container">
+            <label class="checklist-item">
+                <input type="checkbox" class="readiness-check" onchange="checkReadinessStatus()">
+                <span class="custom-checkbox"></span>
+                <span class="check-text">Realizar sumas, restas, multiplicaciones y divisiones sin depender de una calculadora.</span>
+            </label>
+
+            <label class="checklist-item">
+                <input type="checkbox" class="readiness-check" onchange="checkReadinessStatus()">
+                <span class="custom-checkbox"></span>
+                <span class="check-text">Operar con números negativos.</span>
+            </label>
+
+            <label class="checklist-item">
+                <input type="checkbox" class="readiness-check" onchange="checkReadinessStatus()">
+                <span class="custom-checkbox"></span>
+                <span class="check-text">Resolver operaciones con decimales.</span>
+            </label>
+
+            <label class="checklist-item">
+                <input type="checkbox" class="readiness-check" onchange="checkReadinessStatus()">
+                <span class="custom-checkbox"></span>
+                <span class="check-text">Comparar y ordenar números.</span>
+            </label>
+
+            <label class="checklist-item">
+                <input type="checkbox" class="readiness-check" onchange="checkReadinessStatus()">
+                <span class="custom-checkbox"></span>
+                <span class="check-text">Respetar la jerarquía de operaciones.</span>
+            </label>
+
+            <label class="checklist-item">
+                <input type="checkbox" class="readiness-check" onchange="checkReadinessStatus()">
+                <span class="custom-checkbox"></span>
+                <span class="check-text">Comprobar tus resultados mediante operaciones inversas o estimaciones.</span>
+            </label>
+        </div>
+
+        <!-- RECOMENDACIÓN -->
+        <div class="recommended-topic-box">
+            <strong>Siguiente tema recomendado:</strong> jerarquía de operaciones y uso de paréntesis, ahora con mayor profundidad, incluyendo potencias, raíces, fracciones y expresiones combinadas.
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN ENTRE TEMAS (ANTERIOR / SIGUIENTE) -->
+    <nav class="lesson-nav animate-on-scroll">
+        <a href="precalculo.html" class="nav-btn prev">
+            <span class="nav-label">Anterior</span>
+            <span class="nav-title">← Volver al Temario</span>
+        </a>
+        <a href="jerarquia_operaciones.html" class="nav-btn next disabled" id="nextTopicBtn">
+            <span class="nav-label">Siguiente Tema</span>
+            <span class="nav-title">Jerarquía de operaciones →</span>
+        </a>
+    </nav>
+</section>
+
+<script>
+function checkReadinessStatus() {
+    const checkboxes = document.querySelectorAll('.readiness-check');
+    const nextBtn = document.getElementById('nextTopicBtn');
+    
+    // Verifica si TODAS las casillas están marcadas
+    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+
+    if (allChecked) {
+        // Desbloquear con animación amarilla
+        nextBtn.classList.remove('disabled');
+        nextBtn.classList.add('unlocked');
+    } else {
+        // Volver al estado bloqueado si desmarca alguna
+        nextBtn.classList.remove('unlocked');
+        nextBtn.classList.add('disabled');
+    }
+}
+</script>
+
+     
     </main>
 
     <!-- Pie de Página -->
