@@ -1836,3 +1836,158 @@ body {
     color: #000000;
     font-size: 1.02rem;
 }
+/* === RECTA NUMÉRICA INTERACTIVA === */
+
+.number-line-card {
+    background: #0d0d0d;
+    border: 1px solid #222222;
+    border-radius: 14px;
+    padding: 30px 24px;
+    margin: 25px 0;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.number-line-card:hover {
+    border-color: #444444;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Indicadores de Zona (Menores / Mayores) */
+.number-line-zones {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.zone-less {
+    color: #ff7b54;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.zone-greater {
+    color: #00e6a8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Contenedor de la línea */
+.number-line-wrapper {
+    position: relative;
+    padding: 40px 10px 20px 10px;
+    margin: 10px 0 25px 0;
+}
+
+/* Eje principal de la recta */
+.line-axis {
+    position: relative;
+    height: 4px;
+    background: linear-gradient(90deg, #ff7b54 0%, #ffffff 50%, #00e6a8 100%);
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Flecha derecha de la recta */
+.line-axis::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: -5px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid #00e6a8;
+}
+
+/* Ticks / Puntos numéricos */
+.line-tick {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Muesca vertical */
+.tick-mark {
+    width: 3px;
+    height: 18px;
+    background-color: #888888;
+    border-radius: 2px;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tick-mark.zero {
+    height: 24px;
+    background-color: #ffffff;
+    width: 4px;
+}
+
+/* Valor numérico debajo del tick */
+.tick-value {
+    margin-top: 14px;
+    font-family: monospace, monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #aaaaaa;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* INTERACTIVIDAD HOVER POR PUNTO */
+.line-tick:hover .tick-mark {
+    transform: scaleY(1.4);
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.line-tick:hover .tick-value {
+    color: #ffffff;
+    transform: translateY(2px) scale(1.15);
+}
+
+.line-tick.negative:hover .tick-mark {
+    background-color: #ff7b54;
+    box-shadow: 0 0 12px rgba(255, 123, 84, 0.8);
+}
+.line-tick.negative:hover .tick-value { color: #ff7b54; }
+
+.line-tick.positive:hover .tick-mark {
+    background-color: #00e6a8;
+    box-shadow: 0 0 12px rgba(0, 230, 168, 0.8);
+}
+.line-tick.positive:hover .tick-value { color: #00e6a8; }
+
+/* Pie informativo con animación de flecha */
+.number-line-footer {
+    text-align: center;
+    font-size: 0.98rem;
+    color: #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.arrow-pulse {
+    display: inline-block;
+    font-weight: bold;
+    animation: arrowPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes arrowPulse {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
