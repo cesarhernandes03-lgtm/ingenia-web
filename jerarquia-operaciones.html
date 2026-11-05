@@ -52,556 +52,472 @@
             <p>
                 Cuando encontramos una expresión matemática que contiene varias operaciones, debemos seguir ciertas reglas para obtener un resultado correcto. Estas reglas reciben el nombre de <strong>jerarquía de operaciones</strong>.
             </p>
+
+            <!-- EJEMPLO INTRODUCTORIO Y ACLARACIÓN DE JERARQUÍA -->
+            <div class="example-box animate-on-scroll" style="margin-top: 24px;">
+                <div class="card-top-bar" style="margin-bottom: 14px;">
+                    <span class="example-number-badge">Caso de Análisis</span>
+                    <span class="example-category">Prioridad de operaciones</span>
+                </div>
+
+                <p class="example-problem">
+                    Imagina que tenemos la siguiente expresión:
+                </p>
+
+                <div class="example-math-display" style="margin: 16px 0;">
+                    <span class="math-expr">$$8 + 4 \times 3$$</span>
+                </div>
+
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-number">!</span>
+                        <div>
+                            Podríamos pensar que primero debemos sumar <strong>8 y 4</strong>, y después multiplicar el resultado por <strong>3</strong>. Sin embargo, <strong>eso sería incorrecto</strong>, porque la multiplicación tiene prioridad sobre la suma.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-conclusion-box" style="margin-top: 24px;">
+                    <p><strong>Por lo tanto:</strong></p>
+                    <div class="example-math-display" style="margin: 12px 0; display: inline-block; border: 1px solid #e2e8f0; padding: 10px 20px; border-radius: 8px; background: #ffffff;">
+                        <span class="math-expr">$$8 + (4 \times 3) = 8 + 12 = 20$$</span>
+                    </div>
+                    <p style="margin-top: 8px; color: #16a34a; font-weight: 600;">
+                        El resultado correcto es <strong>20</strong>, no <strong>36</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TARJETA DE OBJETIVO DEL TEMA -->
+            <div class="insight-box animate-on-scroll" style="margin-top: 24px;">
+                <div class="insight-header">
+                    <span class="insight-badge">🎯 Objetivo del tema</span>
+                </div>
+                <p class="insight-text">
+                    En este tema estudiaremos cómo identificar y resolver expresiones matemáticas que contienen diferentes operaciones, signos de agrupación, potencias y raíces.
+                </p>
+            </div>
         </section>
 
-        <!-- EJEMPLO INTRODUCTORIO Y ACLARACIÓN DE JERARQUÍA -->
-<div class="example-box animate-on-scroll" style="margin-top: 24px;">
-    <div class="card-top-bar" style="margin-bottom: 14px;">
-        <span class="example-number-badge">Caso de Análisis</span>
-        <span class="example-category">Prioridad de operaciones</span>
-    </div>
-
-    <p class="example-problem">
-        Imagina que tenemos la siguiente expresión:<!--[cite: 25] -->
-    </p>
-
-    <!-- EXPRESIÓN INICIAL -->
-    <div class="example-math-display" style="margin: 16px 0;">
-        <span class="math-expr">$$8 + 4 \times 3$$</span><!--[cite: 25] -->
-    </div>
-
-    <!-- NOTA SOBRE EL ERROR COMÚN -->
-    <div class="steps-list">
-        <div class="step-item">
-            <span class="step-number">!</span>
-            <div>
-                Podríamos pensar que primero debemos sumar <strong>8 y 4</strong>, y después multiplicar el resultado por <strong>3</strong>. Sin embargo, <strong>eso sería incorrecto</strong>, porque la multiplicación tiene prioridad sobre la suma.<!--[cite: 25] -->
+        <!-- Sección de Objetivos de Aprendizaje -->
+        <section class="objectives-container animate-on-scroll">
+            <div class="objectives-header">
+                <span class="objectives-badge">Lo que vas a lograr</span>
+                <h2>Objetivos de aprendizaje</h2>
             </div>
-        </div>
-    </div>
 
-    <!-- RESOLUCIÓN CORRECTA -->
-    <div class="example-conclusion-box" style="margin-top: 24px;">
-        <p><strong>Por lo tanto:</strong></p><!--[cite: 25] -->
-        <div class="example-math-display" style="margin: 12px 0; display: inline-block; border: 1px solid #e2e8f0; padding: 10px 20px; border-radius: 8px; background: #ffffff;">
-            <span class="math-expr">$$8 + (4 \times 3) = 8 + 12 = 20$$</span><!--[cite: 25] -->
-        </div>
-        <p style="margin-top: 8px; color: #16a34a; font-weight: 600;">
-            El resultado correcto es <strong>20</strong>, no <strong>36</strong>.<!--[cite: 25] -->
-        </p>
-    </div>
-</div>
-
-<!-- TARJETA DE OBJETIVO DEL TEMA -->
-<div class="insight-box animate-on-scroll" style="margin-top: 24px;">
-    <div class="insight-header">
-        <span class="insight-badge"> Objetivo del tema</span>
-    </div>
-    <p class="insight-text">
-        En este tema estudiaremos cómo identificar y resolver expresiones matemáticas que contienen diferentes operaciones, signos de agrupación, potencias y raíces.<!--[cite: 25] -->
-    </p>
-</div>
-
-<!-- Sección de Objetivos de Aprendizaje -->
-<section class="objectives-container animate-on-scroll">
-    <div class="objectives-header">
-        <span class="objectives-badge">Lo que vas a lograr</span>
-        <h2>Objetivos de aprendizaje</h2>
-    </div>
-
-    <div class="objectives-grid">
-        <!-- Objetivo 1 -->
-        <div class="objective-card">
-            <div class="objective-icon">✓</div>
-            <div class="objective-text">
-                <strong>Comprender</strong> el concepto de jerarquía de operaciones.
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-icon">✓</div>
+                    <div class="objective-text">
+                        <strong>Comprender</strong> el concepto de jerarquía de operaciones.
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">✓</div>
+                    <div class="objective-text">
+                        <strong>Identificar</strong> los diferentes signos de agrupación (paréntesis, corchetes y llaves).
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">✓</div>
+                    <div class="objective-text">
+                        <strong>Resolver</strong> expresiones matemáticas respetando el orden correcto de las operaciones.
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">✓</div>
+                    <div class="objective-text">
+                        <strong>Relacionar</strong> las potencias y raíces con las operaciones fundamentales dentro de la jerarquía.
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">✓</div>
+                    <div class="objective-text">
+                        <strong>Operar</strong> expresiones complejas con números enteros, decimales y negativos.
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">✓</div>
+                    <div class="objective-text">
+                        <strong>Reconocer</strong> y evitar errores frecuentes al desarrollar operaciones combinadas.
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Objetivo 2 -->
-        <div class="objective-card">
-            <div class="objective-icon">✓</div>
-            <div class="objective-text">
-                <strong>Identificar</strong> los diferentes signos de agrupación (paréntesis, corchetes y llaves).
-            </div>
-        </div>
+        <!-- SUBSECCIÓN 1.1: ¿QUÉ ES LA JERARQUÍA DE OPERACIONES? -->
+        <section class="lesson-section animate-on-scroll">
+            <h2>1.1 ¿Qué es la jerarquía de operaciones?</h2>
+            
+            <p>
+                La jerarquía de operaciones es el conjunto de reglas que establece el orden en el que deben resolverse las operaciones matemáticas cuando aparecen varias de ellas en una misma expresión.
+            </p>
 
-        <!-- Objetivo 3 -->
-        <div class="objective-card">
-            <div class="objective-icon">✓</div>
-            <div class="objective-text">
-                <strong>Resolver</strong> expresiones matemáticas respetando el orden correcto de las operaciones.
-            </div>
-        </div>
-
-        <!-- Objetivo 4 -->
-        <div class="objective-card">
-            <div class="objective-icon">✓</div>
-            <div class="objective-text">
-                <strong>Relacionar</strong> las potencias y raíces con las operaciones fundamentales dentro de la jerarquía.
-            </div>
-        </div>
-
-        <!-- Objetivo 5 -->
-        <div class="objective-card">
-            <div class="objective-icon">✓</div>
-            <div class="objective-text">
-                <strong>Operar</strong> expresiones complejas con números enteros, decimales y negativos.
-            </div>
-        </div>
-
-        <!-- Objetivo 6 -->
-        <div class="objective-card">
-            <div class="objective-icon">✓</div>
-            <div class="objective-text">
-                <strong>Reconocer</strong> y evitar errores frecuentes al desarrollar operaciones combinadas.
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SUBSECCIÓN 1.1: ¿QUÉ ES LA JERARQUÍA DE OPERACIONES? -->
-<section class="lesson-section animate-on-scroll">
-    <h2>1.1 ¿Qué es la jerarquía de operaciones?</h2>
-    
-    <p>
-        La jerarquía de operaciones es el conjunto de reglas que establece el orden en el que deben resolverse las operaciones matemáticas cuando aparecen varias de ellas en una misma expresión.
-    </p>
-
-    <!-- TARJETA DESTACADA: PROPÓSITO -->
-    <div class="insight-box animate-on-scroll" style="margin-top: 20px; margin-bottom: 20px;">
-        <div class="insight-header">
-            <span class="insight-badge"> Propósito principal</span>
-        </div>
-        <p class="insight-text">
-            Garantizar que cualquier persona que resuelva una expresión matemática obtenga el <strong>mismo resultado</strong>, siempre que aplique correctamente las reglas establecidas.
-        </p>
-    </div>
-
-    <p>
-        El orden convencional es el siguiente:
-    </p>
-</section>
-
-<!-- ESTRUCTURA DESTACADA DE ORDEN DE PRIORIDAD -->
-<div class="pro-features-section animate-on-scroll" style="margin-top: 25px;">
-    <div class="pro-features-header">
-        <span class="objectives-badge">Regla Fundamental</span>
-        <h2>Orden de prioridad</h2>
-    </div>
-
-    <div class="pro-features-grid">
-        <!-- Nivel 1 -->
-        <article class="pro-feature-card">
-            <div class="pro-feature-top">
-                <span class="pro-feature-num">01</span>
-                <span class="pro-feature-status">Prioridad 1</span>
-            </div>
-            <h3>Signos de agrupación</h3>
-            <p>Paréntesis, corchetes y llaves. Se resuelven desde el interior hacia el exterior.</p>
-        </article>
-
-        <!-- Nivel 2 -->
-        <article class="pro-feature-card">
-            <div class="pro-feature-top">
-                <span class="pro-feature-num">02</span>
-                <span class="pro-feature-status">Prioridad 2</span>
-            </div>
-            <h3>Potencias y raíces</h3>
-            <p>Exponentes y operaciones radicales.</p>
-        </article>
-
-        <!-- Nivel 3 -->
-        <article class="pro-feature-card">
-            <div class="pro-feature-top">
-                <span class="pro-feature-num">03</span>
-                <span class="pro-feature-status">Prioridad 3</span>
-            </div>
-            <h3>Multiplicaciones y divisiones</h3>
-            <p>Se resuelven de izquierda a derecha, conforme aparecen.</p>
-        </article>
-
-        <!-- Nivel 4 -->
-        <article class="pro-feature-card">
-            <div class="pro-feature-top">
-                <span class="pro-feature-num">04</span>
-                <span class="pro-feature-status">Prioridad 4</span>
-            </div>
-            <h3>Sumas y restas</h3>
-            <p>Se resuelven de izquierda a derecha, conforme aparecen.</p>
-        </article>
-    </div>
-</div>
-
-<!-- TARJETA DE ACLARACIÓN IMPORTANTE -->
-<div class="insight-box animate-on-scroll" style="margin-top: 24px;">
-    <div class="insight-header">
-        <span class="insight-badge">⚠️ Regla de Izquierda a Derecha</span>
-    </div>
-    <p class="insight-text">
-        <strong>Una aclaración importante:</strong> la multiplicación no tiene prioridad sobre la división, ni la suma sobre la resta. Cuando tienen el mismo nivel de prioridad, se resuelven de <strong>izquierda a derecha</strong>.
-    </p>
-</div>
-
-<!-- EJEMPLO 1: OPERACIONES CON MULTIPLICACIÓN Y SUMA -->
-<div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
-    
-    <!-- ENCABEZADO DEL EJEMPLO -->
-    <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-        <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 01</span>
-        <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Multiplicación y suma</span>
-    </div>
-
-    <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
-        Ejemplo 1. Operaciones con multiplicación y suma
-    </h3>
-
-    <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
-        Resolver:
-    </p>
-
-    <!-- EXPRESIÓN A RESOLVER -->
-    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
-        <span class="math-expr">$$15 + 6 \times 4$$</span>
-    </div>
-
-    <!-- PASOS DESARROLLADOS PASO A PASO -->
-    <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
-        
-        <!-- PASO 1 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
-            <div>
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Identificar las operaciones.</strong>
-                <p style="margin: 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
-                    En la expresión encontramos una suma y una multiplicación.
+            <div class="insight-box animate-on-scroll" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="insight-header">
+                    <span class="insight-badge">🎯 Propósito principal</span>
+                </div>
+                <p class="insight-text">
+                    Garantizar que cualquier persona que resuelva una expresión matemática obtenga el <strong>mismo resultado</strong>, siempre que aplique correctamente las reglas establecidas.
                 </p>
             </div>
-        </div>
 
-        <!-- PASO 2 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
-            <div style="width: 100%;">
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Identificar cuál tiene mayor prioridad.</strong>
-                <p style="margin: 0 0 8px 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
-                    La multiplicación se resuelve antes que la suma.
-                </p>
-                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
-                    $$6 \times 4 = 24$$
-                </div>
+            <p>
+                El orden convencional es el siguiente:
+            </p>
+        </section>
+
+        <!-- ESTRUCTURA DESTACADA DE ORDEN DE PRIORIDAD -->
+        <div class="pro-features-section animate-on-scroll" style="margin-top: 25px;">
+            <div class="pro-features-header">
+                <span class="objectives-badge">Regla Fundamental</span>
+                <h2>Orden de prioridad</h2>
+            </div>
+
+            <div class="pro-features-grid">
+                <article class="pro-feature-card">
+                    <div class="pro-feature-top">
+                        <span class="pro-feature-num">01</span>
+                        <span class="pro-feature-status">Prioridad 1</span>
+                    </div>
+                    <h3>Signos de agrupación</h3>
+                    <p>Paréntesis, corchetes y llaves. Se resuelven desde el interior hacia el exterior.</p>
+                </article>
+
+                <article class="pro-feature-card">
+                    <div class="pro-feature-top">
+                        <span class="pro-feature-num">02</span>
+                        <span class="pro-feature-status">Prioridad 2</span>
+                    </div>
+                    <h3>Potencias y raíces</h3>
+                    <p>Exponentes y operaciones radicales.</p>
+                </article>
+
+                <article class="pro-feature-card">
+                    <div class="pro-feature-top">
+                        <span class="pro-feature-num">03</span>
+                        <span class="pro-feature-status">Prioridad 3</span>
+                    </div>
+                    <h3>Multiplicaciones y divisiones</h3>
+                    <p>Se resuelven de izquierda a derecha, conforme aparecen.</p>
+                </article>
+
+                <article class="pro-feature-card">
+                    <div class="pro-feature-top">
+                        <span class="pro-feature-num">04</span>
+                        <span class="pro-feature-status">Prioridad 4</span>
+                    </div>
+                    <h3>Sumas y restas</h3>
+                    <p>Se resuelven de izquierda a derecha, conforme aparecen.</p>
+                </article>
             </div>
         </div>
 
-        <!-- PASO 3 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
-            <div style="width: 100%;">
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Sustituir el resultado.</strong>
-                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
-                    $$15 + 24$$
-                </div>
+        <div class="insight-box animate-on-scroll" style="margin-top: 24px;">
+            <div class="insight-header">
+                <span class="insight-badge">⚠️ Regla de Izquierda a Derecha</span>
             </div>
+            <p class="insight-text">
+                <strong>Una aclaración importante:</strong> la multiplicación no tiene prioridad sobre la división, ni la suma sobre la resta. Cuando tienen el mismo nivel de prioridad, se resuelven de <strong>izquierda a derecha</strong>.
+            </p>
         </div>
 
-        <!-- PASO 4 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
-            <div style="width: 100%;">
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Realizar la suma.</strong>
-                <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
-                    $$\boxed{39}$$
-                </div>
+        <!-- EJEMPLO 1: OPERACIONES CON MULTIPLICACIÓN Y SUMA -->
+        <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+            <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+                <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 01</span>
+                <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Multiplicación y suma</span>
             </div>
-        </div>
 
-    </div>
-
-    <!-- CONCLUSIÓN / RESULTADO FINAL -->
-    <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>39</strong>.
-    </div>
-</div>
-
-<!-- EJEMPLO 2: OPERACIONES CON DIVISIÓN Y RESTA -->
-<div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
-    
-    <!-- ENCABEZADO DEL EJEMPLO -->
-    <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-        <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 02</span>
-        <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">División y resta</span>
-    </div>
-
-    <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
-        Ejemplo 2. Operaciones con división y resta
-    </h3>
-
-    <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
-        Resolver:
-    </p>
-
-    <!-- EXPRESIÓN A RESOLVER -->
-    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
-        <span class="math-expr">$$72 - 24 \div 6$$</span>
-    </div>
-
-    <!-- PASOS DESARROLLADOS PASO A PASO -->
-    <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
-        
-        <!-- PASO 1 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
-            <div>
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Identificar las operaciones.</strong>
-                <p style="margin: 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
-                    Tenemos una resta y una división.
-                </p>
-            </div>
-        </div>
-
-        <!-- PASO 2 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
-            <div style="width: 100%;">
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Resolver la división.</strong>
-                <p style="margin: 0 0 8px 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
-                    La división tiene prioridad sobre la resta.
-                </p>
-                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
-                    $$24 \div 6 = 4$$
-                </div>
-            </div>
-        </div>
-
-        <!-- PASO 3 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
-            <div style="width: 100%;">
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Sustituir el resultado.</strong>
-                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
-                    $$72 - 4$$
-                </div>
-            </div>
-        </div>
-
-        <!-- PASO 4 -->
-        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
-            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
-            <div style="width: 100%;">
-                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Realizar la resta.</strong>
-                <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
-                    $$\boxed{68}$$
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- CONCLUSIÓN / RESULTADO FINAL -->
-    <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>68</strong>.
-    </div>
-</div>
-
-<!-- EVALUACIÓN INTERACTIVA DE ENTRADA DIRECTA (SUBTEMA 1) -->
-<section class="lesson-section animate-on-scroll">
-    <div class="quiz-input-card" id="quizContainer">
-        
-        <!-- Encabezado y Progreso -->
-        <div class="quiz-header-bar">
-            <span class="quiz-badge">Práctica del subtema 1</span>
-            <span class="quiz-step-counter" id="quizStepText">Ejercicio 1 de 5</span>
-        </div>
-
-        <div class="quiz-progress-bar">
-            <div class="quiz-progress-fill" id="quizProgressFill"></div>
-        </div>
-
-        <!-- CUERPO DE PREGUNTAS -->
-        <div id="quizQuestionBody">
-            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
-                Resuelve la siguiente expresión respetando la jerarquía de operaciones:
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+                Ejemplo 1. Operaciones con multiplicación y suma
             </h3>
 
-            <!-- EXPRESIÓN MATEMÁTICA EN KATEX -->
-            <div class="quiz-math-box" id="quizMathDisplay">
-                $$12 + 5 \times 6$$
-            </div>
-
-            <!-- FORMULARIO DE RESPUESTA -->
-            <div class="quiz-input-group">
-                <input type="number" id="quizAnswerInput" class="quiz-num-input" placeholder="Resultado" autocomplete="off" onkeydown="handleKeyPress(event)">
-                <button type="button" class="quiz-submit-btn" id="checkBtn" onclick="checkAnswer()">Comprobar</button>
-                <button type="button" class="quiz-next-btn" id="nextBtn" style="display: none;" onclick="nextQuestion()">Siguiente →</button>
-            </div>
-
-            <div class="quiz-feedback-box" id="quizFeedback"></div>
-        </div>
-
-        <!-- PANTALLA FINAL DE COMPLETADO -->
-        <div id="quizCompletionBody" style="display: none; text-align: center; padding: 20px 0;">
-            <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a;"> ¡Práctica Completada!</h3>
-            <p style="color: #475569; font-size: 1.05rem; margin: 10px 0 24px 0;">
-                Has resuelto correctamente los 5 ejercicios de prioridad de operaciones.
+            <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+                Resolver:
             </p>
-            <button class="quiz-submit-btn" onclick="restartQuiz()">Reiniciar Evaluación ↺</button>
+
+            <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+                <span class="math-expr">$$15 + 6 \times 4$$</span>
+            </div>
+
+            <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+                    <div>
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Identificar las operaciones.</strong>
+                        <p style="margin: 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
+                            En la expresión encontramos una suma y una multiplicación.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+                    <div style="width: 100%;">
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Identificar cuál tiene mayor prioridad.</strong>
+                        <p style="margin: 0 0 8px 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
+                            La multiplicación se resuelve antes que la suma.
+                        </p>
+                        <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                            $$6 \times 4 = 24$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+                    <div style="width: 100%;">
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Sustituir el resultado.</strong>
+                        <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                            $$15 + 24$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+                    <div style="width: 100%;">
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Realizar la suma.</strong>
+                        <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                            $$\boxed{39}$$
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>39</strong>.
+            </div>
         </div>
+
+        <!-- EJEMPLO 2: OPERACIONES CON DIVISIÓN Y RESTA -->
+        <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+            <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+                <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 02</span>
+                <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">División y resta</span>
+            </div>
+
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+                Ejemplo 2. Operaciones con división y resta
+            </h3>
+
+            <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+                Resolver:
+            </p>
+
+            <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+                <span class="math-expr">$$72 - 24 \div 6$$</span>
+            </div>
+
+            <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+                    <div>
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Identificar las operaciones.</strong>
+                        <p style="margin: 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
+                            Tenemos una resta y una división.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+                    <div style="width: 100%;">
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Resolver la división.</strong>
+                        <p style="margin: 0 0 8px 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
+                            La división tiene prioridad sobre la resta.
+                        </p>
+                        <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                            $$24 \div 6 = 4$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+                    <div style="width: 100%;">
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Sustituir el resultado.</strong>
+                        <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                            $$72 - 4$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                    <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+                    <div style="width: 100%;">
+                        <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Realizar la resta.</strong>
+                        <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                            $$\boxed{68}$$
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>68</strong>.
+            </div>
+        </div>
+
+        <!-- EVALUACIÓN INTERACTIVA DE ENTRADA DIRECTA (SUBTEMA 1) -->
+        <section class="lesson-section animate-on-scroll">
+            <div class="quiz-input-card" id="quizContainer">
+                <div class="quiz-header-bar">
+                    <span class="quiz-badge">Práctica del subtema 1</span>
+                    <span class="quiz-step-counter" id="quizStepText">Ejercicio 1 de 5</span>
+                </div>
+
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quizProgressFill"></div>
+                </div>
+
+                <div id="quizQuestionBody">
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
+                        Resuelve la siguiente expresión respetando la jerarquía de operaciones:
+                    </h3>
+
+                    <div class="quiz-math-box" id="quizMathDisplay">
+                        $$12 + 5 \times 6$$
+                    </div>
+
+                    <div class="quiz-input-group">
+                        <input type="number" id="quizAnswerInput" class="quiz-num-input" placeholder="Resultado" autocomplete="off" onkeydown="handleKeyPress(event)">
+                        <button type="button" class="quiz-submit-btn" id="checkBtn" onclick="checkAnswer()">Comprobar</button>
+                        <button type="button" class="quiz-next-btn" id="nextBtn" style="display: none;" onclick="nextQuestion()">Siguiente →</button>
+                    </div>
+
+                    <div class="quiz-feedback-box" id="quizFeedback"></div>
+                </div>
+
+                <div id="quizCompletionBody" style="display: none; text-align: center; padding: 20px 0;">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a;">🎉 ¡Práctica Completada!</h3>
+                    <p style="color: #475569; font-size: 1.05rem; margin: 10px 0 24px 0;">
+                        Has resuelto correctamente los 5 ejercicios de prioridad de operaciones.
+                    </p>
+                    <button class="quiz-submit-btn" onclick="restartQuiz()">Reiniciar Evaluación ↺</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: SIGNOS DE AGRUPACIÓN (AGREGADA ABAJO DEL QUIZ) -->
+        <section class="lesson-section animate-on-scroll" style="margin-top: 40px;">
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+                2. Signos de agrupación
+            </h2>
+
+            <h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 16px;">
+                2.1 ¿Qué son los signos de agrupación?
+            </h3>
+            
+            <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; margin-bottom: 18px;">
+                Los signos de agrupación son símbolos matemáticos que permiten organizar expresiones y establecer qué operaciones deben realizarse primero.
+            </p>
+
+            <div class="insight-box animate-on-scroll" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="insight-header">
+                    <span class="insight-badge">💡 Función Principal</span>
+                </div>
+                <p class="insight-text">
+                    Se utilizan para indicar que determinadas operaciones deben considerarse como <strong>una unidad</strong> antes de continuar con el resto de la expresión.
+                </p>
+            </div>
+
+            <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; margin-top: 20px;">
+                Los principales signos de agrupación son:
+            </p>
+        </section>
+
+        <!-- TARJETAS DE SIGNOS DE AGRUPACIÓN -->
+<div class="pro-features-section animate-on-scroll" style="margin-top: 24px;">
+    <div class="pro-features-header">
+        <span class="objectives-badge">Clasificación</span>
+        <h2>Símbolos y funciones</h2>
+    </div>
+
+    <div class="pro-features-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+        
+        <!-- Paréntesis -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">( )</span>
+                <span class="pro-feature-status">Nivel 1</span>
+            </div>
+            <h3>Paréntesis</h3>
+            <p>Se utilizan para agrupar operaciones o expresiones.</p>
+        </article>
+
+        <!-- Corchetes -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">[ ]</span>
+                <span class="pro-feature-status">Nivel 2</span>
+            </div>
+            <h3>Corchetes</h3>
+            <p>Se utilizan para agrupar expresiones que pueden contener paréntesis.</p>
+        </article>
+
+        <!-- Llaves -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">{ }</span>
+                <span class="pro-feature-status">Nivel 3</span>
+            </div>
+            <h3>Llaves</h3>
+            <p>Permiten organizar expresiones con diferentes niveles de agrupación.</p>
+        </article>
+
+        <!-- Barra de fracción -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">$$\frac{a}{b}$$</span>
+                <span class="pro-feature-status">Agrupador</span>
+            </div>
+            <h3>Barra de fracción</h3>
+            <p>Agrupa el numerador y el denominador como una sola expresión.</p>
+        </article>
+
+        <!-- Radical -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">$$\sqrt{\;\;}$$</span>
+                <span class="pro-feature-status">Agrupador</span>
+            </div>
+            <h3>Radical</h3>
+            <p>La expresión que se encuentra dentro del radical se considera su radicando.</p>
+        </article>
 
     </div>
-</section>
+</div>
 
-<script>
-// BANCO DE DATOS EXACTO DE LA PRÁCTICA DEL SUBTEMA 1
-const quizPracticeData = [
-    { expr: "$$12 + 5 \\times 6$$", answer: 42 },
-    { expr: "$$80 - 36 \\div 4$$", answer: 71 },
-    { expr: "$$7 \\times 8 + 15$$", answer: 71 },
-    { expr: "$$100 \\div 5 - 9$$", answer: 11 },
-    { expr: "$$18 + 24 \\div 3 \\times 2$$", answer: 34 }
-];
-
-let currentQuizIdx = 0;
-let isCurrentSolved = false;
-
-function loadQuizExercise() {
-    isCurrentSolved = false;
-    const currentEx = quizPracticeData[currentQuizIdx];
-
-    // Actualizar Encabezado y Barra
-    document.getElementById("quizStepText").innerText = `Ejercicio ${currentQuizIdx + 1} de ${quizPracticeData.length}`;
-    const fillPercent = ((currentQuizIdx + 1) / quizPracticeData.length) * 100;
-    document.getElementById("quizProgressFill").style.width = `${fillPercent}%`;
-
-    // Renderizar KaTeX
-    const mathDisplay = document.getElementById("quizMathDisplay");
-    mathDisplay.innerHTML = currentEx.expr;
-    if (window.renderMathInElement) {
-        renderMathInElement(mathDisplay);
-    }
-
-    // Resetear Input y Botones
-    const input = document.getElementById("quizAnswerInput");
-    input.value = "";
-    input.disabled = false;
-    input.className = "quiz-num-input";
-    input.focus();
-
-    document.getElementById("checkBtn").style.display = "inline-block";
-    document.getElementById("nextBtn").style.display = "none";
-    document.getElementById("quizFeedback").innerText = "";
-    document.getElementById("quizFeedback").className = "quiz-feedback-box";
-}
-
-function checkAnswer() {
-    if (isCurrentSolved) return;
-
-    const input = document.getElementById("quizAnswerInput");
-    const userAns = parseInt(input.value.trim(), 10);
-    const correctAns = quizPracticeData[currentQuizIdx].answer;
-    const feedback = document.getElementById("quizFeedback");
-
-    if (isNaN(userAns)) {
-        feedback.innerText = "Por favor ingresa un número.";
-        feedback.className = "quiz-feedback-box incorrect";
-        return;
-    }
-
-    if (userAns === correctAns) {
-        // CORRECTO: Animación Verde + Habilitar Siguiente
-        isCurrentSolved = true;
-        input.className = "quiz-num-input success-correct";
-        input.disabled = true;
-
-        feedback.innerText = "¡Correcto! Excelente cálculo.";
-        feedback.className = "quiz-feedback-box correct";
-
-        document.getElementById("checkBtn").style.display = "none";
-        document.getElementById("nextBtn").style.display = "inline-block";
-        document.getElementById("nextBtn").focus();
-    } else {
-        // INCORRECTO: Animación Shake Rojo
-        input.classList.remove("shake-error");
-        // Forzar reflow para reiniciar animación si falla varias veces
-        void input.offsetWidth; 
-        input.classList.add("shake-error");
-
-        feedback.innerText = "Incorrecto. Revisa el orden de las operaciones e inténtalo de nuevo.";
-        feedback.className = "quiz-feedback-box incorrect";
-    }
-}
-
-function handleKeyPress(e) {
-    if (e.key === "Enter") {
-        if (isCurrentSolved) {
-            nextQuestion();
-        } else {
-            checkAnswer();
-        }
-    }
-}
-
-function nextQuestion() {
-    if (currentQuizIdx < quizPracticeData.length - 1) {
-        currentQuizIdx++;
-        loadQuizExercise();
-    } else {
-        // Pantalla final
-        document.getElementById("quizQuestionBody").style.display = "none";
-        document.getElementById("quizCompletionBody").style.display = "block";
-        document.getElementById("quizStepText").innerText = "¡Completado!";
-        document.getElementById("quizProgressFill").style.width = "100%";
-    }
-}
-
-function restartQuiz() {
-    currentQuizIdx = 0;
-    document.getElementById("quizCompletionBody").style.display = "none";
-    document.getElementById("quizQuestionBody").style.display = "block";
-    loadQuizExercise();
-}
-
-// Inicializar al cargar
-document.addEventListener("DOMContentLoaded", loadQuizExercise);
-</script>
+<!-- TARJETA DESTACADA: REGLA DE RESOLUCIÓN DE ADENTRO HACIA AFUERA -->
+<div class="insight-box animate-on-scroll" style="margin-top: 28px;">
+    <div class="insight-header">
+        <span class="insight-badge">📌 Orden de resolución</span>
+    </div>
+    <p class="insight-text">
+        Cuando una expresión contiene varios signos de agrupación, debemos <strong>comenzar por el más interno</strong> y avanzar paulatinamente hacia el <strong>exterior</strong>.
+    </p>
+</div>
 
 
 
         <!-- NAVEGACIÓN ENTRE TEMAS (ANTERIOR / SIGUIENTE) -->
-    <nav class="lesson-nav animate-on-scroll">
-        <a href="precalculo.html" class="nav-btn prev">
-            <span class="nav-label">Anterior</span>
-            <span class="nav-title">← Volver al Temario</span>
-        </a>
-        <a href="jerarquia-operaciones.html" class="nav-btn next disabled" id="nextTopicBtn">
-        <span class="nav-label">Siguiente Tema</span>
-        <span class="nav-title">Jerarquía de operaciones →</span>
-    </a>
-</nav>
-</section>
-
-<script>
-function checkReadinessStatus() {
-    const checkboxes = document.querySelectorAll('.readiness-check');
-    const nextBtn = document.getElementById('nextTopicBtn');
-    
-    // Verifica si TODAS las casillas están marcadas
-    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-
-    if (allChecked) {
-        // Desbloquear con animación amarilla
-        nextBtn.classList.remove('disabled');
-        nextBtn.classList.add('unlocked');
-    } else {
-        // Volver al estado bloqueado si desmarca alguna
-        nextBtn.classList.remove('unlocked');
-        nextBtn.classList.add('disabled');
-    }
-}
-</script>
+        <nav class="lesson-nav animate-on-scroll" style="margin-top: 40px;">
+            <a href="precalculo.html" class="nav-btn prev">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">← Volver al Temario</span>
+            </a>
+            <a href="jerarquia-operaciones.html" class="nav-btn next disabled" id="nextTopicBtn">
+                <span class="nav-label">Siguiente Tema</span>
+                <span class="nav-title">Jerarquía de operaciones →</span>
+            </a>
+        </nav>
 
     </main>
 
- <!-- Pie de Página -->
+    <!-- Pie de Página -->
     <footer id="contacto" class="site-footer">
         <div class="footer-content">
             <div class="footer-col">
@@ -630,25 +546,146 @@ function checkReadinessStatus() {
         </div>
     </footer>
 
-    <!-- Script de Animaciones e Interacciones -->
+    <!-- SCRIPTS DE JAVASCRIPT ORGANIZADOS -->
     <script>
-        const animatedElements = document.querySelectorAll('.animate-on-scroll, .site-footer');
+        // BANCO DE DATOS DEL QUIZ (SUBTEMA 1)
+        const quizPracticeData = [
+            { expr: "$$12 + 5 \\times 6$$", answer: 42 },
+            { expr: "$$80 - 36 \\div 4$$", answer: 71 },
+            { expr: "$$7 \\times 8 + 15$$", answer: 71 },
+            { expr: "$$100 \\div 5 - 9$$", answer: 11 },
+            { expr: "$$18 + 24 \\div 3 \\times 2$$", answer: 34 }
+        ];
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        let currentQuizIdx = 0;
+        let isCurrentSolved = false;
+
+        function loadQuizExercise(autoFocus = false) {
+            isCurrentSolved = false;
+            const currentEx = quizPracticeData[currentQuizIdx];
+
+            document.getElementById("quizStepText").innerText = `Ejercicio ${currentQuizIdx + 1} de ${quizPracticeData.length}`;
+            const fillPercent = ((currentQuizIdx + 1) / quizPracticeData.length) * 100;
+            document.getElementById("quizProgressFill").style.width = `${fillPercent}%`;
+
+            const mathDisplay = document.getElementById("quizMathDisplay");
+            mathDisplay.innerHTML = currentEx.expr;
+            if (window.renderMathInElement) {
+                renderMathInElement(mathDisplay);
+            }
+
+            const input = document.getElementById("quizAnswerInput");
+            input.value = "";
+            input.disabled = false;
+            input.className = "quiz-num-input";
+
+            if (autoFocus) {
+                input.focus();
+            }
+
+            document.getElementById("checkBtn").style.display = "inline-block";
+            document.getElementById("nextBtn").style.display = "none";
+            document.getElementById("quizFeedback").innerText = "";
+            document.getElementById("quizFeedback").className = "quiz-feedback-box";
+        }
+
+        function checkAnswer() {
+            if (isCurrentSolved) return;
+
+            const input = document.getElementById("quizAnswerInput");
+            const userAns = parseInt(input.value.trim(), 10);
+            const correctAns = quizPracticeData[currentQuizIdx].answer;
+            const feedback = document.getElementById("quizFeedback");
+
+            if (isNaN(userAns)) {
+                feedback.innerText = "Por favor ingresa un número.";
+                feedback.className = "quiz-feedback-box incorrect";
+                return;
+            }
+
+            if (userAns === correctAns) {
+                isCurrentSolved = true;
+                input.className = "quiz-num-input success-correct";
+                input.disabled = true;
+
+                feedback.innerText = "¡Correcto! Excelente cálculo.";
+                feedback.className = "quiz-feedback-box correct";
+
+                document.getElementById("checkBtn").style.display = "none";
+                document.getElementById("nextBtn").style.display = "inline-block";
+                document.getElementById("nextBtn").focus();
+            } else {
+                input.classList.remove("shake-error");
+                void input.offsetWidth; 
+                input.classList.add("shake-error");
+
+                feedback.innerText = "Incorrecto. Revisa el orden de las operaciones e inténtalo de nuevo.";
+                feedback.className = "quiz-feedback-box incorrect";
+            }
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === "Enter") {
+                if (isCurrentSolved) {
+                    nextQuestion();
+                } else {
+                    checkAnswer();
                 }
-            });
-        }, {
-            threshold: 0.12
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuizIdx < quizPracticeData.length - 1) {
+                currentQuizIdx++;
+                loadQuizExercise(true);
+            } else {
+                document.getElementById("quizQuestionBody").style.display = "none";
+                document.getElementById("quizCompletionBody").style.display = "block";
+                document.getElementById("quizStepText").innerText = "¡Completado!";
+                document.getElementById("quizProgressFill").style.width = "100%";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuizIdx = 0;
+            document.getElementById("quizCompletionBody").style.display = "none";
+            document.getElementById("quizQuestionBody").style.display = "block";
+            loadQuizExercise(true);
+        }
+
+        function checkReadinessStatus() {
+            const checkboxes = document.querySelectorAll('.readiness-check');
+            const nextBtn = document.getElementById('nextTopicBtn');
+            if (!nextBtn || checkboxes.length === 0) return;
+            
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+
+            if (allChecked) {
+                nextBtn.classList.remove('disabled');
+                nextBtn.classList.add('unlocked');
+            } else {
+                nextBtn.classList.remove('unlocked');
+                nextBtn.classList.add('disabled');
+            }
+        }
+
+        // ANIMACIONES AL HACER SCROLL E INICIALIZACIÓN
+        document.addEventListener("DOMContentLoaded", () => {
+            loadQuizExercise(false);
+
+            const animatedElements = document.querySelectorAll('.animate-on-scroll, .site-footer');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            animatedElements.forEach((el) => observer.observe(el));
         });
 
-        animatedElements.forEach((el) => {
-            observer.observe(el);
-        });
-
-        // === FUNCIONALIDAD PARA COPIAR FÓRMULA LATEX ===
+        // FUNCIONALIDAD PARA COPIAR FÓRMULA LATEX
         function copyFormula(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
                 const btnText = btn.querySelector('.btn-text');
@@ -667,4 +704,4 @@ function checkReadinessStatus() {
         }
     </script>
 </body>
-</html> 
+</html>
