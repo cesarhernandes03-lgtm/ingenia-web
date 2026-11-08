@@ -494,11 +494,1041 @@
 <!-- TARJETA DESTACADA: REGLA DE RESOLUCIÓN DE ADENTRO HACIA AFUERA -->
 <div class="insight-box animate-on-scroll" style="margin-top: 28px;">
     <div class="insight-header">
-        <span class="insight-badge">📌 Orden de resolución</span>
+        <span class="insight-badge"> Orden de resolución</span>
     </div>
     <p class="insight-text">
         Cuando una expresión contiene varios signos de agrupación, debemos <strong>comenzar por el más interno</strong> y avanzar paulatinamente hacia el <strong>exterior</strong>.
     </p>
+</div>
+
+<!-- EJEMPLO DE ANIDAMIENTO DE SIGNOS DE AGRUPACIÓN -->
+<div class="example-box animate-on-scroll" style="margin-top: 24px;">
+    <div class="card-top-bar" style="margin-bottom: 14px;">
+        <span class="example-number-badge">Caso de Análisis</span>
+        <span class="example-category">Anidamiento de signos</span>
+    </div>
+
+    <p class="example-problem">
+        Por ejemplo:
+    </p>
+
+    <!-- EXPRESIÓN CON ANIDAMIENTO -->
+    <div class="example-math-display" style="margin: 16px 0;">
+        <span class="math-expr">$$\{20 + [12 - (5 + 2)]\}$$</span>
+    </div>
+
+    <!-- EXPLICACIÓN Y ORDEN DE RESOLUCIÓN -->
+    <div class="example-conclusion-box" style="margin-top: 20px;">
+        <p style="margin: 0; color: #334155; line-height: 1.6; font-size: 1rem;">
+            Primero resolvemos <strong>(5 + 2)</strong>, después el corchete y finalmente la llave.
+        </p>
+    </div>
+</div>
+
+<!-- EJEMPLO 1: EXPRESIÓN CON PARÉNTESIS -->
+<div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+    
+    <!-- ENCABEZADO DEL EJEMPLO -->
+    <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 01</span>
+        <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Expresión con paréntesis</span>
+    </div>
+
+    <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+        Ejemplo 1. Expresión con paréntesis
+    </h3>
+
+    <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+        Resolver:
+    </p>
+
+    <!-- EXPRESIÓN A RESOLVER -->
+    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+        <span class="math-expr">$$25 + 3(8 - 4)$$</span>
+    </div>
+
+    <!-- PASOS DESARROLLADOS PASO A PASO -->
+    <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+        
+        <!-- PASO 1 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Identificar el paréntesis.</strong>
+                <p style="margin: 0 0 8px 0; color: #475569; font-size: 0.98rem; line-height: 1.5;">
+                    Debemos resolver primero la operación que se encuentra dentro de él.
+                </p>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$8 - 4 = 4$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Sustituir el resultado.</strong>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$25 + 3(4)$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Realizar la multiplicación.</strong>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$3 \times 4 = 12$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 4 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Realizar la suma.</strong>
+                <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$\boxed{37}$$
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CONCLUSIÓN / RESULTADO FINAL -->
+    <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>37</strong>.
+    </div>
+</div>
+
+<!-- EJEMPLO 2: EXPRESIÓN CON VARIOS SIGNOS DE AGRUPACIÓN -->
+<div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+    
+    <!-- ENCABEZADO DEL EJEMPLO -->
+    <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 02</span>
+        <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Varios signos de agrupación</span>
+    </div>
+
+    <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+        Ejemplo 2. Expresión con varios signos de agrupación
+    </h3>
+
+    <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+        Resolver:
+    </p>
+
+    <!-- EXPRESIÓN A RESOLVER -->
+    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+        <span class="math-expr">$$50 - \{8 + [12 - (3 + 5)]\}$$</span>
+    </div>
+
+    <!-- PASOS DESARROLLADOS PASO A PASO -->
+    <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+        
+        <!-- PASO 1 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Resolver el paréntesis más interno.</strong>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$3 + 5 = 8$$
+                </div>
+                <p style="margin: 8px 0 4px 0; color: #475569; font-size: 0.95rem;">Sustituimos:</p>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center;">
+                    $$50 - \{8 + [12 - 8]\}$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Resolver el corchete.</strong>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$12 - 8 = 4$$
+                </div>
+                <p style="margin: 8px 0 4px 0; color: #475569; font-size: 0.95rem;">Obtenemos:</p>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center;">
+                    $$50 - \{8 + 4\}$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Resolver la llave.</strong>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$8 + 4 = 12$$
+                </div>
+                <p style="margin: 8px 0 4px 0; color: #475569; font-size: 0.95rem;">La expresión queda:</p>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center;">
+                    $$50 - 12$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 4 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px; transition: transform 0.2s ease, border-color 0.2s ease;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Realizar la resta.</strong>
+                <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$\boxed{38}$$
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CONCLUSIÓN / RESULTADO FINAL -->
+    <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>38</strong>.
+    </div>
+</div>
+
+<!-- EVALUACIÓN INTERACTIVA (PRÁCTICA DEL SUBTEMA 2) -->
+<section class="lesson-section animate-on-scroll">
+    <div class="quiz-input-card" id="quizContainer2">
+        
+        <!-- Encabezado y Progreso -->
+        <div class="quiz-header-bar">
+            <span class="quiz-badge">Práctica del subtema 2</span>
+            <span class="quiz-step-counter" id="quizStepText2">Ejercicio 1 de 5</span>
+        </div>
+
+        <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill2"></div>
+        </div>
+
+        <!-- CUERPO DE PREGUNTAS -->
+        <div id="quizQuestionBody2">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
+                Resuelve la expresión eliminando signos de agrupación de dentro hacia afuera:
+            </h3>
+
+            <!-- EXPRESIÓN MATEMÁTICA EN KATEX -->
+            <div class="quiz-math-box" id="quizMathDisplay2">
+                $$15 + (8 - 3)$$
+            </div>
+
+            <!-- FORMULARIO DE RESPUESTA -->
+            <div class="quiz-input-group">
+                <input type="number" id="quizAnswerInput2" class="quiz-num-input" placeholder="Resultado" autocomplete="off" onkeydown="handleKeyPress2(event)">
+                <button type="button" class="quiz-submit-btn" id="checkBtn2" onclick="checkAnswer2()">Comprobar</button>
+                <button type="button" class="quiz-next-btn" id="nextBtn2" style="display: none;" onclick="nextQuestion2()">Siguiente →</button>
+            </div>
+
+            <div class="quiz-feedback-box" id="quizFeedback2"></div>
+        </div>
+
+        <!-- PANTALLA FINAL DE COMPLETADO -->
+        <div id="quizCompletionBody2" style="display: none; text-align: center; padding: 20px 0;">
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a;">🎉 ¡Subtema 2 Completado!</h3>
+            <p style="color: #475569; font-size: 1.05rem; margin: 10px 0 24px 0;">
+                Has dominado el uso y resolución de paréntesis, corchetes y llaves.
+            </p>
+            <button class="quiz-submit-btn" onclick="restartQuiz2()">Reiniciar Evaluación ↺</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECCIÓN 3: POTENCIAS -->
+<section class="lesson-section animate-on-scroll" style="margin-top: 40px;">
+    
+    <h2 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+        3. Potencias
+    </h2>
+
+    <h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 16px;">
+        3.1 ¿Qué es una potencia?
+    </h3>
+    
+    <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; margin-bottom: 18px;">
+        Una potencia es una operación matemática que representa la multiplicación repetida de un mismo número por sí mismo.
+    </p>
+
+    <p style="font-size: 1rem; color: #475569; margin-bottom: 12px;">
+        Se expresa de la siguiente manera:
+    </p>
+
+    <!-- EXPRESIÓN GENERAL -->
+    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 12px; margin-bottom: 24px;">
+        <span class="math-expr">$$a^n$$</span>
+    </div>
+
+    <!-- TARJETA DESTACADA: ELEMENTOS FORMATO BADGE MATEMÁTICO -->
+    <div class="insight-box animate-on-scroll" style="margin-bottom: 28px;">
+        <div class="insight-header">
+            <span class="insight-badge"> Elementos de la potencia</span>
+        </div>
+        <ul style="margin: 14px 0 0 0; padding-left: 0; color: #334155; line-height: 1.8; font-size: 1rem; list-style-type: none;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 1.15rem; font-weight: 700; padding: 2px 12px; border-radius: 8px; font-family: 'Times New Roman', serif; font-style: italic;">a</span>
+                <span>es la <strong>base</strong>: el número que se multiplica por sí mismo.</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px;">
+                <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 1.15rem; font-weight: 700; padding: 2px 12px; border-radius: 8px; font-family: 'Times New Roman', serif; font-style: italic;">n</span>
+                <span>es el <strong>exponente</strong>: indica cuántas veces aparece la base como factor.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- EJEMPLO PRÁCTICO DE POTENCIA -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Demostración</span>
+            <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Ejemplo de cálculo</span>
+        </div>
+
+        <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+            Por ejemplo:
+        </p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$2^4 = 2 \times 2 \times 2 \times 2 = 16$$</span>
+        </div>
+
+        <p style="font-weight: 700; color: #0f172a; margin-bottom: 10px;">En este caso:</p>
+        
+        <div class="steps-list" style="display: flex; flex-direction: column; gap: 8px;">
+            <div class="step-item" style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #f1f5f9; padding: 10px 14px; border-radius: 8px;">
+                <span style="font-weight: 700; color: #2563eb;">•</span>
+                <span style="color: #334155; font-size: 0.98rem;"><strong>Base (<em style="font-family: serif;">a</em>):</strong> 2</span>
+            </div>
+            <div class="step-item" style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #f1f5f9; padding: 10px 14px; border-radius: 8px;">
+                <span style="font-weight: 700; color: #2563eb;">•</span>
+                <span style="color: #334155; font-size: 0.98rem;"><strong>Exponente (<em style="font-family: serif;">n</em>):</strong> 4</span>
+            </div>
+            <div class="step-item" style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #f1f5f9; padding: 10px 14px; border-radius: 8px;">
+                <span style="font-weight: 700; color: #16a34a;">•</span>
+                <span style="color: #334155; font-size: 0.98rem;"><strong>Resultado:</strong> 16</span>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- EXPLORADOR INTERACTIVO DE POTENCIAS -->
+<div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+    
+    <!-- ENCABEZADO DEL WIDGET INTERACTIVO -->
+    <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        <span class="example-number-badge" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">⚡ Widget Interactivo</span>
+        <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Explorador de elementos</span>
+    </div>
+
+    <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; text-align: center;">
+        Experimenta con los valores de la potencia
+    </h3>
+    <p style="text-align: center; color: #64748b; font-size: 0.95rem; margin-bottom: 24px;">
+        Modifica la base y el exponente para ver la interpretación matemática paso a paso:
+    </p>
+
+    <!-- PANEL DE CONTROLES (BASE Y EXPONENTE) -->
+    <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 32px;">
+        <!-- Control Base -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+            <label style="font-weight: 700; color: #0891b2; font-size: 0.95rem;">Base (a):</label>
+            <input type="number" id="interactiveBase" value="5" min="1" max="12" style="width: 60px; padding: 6px 10px; font-size: 1.1rem; font-weight: 700; text-align: center; border: 2px solid #cbd5e1; border-radius: 8px; color: #0891b2; outline: none;" onchange="updatePowerWidget()" oninput="updatePowerWidget()">
+        </div>
+
+        <!-- Control Exponente -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+            <label style="font-weight: 700; color: #db2777; font-size: 0.95rem;">Exponente (n):</label>
+            <input type="number" id="interactiveExp" value="2" min="0" max="6" style="width: 60px; padding: 6px 10px; font-size: 1.1rem; font-weight: 700; text-align: center; border: 2px solid #cbd5e1; border-radius: 8px; color: #db2777; outline: none;" onchange="updatePowerWidget()" oninput="updatePowerWidget()">
+        </div>
+    </div>
+
+    <!-- DIAGRAMA VISUAL ESTILO IMAGEN (ANIMADO) -->
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px 20px; text-align: center; margin-bottom: 24px; position: relative;">
+        
+        <!-- ESTRUCTURA PRINCIPAL DE ECUACIÓN -->
+        <div style="display: inline-flex; align-items: flex-baseline; justify-content: center; gap: 16px; position: relative;">
+            
+            <!-- CONTENEDOR BASE + EXPONENTE -->
+            <div style="position: relative; display: inline-flex; align-items: flex-start;">
+                
+                <!-- Etiqueta Exponente (Arriba) -->
+                <div style="position: absolute; top: -45px; right: -15px; display: flex; flex-direction: column; align-items: center;">
+                    <span style="color: #db2777; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px;">Exponente</span>
+                    <span style="color: #0f172a; font-size: 1.2rem; font-weight: 900; line-height: 1;">↑</span>
+                </div>
+
+                <!-- Número Base -->
+                <span id="dispBase" style="font-size: 4rem; font-weight: 900; color: #0891b2; line-height: 1; transition: transform 0.2s ease;">5</span>
+                
+                <!-- Número Exponente -->
+                <span id="dispExp" style="font-size: 2.2rem; font-weight: 900; color: #db2777; line-height: 1; vertical-align: top; margin-left: 2px; transition: transform 0.2s ease;">2</span>
+
+                <!-- Etiqueta Base (Abajo) -->
+                <div style="position: absolute; bottom: -45px; left: 10px; display: flex; flex-direction: column; align-items: center;">
+                    <span style="color: #0f172a; font-size: 1.2rem; font-weight: 900; line-height: 1;">↑</span>
+                    <span style="color: #db2777; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px;">Base</span>
+                </div>
+            </div>
+
+            <!-- SIGNO IGUAL -->
+            <span style="font-size: 3.5rem; font-weight: 900; color: #0891b2; margin: 0 10px;">=</span>
+
+            <!-- CONTENEDOR POTENCIA / RESULTADO -->
+            <div style="position: relative; display: inline-flex;">
+                <span id="dispResult" style="font-size: 4rem; font-weight: 900; color: #0891b2; line-height: 1; transition: transform 0.2s ease;">25</span>
+
+                <!-- Etiqueta Potencia (Abajo) -->
+                <div style="position: absolute; bottom: -45px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;">
+                    <span style="color: #0f172a; font-size: 1.2rem; font-weight: 900; line-height: 1;">↑</span>
+                    <span style="color: #db2777; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px;">Potencia</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ESPACIADOR INFERIOR PARA LAS ETIQUETAS -->
+        <div style="height: 45px;"></div>
+    </div>
+
+    <!-- DESARROLLO MULTIPLICATIVO (EXPANSIÓN) -->
+    <div style="background: #ffffff; border: 2px dashed #fbcfe8; border-radius: 12px; padding: 16px; text-align: center;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #64748b; text-transform: uppercase; display: block; margin-bottom: 6px;">Representación Multiplicativa:</span>
+        <div id="dispExpansion" style="font-size: 1.4rem; font-weight: 800; color: #db2777; font-family: 'Inter', sans-serif;">
+            5² = 5 × 5 = 25
+        </div>
+    </div>
+
+</div>
+
+<!-- SUBSECCIÓN 3.2: PROPIEDADES FUNDAMENTALES DE LAS POTENCIAS -->
+<div class="pro-features-section animate-on-scroll" style="margin-top: 36px;">
+    <div class="pro-features-header">
+        <span class="objectives-badge">Reglas de Exponentes</span>
+        <h2>Propiedades fundamentales de las potencias</h2>
+    </div>
+
+    <div class="pro-features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        
+        <!-- Propiedad 1 -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">01</span>
+                <span class="pro-feature-status">Multiplicación</span>
+            </div>
+            <h3>1. Producto de potencias con la misma base</h3>
+            <p>Se conserva la base y se suman los exponentes.</p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; margin-top: 14px; font-size: 1.15rem; color: #0f172a;">
+                $$a^m \times a^n = a^{m+n}$$
+            </div>
+        </article>
+
+        <!-- Propiedad 2 -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">02</span>
+                <span class="pro-feature-status">División</span>
+            </div>
+            <h3>2. División de potencias con la misma base</h3>
+            <p>Se conserva la base y se restan los exponentes, siempre que la base sea distinta de cero.</p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; margin-top: 14px; font-size: 1.15rem; color: #0f172a;">
+                $$\frac{a^m}{a^n} = a^{m-n}$$
+            </div>
+        </article>
+
+        <!-- Propiedad 3 -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">03</span>
+                <span class="pro-feature-status">Potenciación</span>
+            </div>
+            <h3>3. Potencia de una potencia</h3>
+            <p>Se conserva la base y se multiplican los exponentes.</p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; margin-top: 14px; font-size: 1.15rem; color: #0f172a;">
+                $$(a^m)^n = a^{mn}$$
+            </div>
+        </article>
+
+        <!-- Propiedad 4 -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">04</span>
+                <span class="pro-feature-status">Distributiva</span>
+            </div>
+            <h3>4. Potencia de un producto</h3>
+            <p>El exponente se aplica a cada factor.</p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; margin-top: 14px; font-size: 1.15rem; color: #0f172a;">
+                $$(ab)^n = a^n b^n$$
+            </div>
+        </article>
+
+        <!-- Propiedad 5 -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">05</span>
+                <span class="pro-feature-status">Exponente 0</span>
+            </div>
+            <h3>5. Exponente cero</h3>
+            <p>Cualquier número distinto de cero elevado a cero es igual a uno.</p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; margin-top: 14px; font-size: 1.15rem; color: #0f172a;">
+                $$a^0 = 1, \quad a \neq 0$$
+            </div>
+        </article>
+
+        <!-- Propiedad 6 -->
+        <article class="pro-feature-card">
+            <div class="pro-feature-top">
+                <span class="pro-feature-num">06</span>
+                <span class="pro-feature-status">Inverso</span>
+            </div>
+            <h3>6. Exponente negativo</h3>
+            <p>Representa el inverso multiplicativo de la potencia correspondiente.</p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; margin-top: 14px; font-size: 1.15rem; color: #0f172a;">
+                $$a^{-n} = \frac{1}{a^n}, \quad a \neq 0$$
+            </div>
+        </article>
+
+    </div>
+</div>
+
+<!-- SECCIÓN DE EJEMPLOS RESUELTOS DE POTENCIAS -->
+<div class="pro-features-section animate-on-scroll" style="margin-top: 40px;">
+    <div class="pro-features-header">
+        <span class="objectives-badge">Paso a paso</span>
+        <h2>Ejemplos prácticos de potencias y sus propiedades</h2>
+    </div>
+
+    <!-- EJEMPLO 1: POTENCIA CON EXPONENTE POSITIVO -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 01</span>
+            <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Exponente positivo</span>
+        </div>
+
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+            Ejemplo 1. Potencia con exponente positivo
+        </h3>
+
+        <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+            Resolver:
+        </p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+            <span class="math-expr">$$3^4 + 2^3$$</span>
+        </div>
+
+        <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+                <div>
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Identificar las potencias.</strong>
+                    <p style="margin: 0; color: #475569; font-size: 0.98rem;">Tenemos dos potencias: <strong>3<sup>4</sup></strong> y <strong>2<sup>3</sup></strong>.</p>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Desarrollar cada potencia.</strong>
+                    <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$3^4 = 3 \times 3 \times 3 \times 3 = 81$$
+                    </div>
+                    <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$2^3 = 2 \times 2 \times 2 = 8$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Sustituir los resultados.</strong>
+                    <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$81 + 8$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Realizar la suma.</strong>
+                    <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$\boxed{89}$$
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>89</strong>.
+        </div>
+    </div>
+
+    <!-- EJEMPLO 2: POTENCIA DE UNA POTENCIA -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 02</span>
+            <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Potencia de potencia</span>
+        </div>
+
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+            Ejemplo 2. Potencia de una potencia
+        </h3>
+
+        <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+            Resolver:
+        </p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+            <span class="math-expr">$$(2^3)^2$$</span>
+        </div>
+
+        <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+                <div>
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Identificar la propiedad.</strong>
+                    <p style="margin: 0 0 4px 0; color: #475569; font-size: 0.98rem;">Tenemos una potencia elevada a otra potencia. Aplicamos <strong>(a<sup>m</sup>)<sup>n</sup> = a<sup>m × n</sup></strong>.</p>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Multiplicar los exponentes.</strong>
+                    <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$(2^3)^2 = 2^{3 \times 2} = 2^6$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Desarrollar la potencia.</strong>
+                    <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$2^6 = 2 \times 2 \times 2 \times 2 \times 2 \times 2$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Obtener el resultado.</strong>
+                    <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$\boxed{64}$$
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>64</strong>.
+        </div>
+    </div>
+
+    <!-- EJEMPLO 3: PRODUCTO DE POTENCIAS CON LA MISMA BASE -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 03</span>
+            <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Producto de igual base</span>
+        </div>
+
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+            Ejemplo 3. Producto de potencias con la misma base
+        </h3>
+
+        <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+            Resolver:
+        </p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+            <span class="math-expr">$$2^3 \times 2^2$$</span>
+        </div>
+
+        <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+                <div>
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Aplicar la regla del producto.</strong>
+                    <p style="margin: 0; color: #475569; font-size: 0.98rem;">Dado que las bases son iguales (2), conservamos la base y sumamos los exponentes (<strong>a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></strong>).</p>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Sumar los exponentes.</strong>
+                    <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$2^{3+2} = 2^5$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Calcular la potencia final.</strong>
+                    <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$2^5 = 32 \implies \boxed{32}$$
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>32</strong>.
+        </div>
+    </div>
+
+    <!-- EJEMPLO 4: DIVISIÓN DE POTENCIAS CON LA MISMA BASE -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 04</span>
+            <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">División de igual base</span>
+        </div>
+
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+            Ejemplo 4. División de potencias con la misma base
+        </h3>
+
+        <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+            Resolver:
+        </p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+            <span class="math-expr">$$\frac{5^4}{5^2}$$</span>
+        </div>
+
+        <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+                <div>
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Aplicar la regla del cociente.</strong>
+                    <p style="margin: 0; color: #475569; font-size: 0.98rem;">Al dividir potencias de la misma base, restamos el exponente del denominador al del numerador (<strong>a<sup>m</sup> / a<sup>n</sup> = a<sup>m-n</sup></strong>).</p>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Restar los exponentes.</strong>
+                    <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$5^{4-2} = 5^2$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+                <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+                <div style="width: 100%;">
+                    <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Obtener el resultado.</strong>
+                    <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                        $$5^2 = 25 \implies \boxed{25}$$
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.1rem;">✓</span> El resultado de la expresión es <strong>25</strong>.
+        </div>
+    </div>
+
+    <!-- EJEMPLO 5: EXPONENTE CERO Y NEGATIVO (DESGLOSADO) -->
+<div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+    <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Ejemplo 05</span>
+        <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Exponentes 0 y negativos</span>
+    </div>
+
+    <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+        Ejemplo 5. Operaciones con exponente cero y negativo
+    </h3>
+
+    <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+        Resolver:
+    </p>
+
+    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+        <span class="math-expr">$$7^0 + 2^{-3}$$</span>
+    </div>
+
+    <div class="steps-list" style="display: flex; flex-direction: column; gap: 14px;">
+        <!-- PASO 1 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+            <div>
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 1. Aplicar la propiedad de exponente cero.</strong>
+                <p style="margin: 0; color: #475569; font-size: 0.98rem;">Cualquier número distinto de cero elevado a cero equivale a 1 (<strong>7<sup>0</sup> = 1</strong>).</p>
+            </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 2. Convertir el exponente negativo en positivo.</strong>
+                <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.95rem;">Usamos la propiedad del inverso multiplicativo (<strong>a<sup>-n</sup> = 1 / a<sup>n</sup></strong>):</p>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center;">
+                    $$2^{-3} = \frac{1}{2^3} = \frac{1}{8}$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 3 EXPLICATIVO -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 3. Convertir el entero a una fracción equivalente.</strong>
+                <p style="margin: 0 0 8px 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
+                    Para sumar el entero <strong>1</strong> con la fracción <strong>1/8</strong>, ambos deben tener el mismo denominador (8). Como cualquier número dividido entre sí mismo da 1:
+                </p>
+                <div style="font-size: 1.05rem; color: #0f172a; text-align: center; margin: 6px 0;">
+                    $$1 = \frac{8}{8}$$
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 4 -->
+        <div class="step-item" style="display: flex; gap: 14px; align-items: flex-start; background: #ffffff; border: 1px solid #f1f5f9; padding: 14px 18px; border-radius: 10px;">
+            <span class="step-number" style="background: #0f172a; color: #ffffff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+            <div style="width: 100%;">
+                <strong style="color: #0f172a; font-size: 1rem; display: block; margin-bottom: 4px;">Paso 4. Sumar los numeradores.</strong>
+                <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.95rem;">
+                    Al tener el mismo denominador (8), sumamos directamente los numeradores:
+                </p>
+                <div style="font-size: 1.15rem; color: #0f172a; text-align: center; margin-top: 6px;">
+                    $$\frac{8}{8} + \frac{1}{8} = \frac{8 + 1}{8} = \boxed{\frac{9}{8}}$$
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-conclusion-box" style="margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; color: #166534; font-size: 0.98rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.1rem;">✓</span> El resultado expresado en fracción es <strong>9/8</strong> (o <strong>1.125</strong> en decimal).
+    </div>
+</div>
+</div>
+
+<!-- EVALUACIÓN INTERACTIVA (PRÁCTICA DEL SUBTEMA 3) -->
+<section class="lesson-section animate-on-scroll">
+    <div class="quiz-input-card" id="quizContainer3">
+        
+        <!-- Encabezado y Progreso -->
+        <div class="quiz-header-bar">
+            <span class="quiz-badge">Práctica del subtema 3</span>
+            <span class="quiz-step-counter" id="quizStepText3">Ejercicio 1 de 10</span>
+        </div>
+
+        <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill3"></div>
+        </div>
+
+        <!-- CUERPO DE PREGUNTAS -->
+        <div id="quizQuestionBody3">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
+                Resuelve la siguiente expresión aplicando las propiedades de las potencias:
+            </h3>
+
+            <!-- EXPRESIÓN MATEMÁTICA EN KATEX -->
+            <div class="quiz-math-box" id="quizMathDisplay3">
+                $$4^3$$
+            </div>
+
+            <!-- FORMULARIO DE RESPUESTA -->
+            <div class="quiz-input-group">
+                <input type="number" id="quizAnswerInput3" class="quiz-num-input" placeholder="Resultado" autocomplete="off" onkeydown="handleKeyPress3(event)">
+                <button type="button" class="quiz-submit-btn" id="checkBtn3" onclick="checkAnswer3()">Comprobar</button>
+                <button type="button" class="quiz-next-btn" id="nextBtn3" style="display: none;" onclick="nextQuestion3()">Siguiente →</button>
+            </div>
+
+            <div class="quiz-feedback-box" id="quizFeedback3"></div>
+        </div>
+
+        <!-- PANTALLA FINAL DE COMPLETADO -->
+        <div id="quizCompletionBody3" style="display: none; text-align: center; padding: 20px 0;">
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a;">🎉 ¡Subtema 3 Dominado!</h3>
+            <p style="color: #475569; font-size: 1.05rem; margin: 10px 0 24px 0;">
+                Has resuelto con éxito los 10 ejercicios de potencias y sus propiedades fundamentales.
+            </p>
+            <button class="quiz-submit-btn" onclick="restartQuiz3()">Reiniciar Evaluación ↺</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECCIÓN 4: RAÍCES -->
+<section class="lesson-section animate-on-scroll" style="margin-top: 40px;">
+    
+    <h2 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+        4. Raíces
+    </h2>
+
+    <h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 16px;">
+        4.1 ¿Qué es una raíz?
+    </h3>
+    
+    <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; margin-bottom: 12px;">
+        La radicación es una operación matemática que permite encontrar un número que, elevado a determinada potencia, produce otro número.
+    </p>
+
+    <p style="font-size: 1.05rem; color: #2563eb; font-weight: 600; margin-bottom: 18px;">
+        Es la operación inversa de la potenciación.
+    </p>
+
+    <p style="font-size: 1rem; color: #475569; margin-bottom: 12px;">
+        Su expresión general es:
+    </p>
+
+    <!-- EXPRESIÓN GENERAL -->
+    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 12px; margin-bottom: 24px;">
+        <span class="math-expr">$$\sqrt[n]{a} = b$$</span>
+    </div>
+
+    <!-- TARJETA DESTACADA: ELEMENTOS -->
+    <div class="insight-box animate-on-scroll" style="margin-bottom: 28px;">
+        <div class="insight-header">
+            <span class="insight-badge">📌 Elementos de la raíz</span>
+        </div>
+        <ul style="margin: 14px 0 0 0; padding-left: 0; color: #334155; line-height: 1.8; font-size: 1rem; list-style-type: none;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 1.15rem; font-weight: 700; padding: 2px 12px; border-radius: 8px; font-family: 'Times New Roman', serif; font-style: italic;">n</span>
+                <span>es el <strong>índice</strong> de la raíz.</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 1.15rem; font-weight: 700; padding: 2px 12px; border-radius: 8px; font-family: 'Times New Roman', serif; font-style: italic;">a</span>
+                <span>es el <strong>radicando</strong>.</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px;">
+                <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 1.15rem; font-weight: 700; padding: 2px 12px; border-radius: 8px; font-family: 'Times New Roman', serif; font-style: italic;">b</span>
+                <span>es la <strong>raíz</strong> o resultado.</span>
+            </li>
+        </ul>
+    </div>
+
+    <p style="font-size: 1rem; color: #475569; margin-bottom: 12px;">
+        Esto significa que:
+    </p>
+
+    <!-- EQUIVALENCIA CON POTENCIA -->
+    <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 28px;">
+        <span class="math-expr">$$b^n = a$$</span>
+    </div>
+
+    <!-- EJEMPLO PRÁCTICO -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Demostración</span>
+            <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Ejemplo de raíz</span>
+        </div>
+
+        <p class="example-problem" style="font-size: 1rem; color: #334155; margin-bottom: 14px;">
+            Por ejemplo:
+        </p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+            <span class="math-expr">$$\sqrt{25} = 5$$</span>
+        </div>
+
+        <p style="font-weight: 600; color: #475569; margin-bottom: 10px; text-align: center;">Porque:</p>
+        
+        <div class="example-math-display" style="text-align: center; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 14px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$5^2 = 25$$</span>
+        </div>
+
+        <!-- NOTA SOBRE ÍNDICE IMPLÍCITO -->
+        <div class="example-conclusion-box" style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 10px; padding: 14px 18px; color: #92400e; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 1.2rem;">💡</span>
+            <span>La raíz cuadrada no muestra el índice <strong>2</strong> porque se considera implícito.</span>
+        </div>
+    </div>
+
+</section>
+
+<!-- EXPLORADOR INTERACTIVO DE RAÍCES CUADRADAS -->
+<div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-top: 28px;">
+    
+    <!-- ENCABEZADO DEL WIDGET -->
+    <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        <span class="example-number-badge" style="background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">📐 Visualizador Geométrico</span>
+        <span class="example-category" style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Concepto de área y lado</span>
+    </div>
+
+    <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; text-align: center;">
+        Interpretación Geométrica de la Raíz Cuadrada
+    </h3>
+    <p style="text-align: center; color: #64748b; font-size: 0.95rem; margin-bottom: 24px;">
+        Ajusta la longitud del lado para ver cómo se forma el área total y su relación con la radicación:
+    </p>
+
+    <!-- PANEL DE CONTROL -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px 24px; border-radius: 12px;">
+        <label for="rootSideInput" style="font-weight: 700; color: #0369a1; font-size: 0.95rem;">
+            Lado del cuadrado (<em style="font-family: serif;">b</em>):
+        </label>
+        <input type="range" id="rootSideInput" min="1" max="8" value="4" style="width: 160px; accent-color: #0284c7; cursor: pointer;" oninput="updateRootWidget()">
+        <span id="rootSideValue" style="background: #0284c7; color: #ffffff; font-weight: 800; padding: 4px 12px; border-radius: 8px; font-size: 1.1rem; min-width: 32px; text-align: center;">4</span>
+    </div>
+
+    <!-- ÁREA DE REPRESENTACIÓN VISUAL -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 36px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px 20px; margin-bottom: 24px;">
+        
+        <!-- MATRIZ / CUADRÍCULA GEOMÉTRICA CON ACOTACIONES -->
+        <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+            
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <!-- Acotación Izquierda (Lado Vertical) -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #0284c7; font-weight: 800; font-size: 1.1rem;">
+                    <span>↑</span>
+                    <span id="labelSideLeft" style="margin: 4px 0;">4</span>
+                    <span>↓</span>
+                </div>
+
+                <!-- Cuadrícula Dinámica -->
+                <div id="rootGridContainer" style="display: grid; gap: 3px; background: #0284c7; padding: 4px; border-radius: 8px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15); transition: all 0.3s ease;">
+                    <!-- Se genera dinámicamente mediante JS -->
+                </div>
+            </div>
+
+            <!-- Acotación Inferior (Lado Horizontal) -->
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-top: 10px; color: #0284c7; font-weight: 800; font-size: 1.1rem; gap: 8px;">
+                <span>←</span>
+                <span id="labelSideBottom">4</span>
+                <span>→</span>
+            </div>
+        </div>
+
+        <!-- SIGNO IGUAL -->
+        <span style="font-size: 3rem; font-weight: 900; color: #0284c7;">=</span>
+
+        <!-- ECUACIÓN DE LA RAÍZ (DINÁMICA) -->
+        <div style="display: flex; align-items: center; gap: 12px; background: #ffffff; border: 2px solid #bae6fd; padding: 20px 28px; border-radius: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+            <span style="font-size: 2.4rem; font-weight: 900; color: #0284c7; line-height: 1;">√</span>
+            <div style="border-top: 3px solid #0284c7; padding-top: 4px; margin-left: -6px;">
+                <span id="dispRadicand" style="font-size: 2.8rem; font-weight: 900; color: #0284c7; line-height: 1; display: inline-block; transition: transform 0.2s ease;">16</span>
+            </div>
+            <span style="font-size: 2.4rem; font-weight: 900; color: #0284c7; margin: 0 6px;">=</span>
+            <span id="dispRootResult" style="font-size: 3rem; font-weight: 900; color: #0369a1; line-height: 1; transition: transform 0.2s ease;">4</span>
+        </div>
+
+    </div>
+
+    <!-- EXPLICACIÓN DINÁMICA -->
+    <div style="background: #ffffff; border: 2px dashed #bae6fd; border-radius: 12px; padding: 16px; text-align: center;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #64748b; text-transform: uppercase; display: block; margin-bottom: 6px;">Demostración de Área:</span>
+        <div id="dispRootExplanation" style="font-size: 1.05rem; font-weight: 600; color: #0369a1;">
+            Un cuadrado de <strong>4 × 4</strong> contiene <strong>16</strong> cuadritos unitarios. Por lo tanto, <strong>√16 = 4</strong>.
+        </div>
+    </div>
+
 </div>
 
 
@@ -546,162 +1576,615 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS DE JAVASCRIPT ORGANIZADOS -->
-    <script>
-        // BANCO DE DATOS DEL QUIZ (SUBTEMA 1)
-        const quizPracticeData = [
-            { expr: "$$12 + 5 \\times 6$$", answer: 42 },
-            { expr: "$$80 - 36 \\div 4$$", answer: 71 },
-            { expr: "$$7 \\times 8 + 15$$", answer: 71 },
-            { expr: "$$100 \\div 5 - 9$$", answer: 11 },
-            { expr: "$$18 + 24 \\div 3 \\times 2$$", answer: 34 }
-        ];
+   <!-- SCRIPTS DE JAVASCRIPT ORGANIZADOS E INTEGRADOS -->
+<script>
+    // ==========================================
+    // 🔊 SISTEMA GLOBAL DE EFECTOS DE SONIDO (WEB AUDIO API)
+    // ==========================================
+    let audioCtx = null;
 
-        let currentQuizIdx = 0;
-        let isCurrentSolved = false;
-
-        function loadQuizExercise(autoFocus = false) {
-            isCurrentSolved = false;
-            const currentEx = quizPracticeData[currentQuizIdx];
-
-            document.getElementById("quizStepText").innerText = `Ejercicio ${currentQuizIdx + 1} de ${quizPracticeData.length}`;
-            const fillPercent = ((currentQuizIdx + 1) / quizPracticeData.length) * 100;
-            document.getElementById("quizProgressFill").style.width = `${fillPercent}%`;
-
-            const mathDisplay = document.getElementById("quizMathDisplay");
-            mathDisplay.innerHTML = currentEx.expr;
-            if (window.renderMathInElement) {
-                renderMathInElement(mathDisplay);
-            }
-
-            const input = document.getElementById("quizAnswerInput");
-            input.value = "";
-            input.disabled = false;
-            input.className = "quiz-num-input";
-
-            if (autoFocus) {
-                input.focus();
-            }
-
-            document.getElementById("checkBtn").style.display = "inline-block";
-            document.getElementById("nextBtn").style.display = "none";
-            document.getElementById("quizFeedback").innerText = "";
-            document.getElementById("quizFeedback").className = "quiz-feedback-box";
+    function getAudioContext() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         }
-
-        function checkAnswer() {
-            if (isCurrentSolved) return;
-
-            const input = document.getElementById("quizAnswerInput");
-            const userAns = parseInt(input.value.trim(), 10);
-            const correctAns = quizPracticeData[currentQuizIdx].answer;
-            const feedback = document.getElementById("quizFeedback");
-
-            if (isNaN(userAns)) {
-                feedback.innerText = "Por favor ingresa un número.";
-                feedback.className = "quiz-feedback-box incorrect";
-                return;
-            }
-
-            if (userAns === correctAns) {
-                isCurrentSolved = true;
-                input.className = "quiz-num-input success-correct";
-                input.disabled = true;
-
-                feedback.innerText = "¡Correcto! Excelente cálculo.";
-                feedback.className = "quiz-feedback-box correct";
-
-                document.getElementById("checkBtn").style.display = "none";
-                document.getElementById("nextBtn").style.display = "inline-block";
-                document.getElementById("nextBtn").focus();
-            } else {
-                input.classList.remove("shake-error");
-                void input.offsetWidth; 
-                input.classList.add("shake-error");
-
-                feedback.innerText = "Incorrecto. Revisa el orden de las operaciones e inténtalo de nuevo.";
-                feedback.className = "quiz-feedback-box incorrect";
-            }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
         }
+        return audioCtx;
+    }
 
-        function handleKeyPress(e) {
-            if (e.key === "Enter") {
-                if (isCurrentSolved) {
-                    nextQuestion();
-                } else {
-                    checkAnswer();
-                }
-            }
-        }
-
-        function nextQuestion() {
-            if (currentQuizIdx < quizPracticeData.length - 1) {
-                currentQuizIdx++;
-                loadQuizExercise(true);
-            } else {
-                document.getElementById("quizQuestionBody").style.display = "none";
-                document.getElementById("quizCompletionBody").style.display = "block";
-                document.getElementById("quizStepText").innerText = "¡Completado!";
-                document.getElementById("quizProgressFill").style.width = "100%";
-            }
-        }
-
-        function restartQuiz() {
-            currentQuizIdx = 0;
-            document.getElementById("quizCompletionBody").style.display = "none";
-            document.getElementById("quizQuestionBody").style.display = "block";
-            loadQuizExercise(true);
-        }
-
-        function checkReadinessStatus() {
-            const checkboxes = document.querySelectorAll('.readiness-check');
-            const nextBtn = document.getElementById('nextTopicBtn');
-            if (!nextBtn || checkboxes.length === 0) return;
+    // 1. Sonido de Respuesta Correcta (Chime positivo)
+    function playCorrectSound() {
+        try {
+            const ctx = getAudioContext();
+            const now = ctx.currentTime;
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
             
-            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(523.25, now); // Nota C5
+            osc.frequency.exponentialRampToValueAtTime(880, now + 0.12); // Sube a A5
 
-            if (allChecked) {
-                nextBtn.classList.remove('disabled');
-                nextBtn.classList.add('unlocked');
+            gain.gain.setValueAtTime(0.15, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+
+            osc.start(now);
+            osc.stop(now + 0.35);
+        } catch (e) { console.log(e); }
+    }
+
+    // 2. Sonido de Respuesta Incorrecta (Buzzer de error)
+    function playIncorrectSound() {
+        try {
+            const ctx = getAudioContext();
+            const now = ctx.currentTime;
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(180, now);
+            osc.frequency.exponentialRampToValueAtTime(110, now + 0.2);
+
+            gain.gain.setValueAtTime(0.12, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+
+            osc.start(now);
+            osc.stop(now + 0.25);
+        } catch (e) { console.log(e); }
+    }
+
+    // 3. Sonido de Victoria / Quiz Completado (Fanfarria arpegiada)
+    function playVictorySound() {
+        try {
+            const ctx = getAudioContext();
+            const now = ctx.currentTime;
+            const notes = [523.25, 659.25, 783.99, 1046.50]; // Acorde Do Mayor (C5 - E5 - G5 - C6)
+
+            notes.forEach((freq, idx) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                const noteTime = now + (idx * 0.09);
+
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, noteTime);
+
+                gain.gain.setValueAtTime(0.18, noteTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, noteTime + 0.4);
+
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc.start(noteTime);
+                osc.stop(noteTime + 0.4);
+            });
+        } catch (e) { console.log(e); }
+    }
+
+    // ==========================================
+    // LÓGICA SUBTEMA 1 (OPERACIONES BÁSICAS)
+    // ==========================================
+    const quizPracticeData = [
+        { expr: "$$12 + 5 \\times 6$$", answer: 42 },
+        { expr: "$$80 - 36 \\div 4$$", answer: 71 },
+        { expr: "$$7 \\times 8 + 15$$", answer: 71 },
+        { expr: "$$100 \\div 5 - 9$$", answer: 11 },
+        { expr: "$$18 + 24 \\div 3 \\times 2$$", answer: 34 }
+    ];
+
+    let currentQuizIdx = 0;
+    let isCurrentSolved = false;
+
+    function loadQuizExercise(autoFocus = false) {
+        isCurrentSolved = false;
+        const currentEx = quizPracticeData[currentQuizIdx];
+
+        document.getElementById("quizStepText").innerText = `Ejercicio ${currentQuizIdx + 1} de ${quizPracticeData.length}`;
+        const fillPercent = ((currentQuizIdx + 1) / quizPracticeData.length) * 100;
+        document.getElementById("quizProgressFill").style.width = `${fillPercent}%`;
+
+        const mathDisplay = document.getElementById("quizMathDisplay");
+        mathDisplay.innerHTML = currentEx.expr;
+        if (window.renderMathInElement) {
+            renderMathInElement(mathDisplay);
+        }
+
+        const input = document.getElementById("quizAnswerInput");
+        input.value = "";
+        input.disabled = false;
+        input.className = "quiz-num-input";
+
+        if (autoFocus) {
+            input.focus();
+        }
+
+        document.getElementById("checkBtn").style.display = "inline-block";
+        document.getElementById("nextBtn").style.display = "none";
+        document.getElementById("quizFeedback").innerText = "";
+        document.getElementById("quizFeedback").className = "quiz-feedback-box";
+    }
+
+    function checkAnswer() {
+        if (isCurrentSolved) return;
+
+        const input = document.getElementById("quizAnswerInput");
+        const userAns = parseInt(input.value.trim(), 10);
+        const correctAns = quizPracticeData[currentQuizIdx].answer;
+        const feedback = document.getElementById("quizFeedback");
+
+        if (isNaN(userAns)) {
+            feedback.innerText = "Por favor ingresa un número.";
+            feedback.className = "quiz-feedback-box incorrect";
+            return;
+        }
+
+        if (userAns === correctAns) {
+            isCurrentSolved = true;
+            playCorrectSound(); // 🔊 Sonido Acierto
+
+            input.className = "quiz-num-input success-correct";
+            input.disabled = true;
+
+            feedback.innerText = "¡Correcto! Excelente cálculo.";
+            feedback.className = "quiz-feedback-box correct";
+
+            document.getElementById("checkBtn").style.display = "none";
+            document.getElementById("nextBtn").style.display = "inline-block";
+            document.getElementById("nextBtn").focus();
+        } else {
+            playIncorrectSound(); // 🔊 Sonido Error
+
+            input.classList.remove("shake-error");
+            void input.offsetWidth; 
+            input.classList.add("shake-error");
+
+            feedback.innerText = "Incorrecto. Revisa el orden de las operaciones e inténtalo de nuevo.";
+            feedback.className = "quiz-feedback-box incorrect";
+        }
+    }
+
+    function handleKeyPress(e) {
+        if (e.key === "Enter") {
+            if (isCurrentSolved) {
+                nextQuestion();
             } else {
-                nextBtn.classList.remove('unlocked');
-                nextBtn.classList.add('disabled');
+                checkAnswer();
             }
         }
+    }
 
-        // ANIMACIONES AL HACER SCROLL E INICIALIZACIÓN
-        document.addEventListener("DOMContentLoaded", () => {
-            loadQuizExercise(false);
-
-            const animatedElements = document.querySelectorAll('.animate-on-scroll, .site-footer');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.12 });
-
-            animatedElements.forEach((el) => observer.observe(el));
-        });
-
-        // FUNCIONALIDAD PARA COPIAR FÓRMULA LATEX
-        function copyFormula(text, btn) {
-            navigator.clipboard.writeText(text).then(() => {
-                const btnText = btn.querySelector('.btn-text');
-                const originalText = btnText.textContent;
-                
-                btnText.textContent = '¡Copiado!';
-                btn.style.backgroundColor = '#000000';
-                btn.style.color = '#ffffff';
-
-                setTimeout(() => {
-                    btnText.textContent = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.style.color = '';
-                }, 2000);
-            });
+    function nextQuestion() {
+        if (currentQuizIdx < quizPracticeData.length - 1) {
+            currentQuizIdx++;
+            loadQuizExercise(true);
+        } else {
+            document.getElementById("quizQuestionBody").style.display = "none";
+            document.getElementById("quizCompletionBody").style.display = "block";
+            document.getElementById("quizStepText").innerText = "¡Completado!";
+            document.getElementById("quizProgressFill").style.width = "100%";
+            playVictorySound(); // 🔊 Sonido Victoria Quiz 1
         }
-    </script>
+    }
+
+    function restartQuiz() {
+        currentQuizIdx = 0;
+        document.getElementById("quizCompletionBody").style.display = "none";
+        document.getElementById("quizQuestionBody").style.display = "block";
+        loadQuizExercise(true);
+    }
+
+    // ==========================================
+    // LÓGICA SUBTEMA 2 (SIGNOS DE AGRUPACIÓN)
+    // ==========================================
+    const quizPracticeData2 = [
+        { expr: "$$15 + (8 - 3)$$", answer: 20 },
+        { expr: "$$30 - 2(9 - 4)$$", answer: 20 },
+        { expr: "$$40 - \\{12 + [8 - (5 + 1)]\\}$$", answer: 26 },
+        { expr: "$$5[3 + (10 - 6)]$$", answer: 35 },
+        { expr: "$$100 - \\{20 + [15 - (8 + 2)]\\}$$", answer: 75 }
+    ];
+
+    let currentQuizIdx2 = 0;
+    let isCurrentSolved2 = false;
+
+    function loadQuizExercise2(autoFocus = false) {
+        isCurrentSolved2 = false;
+        const currentEx = quizPracticeData2[currentQuizIdx2];
+
+        document.getElementById("quizStepText2").innerText = `Ejercicio ${currentQuizIdx2 + 1} de ${quizPracticeData2.length}`;
+        const fillPercent = ((currentQuizIdx2 + 1) / quizPracticeData2.length) * 100;
+        document.getElementById("quizProgressFill2").style.width = `${fillPercent}%`;
+
+        const mathDisplay = document.getElementById("quizMathDisplay2");
+        mathDisplay.innerHTML = currentEx.expr;
+        if (window.renderMathInElement) {
+            renderMathInElement(mathDisplay);
+        }
+
+        const input = document.getElementById("quizAnswerInput2");
+        input.value = "";
+        input.disabled = false;
+        input.className = "quiz-num-input";
+
+        if (autoFocus) {
+            input.focus();
+        }
+
+        document.getElementById("checkBtn2").style.display = "inline-block";
+        document.getElementById("nextBtn2").style.display = "none";
+        document.getElementById("quizFeedback2").innerText = "";
+        document.getElementById("quizFeedback2").className = "quiz-feedback-box";
+    }
+
+    function checkAnswer2() {
+        if (isCurrentSolved2) return;
+
+        const input = document.getElementById("quizAnswerInput2");
+        const userAns = parseInt(input.value.trim(), 10);
+        const correctAns = quizPracticeData2[currentQuizIdx2].answer;
+        const feedback = document.getElementById("quizFeedback2");
+
+        if (isNaN(userAns)) {
+            feedback.innerText = "Por favor ingresa un número.";
+            feedback.className = "quiz-feedback-box incorrect";
+            return;
+        }
+
+        if (userAns === correctAns) {
+            isCurrentSolved2 = true;
+            playCorrectSound(); // 🔊 Sonido Acierto
+
+            input.className = "quiz-num-input success-correct";
+            input.disabled = true;
+
+            feedback.innerText = "¡Correcto! Operaciones resueltas en el orden adecuado.";
+            feedback.className = "quiz-feedback-box correct";
+
+            document.getElementById("checkBtn2").style.display = "none";
+            document.getElementById("nextBtn2").style.display = "inline-block";
+            document.getElementById("nextBtn2").focus();
+        } else {
+            playIncorrectSound(); // 🔊 Sonido Error
+
+            input.classList.remove("shake-error");
+            void input.offsetWidth; 
+            input.classList.add("shake-error");
+
+            feedback.innerText = "Incorrecto. Recuerda resolver desde el signo más interno hacia afuera.";
+            feedback.className = "quiz-feedback-box incorrect";
+        }
+    }
+
+    function handleKeyPress2(e) {
+        if (e.key === "Enter") {
+            if (isCurrentSolved2) {
+                nextQuestion2();
+            } else {
+                checkAnswer2();
+            }
+        }
+    }
+
+    function nextQuestion2() {
+        if (currentQuizIdx2 < quizPracticeData2.length - 1) {
+            currentQuizIdx2++;
+            loadQuizExercise2(true);
+        } else {
+            document.getElementById("quizQuestionBody2").style.display = "none";
+            document.getElementById("quizCompletionBody2").style.display = "block";
+            document.getElementById("quizStepText2").innerText = "¡Completado!";
+            document.getElementById("quizProgressFill2").style.width = "100%";
+            playVictorySound(); // 🔊 Sonido Victoria Quiz 2
+        }
+    }
+
+    function restartQuiz2() {
+        currentQuizIdx2 = 0;
+        document.getElementById("quizCompletionBody2").style.display = "none";
+        document.getElementById("quizQuestionBody2").style.display = "block";
+        loadQuizExercise2(true);
+    }
+
+    // ==========================================
+    // LÓGICA DEL EXPLORADOR INTERACTIVO DE POTENCIAS
+    // ==========================================
+    function updatePowerWidget() {
+        const baseInput = document.getElementById("interactiveBase");
+        const expInput = document.getElementById("interactiveExp");
+
+        if (!baseInput || !expInput) return;
+
+        let base = parseInt(baseInput.value, 10);
+        let exp = parseInt(expInput.value, 10);
+
+        if (isNaN(base) || base < 1) base = 1;
+        if (base > 20) base = 20;
+        if (isNaN(exp) || exp < 0) exp = 0;
+        if (exp > 8) exp = 8;
+
+        const result = Math.pow(base, exp);
+
+        const dispBase = document.getElementById("dispBase");
+        const dispExp = document.getElementById("dispExp");
+        const dispResult = document.getElementById("dispResult");
+        const dispExpansion = document.getElementById("dispExpansion");
+
+        if (dispBase) dispBase.innerText = base;
+        if (dispExp) dispExp.innerText = exp;
+        if (dispResult) {
+            dispResult.innerText = result.toLocaleString();
+            dispResult.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                dispResult.style.transform = "scale(1)";
+            }, 150);
+        }
+
+        let expansionText = "";
+        if (exp === 0) {
+            expansionText = `${base}⁰ = 1 (Todo número elevado a 0 es igual a 1)`;
+        } else if (exp === 1) {
+            expansionText = `${base}¹ = ${base}`;
+        } else {
+            const factors = Array(exp).fill(base).join(" × ");
+            expansionText = `${base}<sup>${exp}</sup> = ${factors} = ${result.toLocaleString()}`;
+        }
+
+        if (dispExpansion) dispExpansion.innerHTML = expansionText;
+    }
+
+    // ==========================================
+    // LÓGICA SUBTEMA 3 (POTENCIAS Y PROPIEDADES)
+    // ==========================================
+    const quizPracticeData3 = [
+        { expr: "$$4^3$$", answer: 64 },
+        { expr: "$$2^5 + 3^2$$", answer: 41 },
+        { expr: "$$5^2 \\times 5^3$$", answer: 3125 },
+        { expr: "$$(3^2)^2$$", answer: 81 },
+        { expr: "$$2^4 + 3^3 - 5^2$$", answer: 18 },
+        { expr: "$$\\frac{6^4}{6^2}$$", answer: 36 },
+        { expr: "$$(2^2)^3 \\div 2^3$$", answer: 8 },
+        { expr: "$$3^0 + 2^4 \\times 2^{-2}$$", answer: 5 },
+        { expr: "$$\\frac{3^5 \\times 3^2}{3^4}$$", answer: 27 },
+        { expr: "$$(2^3)^2 - 5^2 \\times 2^0$$", answer: 39 }
+    ];
+
+    let currentQuizIdx3 = 0;
+    let isCurrentSolved3 = false;
+
+    function loadQuizExercise3(autoFocus = false) {
+        isCurrentSolved3 = false;
+        const currentEx = quizPracticeData3[currentQuizIdx3];
+
+        document.getElementById("quizStepText3").innerText = `Ejercicio ${currentQuizIdx3 + 1} de ${quizPracticeData3.length}`;
+        const fillPercent = ((currentQuizIdx3 + 1) / quizPracticeData3.length) * 100;
+        document.getElementById("quizProgressFill3").style.width = `${fillPercent}%`;
+
+        const mathDisplay = document.getElementById("quizMathDisplay3");
+        mathDisplay.innerHTML = currentEx.expr;
+        if (window.renderMathInElement) {
+            renderMathInElement(mathDisplay);
+        }
+
+        const input = document.getElementById("quizAnswerInput3");
+        input.value = "";
+        input.disabled = false;
+        input.className = "quiz-num-input";
+
+        if (autoFocus) {
+            input.focus();
+        }
+
+        document.getElementById("checkBtn3").style.display = "inline-block";
+        document.getElementById("nextBtn3").style.display = "none";
+        document.getElementById("quizFeedback3").innerText = "";
+        document.getElementById("quizFeedback3").className = "quiz-feedback-box";
+    }
+
+    function checkAnswer3() {
+        if (isCurrentSolved3) return;
+
+        const input = document.getElementById("quizAnswerInput3");
+        const userAns = parseInt(input.value.trim(), 10);
+        const correctAns = quizPracticeData3[currentQuizIdx3].answer;
+        const feedback = document.getElementById("quizFeedback3");
+
+        if (isNaN(userAns)) {
+            feedback.innerText = "Por favor ingresa un número.";
+            feedback.className = "quiz-feedback-box incorrect";
+            return;
+        }
+
+        if (userAns === correctAns) {
+            isCurrentSolved3 = true;
+            playCorrectSound(); // 🔊 Sonido Acierto
+
+            input.className = "quiz-num-input success-correct";
+            input.disabled = true;
+
+            feedback.innerText = "¡Correcto! Excelente aplicación de las propiedades de exponentes.";
+            feedback.className = "quiz-feedback-box correct";
+
+            document.getElementById("checkBtn3").style.display = "none";
+            document.getElementById("nextBtn3").style.display = "inline-block";
+            document.getElementById("nextBtn3").focus();
+        } else {
+            playIncorrectSound(); // 🔊 Sonido Error
+
+            input.classList.remove("shake-error");
+            void input.offsetWidth; 
+            input.classList.add("shake-error");
+
+            feedback.innerText = "Incorrecto. Revisa las reglas de exponentes (suma, resta o multiplicación según el caso).";
+            feedback.className = "quiz-feedback-box incorrect";
+        }
+    }
+
+    function handleKeyPress3(e) {
+        if (e.key === "Enter") {
+            if (isCurrentSolved3) {
+                nextQuestion3();
+            } else {
+                checkAnswer3();
+            }
+        }
+    }
+
+    function nextQuestion3() {
+        if (currentQuizIdx3 < quizPracticeData3.length - 1) {
+            currentQuizIdx3++;
+            loadQuizExercise3(true);
+        } else {
+            document.getElementById("quizQuestionBody3").style.display = "none";
+            document.getElementById("quizCompletionBody3").style.display = "block";
+            document.getElementById("quizStepText3").innerText = "¡Completado!";
+            document.getElementById("quizProgressFill3").style.width = "100%";
+            playVictorySound(); // 🔊 Sonido Victoria Quiz 3
+        }
+    }
+
+    function restartQuiz3() {
+        currentQuizIdx3 = 0;
+        document.getElementById("quizCompletionBody3").style.display = "none";
+        document.getElementById("quizQuestionBody3").style.display = "block";
+        loadQuizExercise3(true);
+    }
+
+    // ==========================================
+    // FUNCIONES UTILITARIAS GENERALES
+    // ==========================================
+    function checkReadinessStatus() {
+        const checkboxes = document.querySelectorAll('.readiness-check');
+        const nextBtn = document.getElementById('nextTopicBtn');
+        if (!nextBtn || checkboxes.length === 0) return;
+        
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+
+        if (allChecked) {
+            nextBtn.classList.remove('disabled');
+            nextBtn.classList.add('unlocked');
+        } else {
+            nextBtn.classList.remove('unlocked');
+            nextBtn.classList.add('disabled');
+        }
+    }
+
+    function copyFormula(text, btn) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btnText = btn.querySelector('.btn-text');
+            const originalText = btnText.textContent;
+            
+            btnText.textContent = '¡Copiado!';
+            btn.style.backgroundColor = '#000000';
+            btn.style.color = '#ffffff';
+
+            setTimeout(() => {
+                btnText.textContent = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+            }, 2000);
+        });
+    }
+
+    // ==========================================
+    // INICIALIZACIÓN GLOBAL AL CARGAR EL DOM
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", () => {
+        // Cargar Quizzes sin forzar auto-scroll
+        if (document.getElementById("quizMathDisplay")) loadQuizExercise(false);
+        if (document.getElementById("quizMathDisplay2")) loadQuizExercise2(false);
+        if (document.getElementById("quizMathDisplay3")) loadQuizExercise3(false);
+        if (document.getElementById("interactiveBase")) updatePowerWidget();
+
+        // Configurar observador de animaciones scroll
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .site-footer');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        animatedElements.forEach((el) => observer.observe(el));
+    });
+
+    // ==========================================
+// LÓGICA DEL EXPLORADOR GEOMÉTRICO DE RAÍCES
+// ==========================================
+function updateRootWidget() {
+    const input = document.getElementById("rootSideInput");
+    if (!input) return;
+
+    const side = parseInt(input.value, 10);
+    const area = side * side;
+
+    // Actualizar etiquetas numéricas
+    document.getElementById("rootSideValue").innerText = side;
+    document.getElementById("labelSideLeft").innerText = side;
+    document.getElementById("labelSideBottom").innerText = side;
+
+    const dispRadicand = document.getElementById("dispRadicand");
+    const dispRootResult = document.getElementById("dispRootResult");
+    const dispExplanation = document.getElementById("dispRootExplanation");
+
+    dispRadicand.innerText = area;
+    dispRootResult.innerText = side;
+
+    // Animación de pulso al cambiar
+    dispRadicand.style.transform = "scale(1.15)";
+    dispRootResult.style.transform = "scale(1.15)";
+    setTimeout(() => {
+        dispRadicand.style.transform = "scale(1)";
+        dispRootResult.style.transform = "scale(1)";
+    }, 150);
+
+    // Reconstruir la cuadrícula HTML dinámicamente
+    const gridContainer = document.getElementById("rootGridContainer");
+    gridContainer.style.gridTemplateColumns = `repeat(${side}, 1fr)`;
+    gridContainer.innerHTML = "";
+
+    // Tamaño adaptativo según la cantidad de celdas
+    const cellSize = side > 6 ? 24 : side > 4 ? 30 : 36;
+
+    for (let i = 0; i < area; i++) {
+        const cell = document.createElement("div");
+        cell.style.width = `${cellSize}px`;
+        cell.style.height = `${cellSize}px`;
+        cell.style.backgroundColor = "#e0f2fe";
+        cell.style.border = "1px solid #38bdf8";
+        cell.style.borderRadius = "3px";
+        cell.style.transition = "transform 0.15s ease, background-color 0.15s ease";
+        
+        // Efecto hover interactivo en celdas
+        cell.onmouseover = () => {
+            cell.style.backgroundColor = "#0284c7";
+            cell.style.transform = "scale(1.1)";
+        };
+        cell.onmouseout = () => {
+            cell.style.backgroundColor = "#e0f2fe";
+            cell.style.transform = "scale(1)";
+        };
+
+        gridContainer.appendChild(cell);
+    }
+
+    // Texto explicativo dinámico
+    dispExplanation.innerHTML = `Un cuadrado de <strong>${side} × ${side}</strong> contiene <strong>${area}</strong> unidades cuadradas en su superficie. Por lo tanto, <strong>√${area} = ${side}</strong>.`;
+}
+
+// Asegurar inicialización al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("rootSideInput")) {
+        updateRootWidget();
+    }
+});
+
+
+</script>
 </body>
 </html>
