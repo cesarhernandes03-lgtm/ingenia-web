@@ -2763,5 +2763,15 @@ body {
 
 .quiz-feedback-box.correct { color: #16a34a; }
 .quiz-feedback-box.incorrect { color: #dc2626; }
+.course-image {
+    height: 220px;
+    overflow: hidden;
+}
 
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
