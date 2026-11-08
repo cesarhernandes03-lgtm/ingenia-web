@@ -1,530 +1,417 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingenia y Aprende</title>
-    <!-- Hoja de estilos principal -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Fuente Inter de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Librerías CAS (Nerdamer) -->
-    <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/nerdamer.core.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Algebra.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Calculus.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.js"></script>
 
-    <!-- Motor Gráfico Matemático (KaTeX) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ingenia y Aprende</title>
+
+    <!-- Vinculamos la hoja de estilos -->
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fuente elegante y limpia de Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
+
+
     <!-- Barra de Navegación -->
+
     <nav class="navbar" id="navbar">
+
         <div class="logo-container">
+
             <a href="#inicio">
+
                 <img src="LOGO INGENIA Y APRENDE.png" alt="Logo Ingenia y Aprende" class="logo">
+
             </a>
+
         </div>
 
-        <!-- Botón Hamburguesa -->
+
+
+        <!-- Botón Hamburguesa para pantallas pequeñas -->
+
         <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+
             <span class="bar"></span>
+
             <span class="bar"></span>
+
             <span class="bar"></span>
+
         </button>
 
+
+
         <!-- Enlaces de navegación -->
+
         <ul class="nav-links" id="nav-menu">
+
             <li><a href="#inicio">Inicio</a></li>
+
             <li><a href="#beneficios">Pilares</a></li>
+
             <li><a href="#cursos">Cursos</a></li>
+
             <li><a href="#comunidad">Comunidad</a></li>
-            <!-- Botón Calculadora -->
-            <li>
-                <button id="open-calc-btn" class="btn-calc-nav">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                        <line x1="8" y1="6" x2="16" y2="6"></line>
-                        <line x1="16" y1="14" x2="16" y2="14"></line>
-                        <line x1="12" y1="14" x2="12" y2="14"></line>
-                        <line x1="8" y1="14" x2="8" y2="14"></line>
-                        <line x1="16" y1="18" x2="16" y2="18"></line>
-                        <line x1="12" y1="18" x2="12" y2="18"></line>
-                        <line x1="8" y1="18" x2="8" y2="18"></line>
-                        <line x1="8" y1="10" x2="16" y2="10"></line>
-                    </svg>
-                    Calculadora Pro
-                </button>
-            </li>
+
             <li><a href="#contacto" class="btn-outline">Contacto</a></li>
+
         </ul>
+
     </nav>
 
-    <!-- Sección Hero -->
+
+
+    <!-- Sección Principal (Hero) -->
+
     <header id="inicio" class="hero">
+
         <div class="hero-content">
+
             <h1>Aprende hoy. <br><span>Ingenia el mañana.</span></h1>
+
             <p>Plataforma educativa para estudiantes de Ingeniería, con el propósito de enseñar desde cero y comprender temas de verdad y no solo memorizar fórmulas.</p>
+
             <a href="#cursos" class="btn-solid">Empezar ahora</a>
+
         </div>
+
     </header>
 
-    <!-- Sección Pilares -->
+
+
+    <!-- Sección de Beneficios / Pilares -->
+
     <section id="beneficios" class="features">
+
         <div class="feature-box">
+
             <h3>Desde Cero</h3>
+
             <p>Explicaciones paso a paso sin dar nada por sentado. Construimos bases sólidas para que domines cualquier materia.</p>
+
         </div>
+
         <div class="feature-box">
+
             <h3>Comprende, no memorices</h3>
+
             <p>Nos enfocamos en el razonamiento lógico detrás de cada concepto de ingeniería para que realmente lo interiorices.</p>
+
         </div>
+
         <div class="feature-box">
+
             <h3>Aplicación Real</h3>
+
             <p>Ejercicios y problemas enfocados en situaciones reales que te preparan para los retos de la industria.</p>
+
         </div>
+
     </section>
 
-    <!-- Sección Cursos -->
+
+
+    <!-- Sección de Cursos -->
+
     <section id="cursos" class="courses-section">
+
         <div class="section-title">
+
             <h2>Rutas de Aprendizaje</h2>
+
             <p>Contenido estructurado para estudiantes de ingeniería que buscan dominar las bases.</p>
+
         </div>
+
+
 
         <div class="courses-grid">
-            <article class="course-card">
-                <div class="course-image">
-                    <img src="PORTADA PRECALCULO.jpg" alt="Portada del curso de Precálculo">
-                </div>
-                <div class="course-content">
-                    <span class="tag">Básico</span>
-                    <h3>Precálculo</h3>
-                    <p>Fortalece tus bases matemáticas y prepárate para comprender el cálculo diferencial e integral.</p>
-                    <a href="precalculo.html" class="btn-outline btn-small">Ver temario</a>
-                </div>
-            </article>
 
-            <article class="course-card">
-                <div class="course-image placeholder-img">
-                    <span>Portada del Curso</span>
-                </div>
-                <div class="course-content">
-                    <span class="tag">Intermedio</span>
-                    <h3>Mecánica Clásica</h3>
-                    <p>Comprende el comportamiento de las estructuras y fuerzas con aplicaciones a problemas reales.</p>
-                    <a href="#" class="btn-outline btn-small">Ver temario</a>
-                </div>
-            </article>
+            <!-- Curso 1 -->
 
-            <article class="course-card">
-                <div class="course-image placeholder-img">
-                    <span>Portada del Curso</span>
-                </div>
-                <div class="course-content">
-                    <span class="tag">Intermedio</span>
-                    <h3>Cálculo Diferencial e Integral</h3>
-                    <p>Domina las técnicas de cálculo para resolver problemas en ingeniería y ciencias.</p>
-                    <a href="#" class="btn-outline btn-small">Ver temario</a>
-                </div>
-            </article>
-        </div>
-    </section>
+<article class="course-card">
 
-    <!-- Sección Comunidad -->
-    <section id="comunidad" class="community-section">
-        <div class="community-box">
-            <h2>Únete a nuestra Comunidad</h2>
-            <p>Forma parte de nuestro canal de WhatsApp. Recibe avisos, recursos exclusivos, aportaciones y mantente al tanto de los nuevos contenidos para dominar tu carrera.</p>
-            <a href="https://chat.whatsapp.com/BagZ3MLlOzRJbMEnUu4EBl" class="btn-white" target="_blank">Unirme al Canal</a>
-        </div>
-    </section>
+    <div class="course-image">
 
-    <!-- Pie de Página -->
-    <footer id="contacto" class="site-footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3 class="footer-logo-text">Ingenia & Aprende</h3>
-                <p>Educación para estudiantes de ingeniería enfocada en el razonamiento y la aplicación real.</p>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Explora</h4>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="#cursos">Cursos</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Síguenos</h4>
-                <ul class="social-links">
-                    <li><a href="http://www.youtube.com/@IngeniaAprende-e6x" target="_blank">YouTube</a></li>
-                    <li><a href="https://www.tiktok.com/@ingenia_aprende?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
-                    <li><a href="https://www.instagram.com/ingeniayaprende?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61585189825325" target="_blank">Facebook</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Ingenia & Aprende. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+        <img src="PORTADA PRECALCULO.jpg" alt="Portada del curso de Precálculo">
 
-    <!-- MODAL CALCULADORA PRO -->
-    <div id="calc-modal" class="calc-modal" aria-hidden="true">
-        <div class="calc-backdrop" id="calc-backdrop"></div>
-        <div class="calc-card">
-            
-            <!-- Encabezado -->
-            <div class="calc-header">
-                <div class="calc-title">
-                    <span class="calc-badge">PRO</span>
-                    <h3>Calculadora de Ingeniería</h3>
-                </div>
-                <button id="close-calc-btn" class="calc-close-btn" aria-label="Cerrar calculadora">&times;</button>
-            </div>
-
-            <!-- Selector de Pestañas -->
-            <div class="calc-tabs">
-                <button class="calc-tab active" data-mode="basic">Básico</button>
-                <button class="calc-tab" data-mode="algebra">Álgebra</button>
-                <button class="calc-tab" data-mode="calculus">Cálculo</button>
-            </div>
-            
-            <!-- Pantalla Visual Fotomática -->
-            <div class="calc-screen">
-                <div id="calc-history-math" class="calc-math-preview"></div>
-                <input type="text" id="calc-input" class="calc-input" placeholder="Escribe tu expresión..." autocomplete="off" spellcheck="false">
-                <div id="calc-result-math" class="calc-math-result"></div>
-            </div>
-
-            <!-- TECLADO DE 4 COLUMNAS PENSADO FILA POR FILA -->
-
-            <!-- Modo 1: Básico / Científico -->
-            <div id="panel-basic" class="calc-panel active">
-                <div class="calc-grid">
-                    <!-- Fila 1: Funciones de Plantilla -->
-                    <button class="calc-btn btn-math" data-val="/" data-tex="\frac{\square}{\square}"></button>
-                    <button class="calc-btn btn-math" data-val="^" data-tex="x^{\square}"></button>
-                    <button class="calc-btn btn-math" data-val="sqrt(" data-tex="\sqrt{\square}"></button>
-                    <button class="calc-btn btn-math" data-val="pi" data-tex="\pi"></button>
-                    
-                    <!-- Fila 2: Trigonometría y Logaritmos -->
-                    <button class="calc-btn btn-math" data-val="sin(" data-tex="\sin"></button>
-                    <button class="calc-btn btn-math" data-val="cos(" data-tex="\cos"></button>
-                    <button class="calc-btn btn-math" data-val="tan(" data-tex="\tan"></button>
-                    <button class="calc-btn btn-math" data-val="ln(" data-tex="\ln"></button>
-
-                    <!-- Fila 3: Paréntesis y Borrado -->
-                    <button class="calc-btn btn-action" data-val="(">(</button>
-                    <button class="calc-btn btn-action" data-val=")"><span class="txt">)</span></button>
-                    <button class="calc-btn btn-clear" id="btn-clear">AC</button>
-                    <button class="calc-btn btn-delete" id="btn-del">DEL</button>
-
-                    <!-- Fila 4: Numpad 7-9 & ÷ -->
-                    <button class="calc-btn btn-num" data-val="7">7</button>
-                    <button class="calc-btn btn-num" data-val="8">8</button>
-                    <button class="calc-btn btn-num" data-val="9">9</button>
-                    <button class="calc-btn btn-op" data-val="/">÷</button>
-
-                    <!-- Fila 5: Numpad 4-6 & × -->
-                    <button class="calc-btn btn-num" data-val="4">4</button>
-                    <button class="calc-btn btn-num" data-val="5">5</button>
-                    <button class="calc-btn btn-num" data-val="6">6</button>
-                    <button class="calc-btn btn-op" data-val="*">×</button>
-
-                    <!-- Fila 6: Numpad 1-3 & - -->
-                    <button class="calc-btn btn-num" data-val="1">1</button>
-                    <button class="calc-btn btn-num" data-val="2">2</button>
-                    <button class="calc-btn btn-num" data-val="3">3</button>
-                    <button class="calc-btn btn-op" data-val="-">-</button>
-
-                    <!-- Fila 7: Numpad 0, ., =, + -->
-                    <button class="calc-btn btn-num" data-val="0">0</button>
-                    <button class="calc-btn btn-num" data-val=".">.</button>
-                    <button class="calc-btn btn-equals" id="btn-eval">=</button>
-                    <button class="calc-btn btn-op" data-val="+">+</button>
-                </div>
-            </div>
-
-            <!-- Modo 2: Álgebra -->
-            <div id="panel-algebra" class="calc-panel">
-                <div class="calc-actions-grid">
-                    <button class="calc-btn btn-mode-act" data-action="solve">Resolver Ecuación</button>
-                    <button class="calc-btn btn-mode-act" data-action="simplify">Simplificar</button>
-                    <button class="calc-btn btn-mode-act" data-action="expand">Expandir</button>
-                    <button class="calc-btn btn-mode-act" data-action="factor">Factorizar</button>
-                </div>
-                <div class="calc-grid algebra-keys">
-                    <button class="calc-btn btn-var" data-val="x">x</button>
-                    <button class="calc-btn btn-var" data-val="y">y</button>
-                    <button class="calc-btn btn-var" data-val="=">=</button>
-                    <button class="calc-btn btn-math" data-val="^2" data-tex="x^2"></button>
-                    
-                    <button class="calc-btn btn-action" data-val="(">(</button>
-                    <button class="calc-btn btn-action" data-val=")"><span class="txt">)</span></button>
-                    <button class="calc-btn btn-clear" onclick="clearCalc()">AC</button>
-                    <button class="calc-btn btn-delete" onclick="deleteLast()">DEL</button>
-                </div>
-            </div>
-
-            <!-- Modo 3: Cálculo (Derivadas e Integrales) -->
-            <div id="panel-calculus" class="calc-panel">
-                <div class="calc-actions-grid">
-                    <button class="calc-btn btn-mode-act btn-calc-special" data-action="diff">
-                        <span class="btn-tex" data-tex="\frac{d}{dx}"></span> (Derivar)
-                    </button>
-                    <button class="calc-btn btn-mode-act btn-calc-special" data-action="integrate">
-                        <span class="btn-tex" data-tex="\int dx"></span> (Integrar)
-                    </button>
-                </div>
-                <div class="calc-grid calculus-keys">
-                    <button class="calc-btn btn-var" data-val="x">x</button>
-                    <button class="calc-btn btn-math" data-val="^" data-tex="x^\square"></button>
-                    <button class="calc-btn btn-math" data-val="e^(" data-tex="e^\square"></button>
-                    <button class="calc-btn btn-math" data-val="sqrt(" data-tex="\sqrt{\square}"></button>
-
-                    <button class="calc-btn btn-math" data-val="sin(" data-tex="\sin"></button>
-                    <button class="calc-btn btn-math" data-val="cos(" data-tex="\cos"></button>
-                    <button class="calc-btn btn-math" data-val="tan(" data-tex="\tan"></button>
-                    <button class="calc-btn btn-math" data-val="ln(" data-tex="\ln"></button>
-
-                    <button class="calc-btn btn-action" data-val="(">(</button>
-                    <button class="calc-btn btn-action" data-val=")"><span class="txt">)</span></button>
-                    <button class="calc-btn btn-clear" onclick="clearCalc()">AC</button>
-                    <button class="calc-btn btn-delete" onclick="deleteLast()">DEL</button>
-                </div>
-            </div>
-
-        </div>
     </div>
 
-    <!-- Scripts de Interactividad -->
+    <div class="course-content">
+
+        <span class="tag">Básico</span>
+
+        <h3>Precálculo</h3>
+
+        <p>Fortalece tus bases matemáticas y prepárate para comprender el cálculo diferencial e integral.</p>
+
+        <a href="precalculo.html" class="btn-outline btn-small">Ver temario</a>
+
+    </div>
+
+</article>
+
+
+
+            <!-- Curso 2 -->
+
+            <article class="course-card">
+
+                <div class="course-image placeholder-img">
+
+                    <span>Portada del Curso</span>
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="tag">Intermedio</span>
+
+                    <h3>Mecánica Clásica</h3>
+
+                    <p>Comprende el comportamiento de las estructuras y fuerzas con aplicaciones a problemas reales.</p>
+
+                    <a href="#" class="btn-outline btn-small">Ver temario</a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Curso 3 -->
+
+            <article class="course-card">
+
+                <div class="course-image placeholder-img">
+
+                    <span>Portada del Curso</span>
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="tag">Intermedio</span>
+
+                    <h3>Cálculo Diferencial e Integral</h3>
+
+                    <p>Domina las técnicas de cálculo para resolver problemas en ingeniería y ciencias.</p>
+
+                    <a href="#" class="btn-outline btn-small">Ver temario</a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+<!-- Sección de Comunidad -->
+
+    <section id="comunidad" class="community-section">
+
+        <div class="community-box">
+
+            <h2>Únete a nuestra Comunidad</h2>
+
+            <p>Forma parte de nuestro canal de WhatsApp. Recibe avisos, recursos exclusivos, aportaciones y mantente al tanto de los nuevos contenidos para dominar tu carrera.</p>
+
+            <!-- Cambia el # por el link de tu canal de WhatsApp cuando lo tengas -->
+
+            <a href="https://chat.whatsapp.com/BagZ3MLlOzRJbMEnUu4EBl" class="btn-white" target="_blank">Unirme al Canal</a>
+
+        </div>
+
+    </section>
+
+    <!-- Pie de Página (Footer) -->
+
+    <footer id="contacto" class="site-footer">
+
+        <div class="footer-content">
+
+            <!-- Columna 1: Marca -->
+
+            <div class="footer-col">
+
+                <h3 class="footer-logo-text">Ingenia & Aprende</h3>
+
+                <p>Educación para estudiantes de ingeniería enfocada en el razonamiento y la aplicación real.</p>
+
+            </div>
+
+           
+
+            <!-- Columna 2: Enlaces rápidos -->
+
+            <div class="footer-col">
+
+                <h4>Explora</h4>
+
+                <ul>
+
+                    <li><a href="#inicio">Inicio</a></li>
+
+                    <li><a href="#beneficios">Beneficios</a></li>
+
+                    <li><a href="#cursos">Cursos</a></li>
+
+                </ul>
+
+            </div>
+
+           
+
+            <!-- Columna 3: Redes Sociales -->
+
+            <div class="footer-col">
+
+                <h4>Síguenos</h4>
+
+                <ul class="social-links">
+
+                    <li><a href="http://www.youtube.com/@IngeniaAprende-e6x" target="_blank">YouTube</a></li>
+
+                    <li><a href="https://www.tiktok.com/@ingenia_aprende?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
+
+                    <li><a href="https://www.instagram.com/ingeniayaprende?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+
+                    <li><a href="https://www.facebook.com/profile.php?id=61585189825325" target="_blank">Facebook</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+       
+
+        <!-- Línea final de derechos -->
+
+        <div class="footer-bottom">
+
+            <p>&copy; 2026 Ingenia & Aprende. Todos los derechos reservados.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Script para animaciones al hacer scroll -->
+
     <script>
-        // === MENÚ HAMBURGUESA Y NAVBAR ===
+
+        // Seleccionamos todos los elementos que queremos animar
+
+        const animatedElements = document.querySelectorAll('.feature-box, .course-card, .site-footer, .community-box');
+
+
+
+        // Configuramos el observador
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach((entry) => {
+
+                // Si el elemento entra en la pantalla del usuario
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add('visible');
+
+                }
+
+            });
+
+        }, {
+
+            threshold: 0.15 // Se activa cuando al menos el 15% del elemento es visible
+
+        });
+
+
+
+        // Le decimos al observador que vigile cada uno de los elementos
+
+        animatedElements.forEach((el) => {
+
+            observer.observe(el);
+
+        });
+
+        // === INTERACTIVIDAD DEL MENÚ ===
+
         const navbar = document.getElementById('navbar');
+
         const hamburger = document.getElementById('hamburger');
+
         const navMenu = document.getElementById('nav-menu');
+
         const navLinks = document.querySelectorAll('.nav-links a');
 
+
+
+        // Sombra / Ajuste al hacer scroll
+
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 30) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
+
+            if (window.scrollY > 30) {
+
+                navbar.classList.add('scrolled');
+
+            } else {
+
+                navbar.classList.remove('scrolled');
+
+            }
+
         });
+
+
+
+        // Abrir/Cerrar menú móvil
 
         hamburger.addEventListener('click', () => {
+
             hamburger.classList.toggle('active');
+
             navMenu.classList.toggle('active');
+
         });
+
+
+
+        // Cerrar el menú al hacer clic en cualquier opción
 
         navLinks.forEach(link => {
+
             link.addEventListener('click', () => {
+
                 hamburger.classList.remove('active');
+
                 navMenu.classList.remove('active');
+
             });
+
         });
 
-        // === SCROLL OBSERVER ===
-        const animatedElements = document.querySelectorAll('.feature-box, .course-card, .site-footer, .community-box');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.15 });
-
-        animatedElements.forEach((el) => observer.observe(el));
-
-        // === CALCULADORA PRO ===
-        const calcModal = document.getElementById('calc-modal');
-        const openCalcBtn = document.getElementById('open-calc-btn');
-        const closeCalcBtn = document.getElementById('close-calc-btn');
-        const calcBackdrop = document.getElementById('calc-backdrop');
-        const calcInput = document.getElementById('calc-input');
-        const calcHistoryMath = document.getElementById('calc-history-math');
-        const calcResultMath = document.getElementById('calc-result-math');
-
-        let currentMode = 'basic';
-
-        function renderKaTeX(element, latexString) {
-            try {
-                katex.render(latexString, element, {
-                    throwOnError: false,
-                    displayMode: true
-                });
-            } catch (err) {
-                element.textContent = latexString;
-            }
-        }
-
-        function renderKeypadMath() {
-            document.querySelectorAll('[data-tex]').forEach(el => {
-                const tex = el.dataset.tex;
-                try {
-                    katex.render(tex, el, { throwOnError: false });
-                } catch(e) {
-                    el.textContent = tex;
-                }
-            });
-        }
-
-        function toggleCalc(show) {
-            if (show) {
-                calcModal.classList.add('active');
-                calcModal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-                calcInput.focus();
-                updateLivePreview();
-            } else {
-                calcModal.classList.remove('active');
-                calcModal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-        }
-
-        openCalcBtn.addEventListener('click', () => toggleCalc(true));
-        closeCalcBtn.addEventListener('click', () => toggleCalc(false));
-        calcBackdrop.addEventListener('click', () => toggleCalc(false));
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && calcModal.classList.contains('active')) toggleCalc(false);
-        });
-
-        document.querySelectorAll('.calc-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
-                
-                tab.classList.add('active');
-                currentMode = tab.dataset.mode;
-                document.getElementById(`panel-${currentMode}`).classList.add('active');
-            });
-        });
-
-        function updateLivePreview() {
-            const expr = calcInput.value.trim();
-            if (!expr) {
-                renderKaTeX(calcHistoryMath, '\\text{Vista previa de la expresión}');
-                return;
-            }
-            try {
-                let latex = nerdamer(expr).toTeX();
-                renderKaTeX(calcHistoryMath, latex);
-            } catch (e) {
-                calcHistoryMath.textContent = expr;
-            }
-        }
-
-        calcInput.addEventListener('input', updateLivePreview);
-
-        function appendValue(val) {
-            const start = calcInput.selectionStart;
-            const end = calcInput.selectionEnd;
-            const text = calcInput.value;
-            calcInput.value = text.substring(0, start) + val + text.substring(end);
-            calcInput.selectionStart = calcInput.selectionEnd = start + val.length;
-            calcInput.focus();
-            updateLivePreview();
-        }
-
-        function clearCalc() {
-            calcInput.value = '';
-            renderKaTeX(calcHistoryMath, '\\text{Ingresa una expresión o ecuación}');
-            renderKaTeX(calcResultMath, '= 0');
-            calcInput.focus();
-        }
-
-        function deleteLast() {
-            const start = calcInput.selectionStart;
-            const text = calcInput.value;
-            if (start > 0) {
-                calcInput.value = text.substring(0, start - 1) + text.substring(start);
-                calcInput.selectionStart = calcInput.selectionEnd = start - 1;
-            }
-            calcInput.focus();
-            updateLivePreview();
-        }
-
-        document.getElementById('btn-clear')?.addEventListener('click', clearCalc);
-        document.getElementById('btn-del')?.addEventListener('click', deleteLast);
-
-        document.querySelectorAll('.calc-btn[data-val]').forEach(btn => {
-            btn.addEventListener('click', () => appendValue(btn.dataset.val));
-        });
-
-        function executeOperation(action) {
-            const expr = calcInput.value.trim();
-            if (!expr) return;
-
-            try {
-                let labelTex = '';
-                let resultTex = '';
-                let innerTex = nerdamer(expr).toTeX();
-
-                switch (action) {
-                    case 'eval':
-                        labelTex = innerTex;
-                        resultTex = nerdamer(expr).evaluate().toTeX();
-                        break;
-                    case 'diff':
-                        labelTex = `\\frac{d}{dx}\\left(${innerTex}\\right)`;
-                        resultTex = nerdamer.diff(expr, 'x').toTeX();
-                        break;
-                    case 'integrate':
-                        labelTex = `\\int \\left(${innerTex}\\right) dx`;
-                        resultTex = nerdamer.integrate(expr, 'x').toTeX() + ' + C';
-                        break;
-                    case 'solve':
-                        labelTex = `\\text{Resolver: } ${innerTex}`;
-                        resultTex = `x = ` + nerdamer.solve(expr, 'x').toTeX();
-                        break;
-                    case 'simplify':
-                        labelTex = `\\text{Simplificar: } ${innerTex}`;
-                        resultTex = nerdamer(expr).simplify().toTeX();
-                        break;
-                    case 'expand':
-                        labelTex = `\\text{Expandir: } ${innerTex}`;
-                        resultTex = nerdamer(expr).expand().toTeX();
-                        break;
-                    case 'factor':
-                        labelTex = `\\text{Factorizar: } ${innerTex}`;
-                        resultTex = nerdamer.factor(expr).toTeX();
-                        break;
-                }
-
-                renderKaTeX(calcHistoryMath, labelTex);
-                renderKaTeX(calcResultMath, `= ${resultTex}`);
-            } catch (err) {
-                renderKaTeX(calcHistoryMath, '\\text{Error de formato}');
-                renderKaTeX(calcResultMath, '\\text{Expresión no válida}');
-            }
-        }
-
-        document.getElementById('btn-eval')?.addEventListener('click', () => executeOperation('eval'));
-
-        document.querySelectorAll('.btn-mode-act').forEach(btn => {
-            btn.addEventListener('click', () => executeOperation(btn.dataset.action));
-        });
-
-        calcInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (currentMode === 'basic') executeOperation('eval');
-                else if (currentMode === 'algebra') executeOperation('solve');
-                else if (currentMode === 'calculus') executeOperation('diff');
-            }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            renderKeypadMath();
-            renderKaTeX(calcHistoryMath, '\\text{Ingresa una expresión o ecuación}');
-            renderKaTeX(calcResultMath, '= 0');
-        });
     </script>
+
 </body>
-</html>
+
+</html> 
