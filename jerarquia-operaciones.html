@@ -5103,7 +5103,375 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </div>
 
+<!-- SECCIÓN DE CIERRE: JERARQUÍA DE OPERACIONES -->
+<section class="ia-cierre-wrapper" id="cierre-tema">
+  <div class="ia-cierre-card">
+    <div class="ia-cierre-header">
+      <div>
+        <h2 class="ia-cierre-title">¿Cuándo estés listo para avanzar?</h2>
+        <p class="ia-cierre-subtitle">
+          Antes de pasar al siguiente tema del Módulo 0, comprueba que puedes:
+        </p>
+      </div>
+      <span class="ia-cierre-counter" id="checklist-counter">0 / 6</span>
+    </div>
 
+    <ul class="ia-checklist" id="learning-checklist">
+      <li>
+        <button type="button" class="ia-check-item" role="checkbox" aria-checked="false">
+          <span class="ia-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="ia-check-text">
+            Aplicar correctamente el orden de prioridad: signos de agrupación, potencias y raíces, multiplicaciones y divisiones, y finalmente sumas y restas.
+          </span>
+        </button>
+      </li>
+
+      <li>
+        <button type="button" class="ia-check-item" role="checkbox" aria-checked="false">
+          <span class="ia-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="ia-check-text">
+            Resolver expresiones con paréntesis, corchetes y llaves anidados trabajando siempre de adentro hacia afuera.
+          </span>
+        </button>
+      </li>
+
+      <li>
+        <button type="button" class="ia-check-item" role="checkbox" aria-checked="false">
+          <span class="ia-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="ia-check-text">
+            Distinguir el efecto de los signos en potencias con y sin paréntesis (por ejemplo, (−3)² frente a −3²).
+          </span>
+        </button>
+      </li>
+
+      <li>
+        <button type="button" class="ia-check-item" role="checkbox" aria-checked="false">
+          <span class="ia-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="ia-check-text">
+            Operar multiplicaciones y divisiones —o sumas y restas— estrictamente de izquierda a derecha cuando tienen la misma jerarquía.
+          </span>
+        </button>
+      </li>
+
+      <li>
+        <button type="button" class="ia-check-item" role="checkbox" aria-checked="false">
+          <span class="ia-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="ia-check-text">
+            Evaluar expresiones combinadas con raíces exactas y barras de fracción entendiendo que agrupan numerador y denominador por separado.
+          </span>
+        </button>
+      </li>
+
+      <li>
+        <button type="button" class="ia-check-item" role="checkbox" aria-checked="false">
+          <span class="ia-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="ia-check-text">
+            Detectar y corregir errores comunes de precedencia al desarrollar cálculos paso a paso.
+          </span>
+        </button>
+      </li>
+    </ul>
+
+    <div class="ia-next-banner">
+      <strong>Siguiente tema recomendado:</strong> simplificación y operaciones con fracciones, dominando mínimo común múltiplo, fracciones equivalentes, suma, resta, multiplicación, división y fracciones complejas.
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .ia-cierre-wrapper {
+    max-width: 880px;
+    margin: 2.5rem auto;
+  }
+
+  .ia-cierre-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  }
+
+  .ia-cierre-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ia-cierre-title {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+  }
+
+  .ia-cierre-subtitle {
+    margin: 0.45rem 0 0 0;
+    font-size: 0.95rem;
+    color: #334155;
+  }
+
+  .ia-cierre-counter {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+  }
+
+  .ia-cierre-counter.is-complete {
+    background-color: #dcfce7;
+    color: #166534;
+    border-color: #86efac;
+  }
+
+  .ia-checklist {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ia-checklist li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ia-check-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.95rem 1.15rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-align: left;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .ia-check-item:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+  }
+
+  .ia-check-circle {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    border: 1.6px solid #94a3b8;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.22s ease;
+  }
+
+  .ia-check-circle svg {
+    width: 12px;
+    height: 12px;
+    color: #ffffff;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+  }
+
+  /* Estado seleccionado */
+  .ia-check-item.is-checked {
+    background-color: #f0fdf4;
+    border-color: #86efac;
+  }
+
+  .ia-check-item.is-checked .ia-check-circle {
+    background-color: #16a34a;
+    border-color: #16a34a;
+    animation: iaCheckPop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .ia-check-item.is-checked .ia-check-circle svg {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .ia-check-item.is-checked .ia-check-text {
+    color: #0f172a;
+    font-weight: 500;
+  }
+
+  /* Banner verde inferior */
+  .ia-next-banner {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #166534;
+  }
+
+  .ia-next-banner strong {
+    color: #14532d;
+    font-weight: 700;
+  }
+
+  /* Desbloqueo + animación amarilla para tu botón real de SIGUIENTE TEMA */
+  .unlocked {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+    color: #0f172a !important;
+    animation: iaUnlockYellow 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+  }
+
+  .unlocked * {
+    color: inherit !important;
+  }
+
+  @keyframes iaCheckPop {
+    0% { transform: scale(0.8); }
+    60% { transform: scale(1.18); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes iaUnlockYellow {
+    0% {
+      transform: scale(0.97);
+      background-color: #fef9c3;
+      border-color: #facc15;
+      box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.65);
+    }
+    45% {
+      transform: scale(1.03);
+      background-color: #fef08a;
+      border-color: #eab308;
+      box-shadow: 0 0 0 10px rgba(250, 204, 21, 0);
+    }
+    100% {
+      transform: scale(1);
+      background-color: #ffffff;
+      border-color: #e2e8f0;
+    }
+  }
+</style>
+
+<script is:inline>
+  function setupCierreChecklist() {
+    const checklist = document.getElementById('learning-checklist');
+    if (!checklist || checklist.dataset.bound === 'true') return;
+    checklist.dataset.bound = 'true';
+
+    const items = checklist.querySelectorAll('.ia-check-item');
+    const counter = document.getElementById('checklist-counter');
+    const total = items.length;
+    let unlocked = false;
+
+    // Localiza tu botón real de SIGUIENTE TEMA en la página
+    const nextBtn =
+      document.getElementById('next-topic-btn') ||
+      document.querySelector('.next-btn.disabled, a.disabled') ||
+      Array.from(document.querySelectorAll('a, button')).find(
+        (el) => el.textContent && el.textContent.toUpperCase().includes('SIGUIENTE TEMA')
+      );
+
+    function playBeep(freq, duration, type = 'sine', vol = 0.03) {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(vol, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      } catch (_) {}
+    }
+
+    function syncState() {
+      const checked = checklist.querySelectorAll('.ia-check-item.is-checked').length;
+      if (counter) {
+        counter.textContent = `${checked} / ${total}`;
+        counter.classList.toggle('is-complete', checked === total);
+      }
+
+      if (checked === total && !unlocked) {
+        unlocked = true;
+        if (nextBtn) {
+          nextBtn.classList.remove('disabled');
+          nextBtn.classList.add('unlocked');
+          nextBtn.removeAttribute('disabled');
+          nextBtn.removeAttribute('aria-disabled');
+          nextBtn.removeAttribute('tabindex');
+        }
+        playBeep(587.33, 0.14, 'triangle', 0.04);
+        setTimeout(() => playBeep(880, 0.24, 'triangle', 0.045), 95);
+      } else if (checked < total && unlocked) {
+        unlocked = false;
+        if (nextBtn) {
+          nextBtn.classList.remove('unlocked');
+          nextBtn.classList.add('disabled');
+          nextBtn.setAttribute('aria-disabled', 'true');
+        }
+      }
+    }
+
+    items.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const active = btn.classList.toggle('is-checked');
+        btn.setAttribute('aria-checked', String(active));
+        playBeep(active ? 520 : 340, 0.09, 'sine', 0.025);
+        syncState();
+      });
+    });
+  }
+
+  setupCierreChecklist();
+  document.addEventListener('astro:page-load', setupCierreChecklist);
+</script>
 
         <!-- NAVEGACIÓN ENTRE TEMAS (ANTERIOR / SIGUIENTE) -->
         <nav class="lesson-nav animate-on-scroll" style="margin-top: 40px;">
@@ -5113,7 +5481,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </a>
             <a href="jerarquia-operaciones.html" class="nav-btn next disabled" id="nextTopicBtn">
                 <span class="nav-label">Siguiente Tema</span>
-                <span class="nav-title">Jerarquía de operaciones →</span>
+                <span class="nav-title">Fracciones: simplificacion, suma, resta, multiplicación y división →</span>
             </a>
         </nav>
 
