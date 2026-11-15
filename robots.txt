@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ingenia-web.pages.dev/sitemap.xml
