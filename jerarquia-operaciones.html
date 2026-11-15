@@ -11,6 +11,35 @@
     <title>Jerarquía de Operaciones | Precálculo | Ingenia y Aprende</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+(function () {
+    const originalFocus = HTMLElement.prototype.focus;
+    let hasUserInteracted = false;
+
+    const unlockFocus = () => {
+        hasUserInteracted = true;
+    };
+
+    ["pointerdown", "keydown", "touchstart"].forEach((event) => {
+        window.addEventListener(event, unlockFocus, {
+            once: true,
+            capture: true,
+            passive: true
+        });
+    });
+
+    HTMLElement.prototype.focus = function (options) {
+        // 1. Ignora cualquier auto-focus automático mientras la página recién carga
+        if (!hasUserInteracted) return;
+
+        // 2. Una vez que ya estás usando la página, enfoca sin hacer saltos bruscos de scroll
+        if (options && typeof options === "object") {
+            return originalFocus.call(this, { preventScroll: true, ...options });
+        }
+        return originalFocus.call(this, { preventScroll: true });
+    };
+})();
+</script>
 </head>
 <body>
 
@@ -1531,6 +1560,3549 @@
 
 </div>
 
+<!-- SUBSECCIÓN: TIPOS DE RAÍCES -->
+<div class="animate-on-scroll" style="margin-top: 36px;">
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 18px;">
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin: 0;">
+            Tipos de raíces
+        </h3>
+        <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Clasificación según su índice
+        </span>
+    </div>
+
+    <!-- CUADRÍCULA DE 4 TARJETAS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+        
+        <!-- TARJETA 1: RAÍZ CUADRADA -->
+        <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#93c5fd';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0';">
+            <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="background: #eff6ff; color: #2563eb; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Índice 2</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">Implícito</span>
+                </div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 6px 0;">
+                    Raíz cuadrada
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; margin: 0 0 16px 0; line-height: 1.5;">
+                    Corresponde al <strong>índice 2</strong>.
+                </p>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px; text-align: center;">
+                <span class="math-expr">$$\sqrt{a} \quad \Rightarrow \quad \sqrt{9} = 3$$</span>
+            </div>
+        </div>
+
+        <!-- TARJETA 2: RAÍZ CÚBICA -->
+        <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#93c5fd';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0';">
+            <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="background: #f0f9ff; color: #0284c7; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Índice 3</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">Explícito</span>
+                </div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 6px 0;">
+                    Raíz cúbica
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; margin: 0 0 16px 0; line-height: 1.5;">
+                    Corresponde al <strong>índice 3</strong>.
+                </p>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px; text-align: center;">
+                <span class="math-expr">$$\sqrt[3]{a} \quad \Rightarrow \quad \sqrt[3]{8} = 2$$</span>
+            </div>
+        </div>
+
+        <!-- TARJETA 3: RAÍZ CUARTA -->
+        <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#93c5fd';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0';">
+            <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="background: #eef2ff; color: #4f46e5; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Índice 4</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">Explícito</span>
+                </div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 6px 0;">
+                    Raíz cuarta
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; margin: 0 0 16px 0; line-height: 1.5;">
+                    Corresponde al <strong>índice 4</strong>.
+                </p>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px; text-align: center;">
+                <span class="math-expr">$$\sqrt[4]{a} \quad \Rightarrow \quad \sqrt[4]{16} = 2$$</span>
+            </div>
+        </div>
+
+        <!-- TARJETA 4: RAÍZ DE ÍNDICE N -->
+        <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#93c5fd';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0';">
+            <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="background: #f0fdf4; color: #16a34a; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Índice n</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">General</span>
+                </div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 6px 0;">
+                    Raíz de índice <em style="font-family: 'Times New Roman', serif;">n</em>
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; margin: 0 0 16px 0; line-height: 1.5;">
+                    Permite generalizar la operación para cualquier grado.
+                </p>
+            </div>
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 12px; text-align: center;">
+                <span class="math-expr">$$\sqrt[n]{a} = b \iff b^n = a$$</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ESTILOS PARA ICONOS MODERNOS ANIMADOS -->
+<style>
+    .ia-callout-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .ia-callout-card:hover .ia-callout-icon {
+        transform: scale(1.1) rotate(-4deg);
+    }
+
+    /* Variante Azul (Condición / Regla) */
+    .ia-icon-info {
+        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        color: #0284c7;
+        border: 1px solid #7dd3fc;
+        animation: iaPulseBlue 2.8s infinite ease-in-out;
+    }
+
+    /* Variante Ámbar (Advertencia / Nota clave) */
+    .ia-icon-warn {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        color: #d97706;
+        border: 1px solid #fcd34d;
+        animation: iaPulseAmber 2.8s infinite ease-in-out;
+    }
+
+    .ia-icon-warn svg {
+        animation: iaSubtleWobble 3.5s infinite ease-in-out;
+        transform-origin: center;
+    }
+
+    @keyframes iaPulseBlue {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.25); }
+        50% { box-shadow: 0 0 0 6px rgba(2, 132, 199, 0); }
+    }
+
+    @keyframes iaPulseAmber {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.28); }
+        50% { box-shadow: 0 0 0 6px rgba(217, 119, 6, 0); }
+    }
+
+    @keyframes iaSubtleWobble {
+        0%, 82%, 100% { transform: rotate(0deg); }
+        86% { transform: rotate(-10deg); }
+        90% { transform: rotate(10deg); }
+        94% { transform: rotate(-6deg); }
+        98% { transform: rotate(6deg); }
+    }
+</style>
+
+<!-- ESTILOS DE PASOS IDENTIDAD INGENIA & APRENDE -->
+<style>
+    .ia-step-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 18px 22px;
+        transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .ia-step-card:hover {
+        transform: translateX(4px);
+        border-color: #cbd5e1;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    .ia-step-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    .ia-step-num {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background: #0f172a;
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .ia-step-card:hover .ia-step-num {
+        transform: scale(1.12);
+        background: #2563eb;
+    }
+
+    .ia-step-final {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 14px;
+        padding: 18px 22px;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .ia-step-final:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(22, 163, 74, 0.08);
+    }
+
+    .ia-step-num-final {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background: #16a34a;
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+    }
+</style>
+
+<!-- SUBSECCIÓN: EJEMPLOS RESUELTOS DE RAÍCES -->
+<div class="animate-on-scroll" style="margin-top: 40px;">
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #0f172a; margin: 0;">
+            Ejemplos resueltos paso a paso
+        </h3>
+        <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Dificultad progresiva
+        </span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EJEMPLO 01: RAÍZ CUADRADA                  -->
+    <!-- ========================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 01</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Raíz cuadrada</span>
+                <span style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Básico</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 1. Raíz cuadrada</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\sqrt{144} + 5$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Identificar la raíz.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 0 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Debemos encontrar el número que multiplicado por sí mismo produce 144.
+                </p>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Determinar la raíz.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$12 \times 12 = 144$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Por lo tanto:</p>
+                <div style="text-align: center;"><span class="math-expr">$$\sqrt{144} = 12$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Sustituir.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$12 + 5$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Realizar la suma.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\boxed{17}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EJEMPLO 02: RAÍZ CÚBICA                    -->
+    <!-- ========================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 02</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Raíz cúbica</span>
+                <span style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Básico</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 2. Raíz cúbica</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\sqrt[3]{216} - 4$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Identificar el índice.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 0 40px; font-size: 0.95rem; line-height: 1.6;">
+                    El índice es 3, por lo que buscamos un número que multiplicado por sí mismo tres veces produzca 216.
+                </p>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Determinar la raíz cúbica.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$6 \times 6 \times 6 = 216$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Por lo tanto:</p>
+                <div style="text-align: center;"><span class="math-expr">$$\sqrt[3]{216} = 6$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Sustituir.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$6 - 4$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Realizar la resta.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\boxed{2}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EJEMPLO 03: RAÍZ DE UN PRODUCTO            -->
+    <!-- ========================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 03</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Raíz de un producto</span>
+                <span style="background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Intermedio</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 3. Raíz de un producto</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver aplicando propiedades:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\sqrt{9 \cdot 25} - 3$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Aplicar la propiedad de la raíz de un producto.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 8px 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Separamos el radicando en el producto de dos raíces independientes:
+                </p>
+                <div style="text-align: center;"><span class="math-expr">$$\sqrt{9 \cdot 25} = \sqrt{9} \cdot \sqrt{25}$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Calcular cada raíz y multiplicar.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$3 \cdot 5 = 15$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Sustituir en la expresión original.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$15 - 3$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Realizar la resta final.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\boxed{12}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================ -->
+    <!-- EJEMPLO 04: RAÍZ DE UN COCIENTE Y RAÍZ CUARTA     -->
+    <!-- ================================================ -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 04</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Cociente y raíz cuarta</span>
+                <span style="background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Intermedio</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 4. Raíz de un cociente y raíz cuarta</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\sqrt{\frac{100}{25}} + \sqrt[4]{81}$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Aplicar la propiedad de la raíz de un cociente.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 8px 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Distribuimos la raíz cuadrada al numerador y al denominador:
+                </p>
+                <div style="text-align: center;"><span class="math-expr">$$\sqrt{\frac{100}{25}} = \frac{\sqrt{100}}{\sqrt{25}} = \frac{10}{5} = 2$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Determinar la raíz cuarta.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 8px 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Buscamos un número que multiplicado por sí mismo cuatro veces sea igual a 81:
+                </p>
+                <div style="text-align: center;"><span class="math-expr">$$3 \times 3 \times 3 \times 3 = 81 \quad \Rightarrow \quad \sqrt[4]{81} = 3$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Sustituir ambos resultados.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$2 + 3$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Realizar la suma final.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\boxed{5}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================ -->
+    <!-- EJEMPLO 05: RAÍZ DE UNA POTENCIA Y VALOR ABSOLUTO -->
+    <!-- ================================================ -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 05</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Raíz de una potencia</span>
+                <span style="background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Intermedio-Alto</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 5. Raíz de una potencia con base negativa</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\sqrt{(-9)^2} - 2\sqrt[4]{16}$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Aplicar la propiedad de raíz de una potencia con índice par.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 8px 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Como el índice es par (2), aplicamos valor absoluto porque la raíz cuadrada principal siempre es no negativa:
+                </p>
+                <div style="text-align: center;"><span class="math-expr">$$\sqrt{(-9)^2} = |-9| = 9$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Calcular la raíz cuarta.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$2^4 = 16 \quad \Rightarrow \quad \sqrt[4]{16} = 2$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Sustituir y respetar la jerarquía (multiplicación antes que resta).</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$9 - 2(2) = 9 - 4$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Realizar la resta final.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\boxed{5}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- EJEMPLO 06: INTEGRACIÓN DE PROPIEDADES Y JERARQUÍA      -->
+    <!-- ====================================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 06</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Operación combinada</span>
+                <span style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Avanzado</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 6. Operación combinada con propiedades</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver combinando todas las propiedades estudiadas:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$2\sqrt{4 \cdot 9} - \sqrt{\frac{64}{4}} + \sqrt{(-3)^2}$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Resolver la raíz de un producto en el primer término.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\sqrt{4 \cdot 9} = \sqrt{4}\sqrt{9} = 2 \cdot 3 = 6$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Resolver la raíz de un cociente en el segundo término.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\sqrt{\frac{64}{4}} = \frac{\sqrt{64}}{\sqrt{4}} = \frac{8}{2} = 4$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Resolver la raíz de una potencia en el tercer término.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\sqrt{(-3)^2} = |-3| = 3$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">4</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 4. Sustituir y simplificar aplicando jerarquía de operaciones.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$2(6) - 4 + 3 = 12 - 4 + 3$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">5</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 5. Calcular el resultado final de izquierda a derecha.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\boxed{11}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- QUIZ INTERACTIVO SUBTEMA 4: RAÍCES (15 REACTIVOS)         -->
+<!-- ========================================================= -->
+<style>
+    .ia-quiz4-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 32px 28px;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+        margin-top: 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ia-quiz4-top-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #2563eb, #0284c7, #10b981);
+    }
+
+    .ia-quiz4-progress-track {
+        width: 100%;
+        height: 8px;
+        background: #f1f5f9;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 18px 0 22px 0;
+    }
+
+    .ia-quiz4-progress-fill {
+        height: 100%;
+        width: 6.66%;
+        background: linear-gradient(90deg, #2563eb, #0284c7);
+        border-radius: 999px;
+        transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .ia-quiz4-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+
+    .ia-quiz4-pill {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 0.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .ia-quiz4-pill:hover {
+        border-color: #93c5fd;
+        color: #2563eb;
+    }
+
+    .ia-quiz4-pill.active {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+        transform: scale(1.08);
+        box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+    }
+
+    .ia-quiz4-pill.completed {
+        background: #dcfce7;
+        border-color: #86efac;
+        color: #15803d;
+    }
+
+    .ia-quiz4-math-stage {
+        background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 28px 20px;
+        text-align: center;
+        margin-bottom: 24px;
+        min-height: 104px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.55rem;
+        color: #0f172a;
+        transition: all 0.25s ease;
+    }
+
+    .ia-quiz4-input-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+    }
+
+    .ia-quiz4-input {
+        width: 170px;
+        padding: 13px 18px;
+        font-size: 1.25rem;
+        font-weight: 800;
+        text-align: center;
+        color: #0f172a;
+        background: #ffffff;
+        border: 2px solid #cbd5e1;
+        border-radius: 12px;
+        outline: none;
+        transition: all 0.2s ease;
+    }
+
+    .ia-quiz4-input:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .ia-quiz4-input.is-correct {
+        border-color: #16a34a;
+        background: #f0fdf4;
+        color: #15803d;
+        animation: iaQuiz4Pop 0.35s ease;
+    }
+
+    .ia-quiz4-input.is-wrong {
+        border-color: #dc2626;
+        background: #fef2f2;
+        color: #b91c1c;
+        animation: iaQuiz4Shake 0.4s ease;
+    }
+
+    .ia-quiz4-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 22px;
+        font-size: 0.96rem;
+        font-weight: 700;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .ia-quiz4-btn-primary {
+        background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.22);
+    }
+
+    .ia-quiz4-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+    }
+
+    .ia-quiz4-btn-next {
+        background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(22, 163, 74, 0.24);
+    }
+
+    .ia-quiz4-btn-next:hover {
+        transform: translateY(-2px);
+    }
+
+    .ia-quiz4-btn-hint {
+        background: #f8fafc;
+        color: #475569;
+        border: 1px solid #cbd5e1;
+        padding: 10px 16px;
+        font-size: 0.88rem;
+    }
+
+    .ia-quiz4-btn-hint:hover {
+        background: #f1f5f9;
+        color: #0f172a;
+    }
+
+    .ia-quiz4-feedback {
+        border-radius: 12px;
+        padding: 14px 18px;
+        margin-top: 16px;
+        display: none;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.96rem;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .ia-quiz4-feedback.success {
+        display: flex;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        color: #166534;
+    }
+
+    .ia-quiz4-feedback.error {
+        display: flex;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #991b1b;
+    }
+
+    .ia-quiz4-hint-box {
+        display: none;
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: 12px;
+        padding: 14px 18px;
+        margin-top: 14px;
+        color: #92400e;
+        font-size: 0.94rem;
+        line-height: 1.6;
+        align-items: center;
+        gap: 12px;
+    }
+
+    @keyframes iaQuiz4Shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-8px); }
+        40% { transform: translateX(8px); }
+        60% { transform: translateX(-5px); }
+        80% { transform: translateX(5px); }
+    }
+
+    @keyframes iaQuiz4Pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.06); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes iaTrophyFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+</style>
+
+<div class="ia-quiz4-card animate-on-scroll" id="quizSubtema4Container">
+    <div class="ia-quiz4-top-accent"></div>
+
+    <!-- ENCABEZADO DEL QUIZ -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 1px solid #bfdbfe; color: #2563eb; display: flex; align-items: center; justify-content: center;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12h3l3 8 4-16h6"></path>
+                </svg>
+            </div>
+            <div>
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0;">Práctica del subtema 4</h3>
+                <p style="font-size: 0.88rem; color: #64748b; margin: 2px 0 0 0;">15 ejercicios progresivos de radicación y sus propiedades</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span id="q4StreakBadge" style="background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.8rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                Racha: <strong id="q4StreakCount">0</strong>
+            </span>
+            <span id="q4ScoreBadge" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; font-size: 0.8rem; font-weight: 700; padding: 5px 12px; border-radius: 20px;">
+                Completados: <strong id="q4CompletedCount">0</strong>/15
+            </span>
+        </div>
+    </div>
+
+    <!-- BARRA DE PROGRESO Y SELECTOR RÁPIDO -->
+    <div class="ia-quiz4-progress-track">
+        <div class="ia-quiz4-progress-fill" id="q4ProgressFill"></div>
+    </div>
+
+    <div class="ia-quiz4-pills" id="q4PillsContainer"></div>
+
+    <!-- CUERPO ACTIVO DEL EJERCICIO -->
+    <div id="q4ActiveBody">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+            <span id="q4QuestionCounter" style="font-size: 0.92rem; font-weight: 800; color: #1e293b;">
+                Ejercicio 1 de 15
+            </span>
+            <span id="q4DifficultyBadge" style="font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px;">
+                Nivel 1 · Básico
+            </span>
+        </div>
+
+        <!-- EXPRESIÓN MATEMÁTICA -->
+        <div class="ia-quiz4-math-stage" id="q4MathDisplay"></div>
+
+        <!-- ENTRADA DE RESPUESTA -->
+        <div class="ia-quiz4-input-row">
+            <input type="number" id="q4AnswerInput" class="ia-quiz4-input" placeholder="Resultado" onkeydown="if(event.key==='Enter') checkQuiz4Answer()">
+            
+            <button type="button" id="q4CheckBtn" class="ia-quiz4-btn ia-quiz4-btn-primary" onclick="checkQuiz4Answer()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Verificar
+            </button>
+
+            <button type="button" id="q4NextBtn" class="ia-quiz4-btn ia-quiz4-btn-next" style="display: none;" onclick="nextQuiz4Question()">
+                Siguiente
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- BOTÓN DE PISTA -->
+        <div style="text-align: center;">
+            <button type="button" class="ia-quiz4-btn ia-quiz4-btn-hint" onclick="toggleQuiz4Hint()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Ver pista / procedimiento
+            </button>
+        </div>
+
+        <!-- CONTENEDOR DE PISTA -->
+        <div class="ia-quiz4-hint-box" id="q4HintBox">
+            <svg width="20" height="20" style="min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h6"></path>
+                <path d="M10 22h4"></path>
+                <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+            </svg>
+            <span id="q4HintText"></span>
+        </div>
+
+        <!-- RETROALIMENTACIÓN -->
+        <div class="ia-quiz4-feedback" id="q4FeedbackBox">
+            <div id="q4FeedbackIcon" style="display: flex; align-items: center;"></div>
+            <div id="q4FeedbackText"></div>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE VICTORIA FINAL -->
+    <div id="q4VictoryScreen" style="display: none; text-align: center; padding: 32px 16px;">
+        <div style="width: 72px; height: 72px; border-radius: 20px; background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); border: 1px solid #86efac; color: #16a34a; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px auto; animation: iaTrophyFloat 2.4s infinite ease-in-out;">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+            </svg>
+        </div>
+
+        <h4 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">
+            ¡Subtema 4 dominado por completo!
+        </h4>
+        <p style="font-size: 1rem; color: #475569; max-width: 520px; margin: 0 auto 24px auto; line-height: 1.6;">
+            Has resuelto correctamente los <strong>15 ejercicios</strong> de raíces cuadradas, cúbicas, cuartas y sus propiedades fundamentales.
+        </p>
+
+        <button type="button" class="ia-quiz4-btn ia-quiz4-btn-primary" onclick="restartQuiz4()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+            Practicar de nuevo
+        </button>
+    </div>
+</div>
+
+<script>
+// =========================================================
+// RESPALDO DE SONIDOS WEB AUDIO API (SI NO EXISTEN GLOBALMENTE)
+// =========================================================
+(function ensureAudioHelpers() {
+    if (typeof window.playCorrectSound !== "function") {
+        window.playCorrectSound = function () {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = "sine";
+                osc.frequency.setValueAtTime(523.25, ctx.currentTime);
+                osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.09);
+                gain.gain.setValueAtTime(0.18, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.32);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.32);
+            } catch (e) {}
+        };
+    }
+
+    if (typeof window.playIncorrectSound !== "function") {
+        window.playIncorrectSound = function () {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = "sawtooth";
+                osc.frequency.setValueAtTime(190, ctx.currentTime);
+                osc.frequency.linearRampToValueAtTime(135, ctx.currentTime + 0.25);
+                gain.gain.setValueAtTime(0.14, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.28);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.28);
+            } catch (e) {}
+        };
+    }
+
+    if (typeof window.playVictorySound !== "function") {
+        window.playVictorySound = function () {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const notes = [523.25, 659.25, 783.99, 1046.50];
+                notes.forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = "triangle";
+                    osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.11);
+                    gain.gain.setValueAtTime(0.18, ctx.currentTime + idx * 0.11);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.11 + 0.38);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(ctx.currentTime + idx * 0.11);
+                    osc.stop(ctx.currentTime + idx * 0.11 + 0.38);
+                });
+            } catch (e) {}
+        };
+    }
+})();
+
+// =========================================================
+// BANCO DE 15 EJERCICIOS ORDENADOS DE FÁCIL A DIFÍCIL
+// =========================================================
+const quiz4Data = [
+    // NIVEL 1: BÁSICO (5 originales de tu imagen)
+    {
+        latex: "\\sqrt{81}",
+        fallback: "√81",
+        answer: 9,
+        level: "Nivel 1 · Básico",
+        badgeBg: "#f0fdf4", badgeColor: "#16a34a", badgeBorder: "#bbf7d0",
+        hint: "Busca el número positivo que multiplicado por sí mismo dé 81: 9 × 9 = 81."
+    },
+    {
+        latex: "\\sqrt{169} + 3",
+        fallback: "√169 + 3",
+        answer: 16,
+        level: "Nivel 1 · Básico",
+        badgeBg: "#f0fdf4", badgeColor: "#16a34a", badgeBorder: "#bbf7d0",
+        hint: "Primero calcula √169 = 13 (ya que 13 × 13 = 169). Después suma 13 + 3."
+    },
+    {
+        latex: "\\sqrt[3]{125} + 7",
+        fallback: "∛125 + 7",
+        answer: 12,
+        level: "Nivel 1 · Básico",
+        badgeBg: "#f0fdf4", badgeColor: "#16a34a", badgeBorder: "#bbf7d0",
+        hint: "El índice es 3: 5 × 5 × 5 = 125, así que ∛125 = 5. Luego suma 5 + 7."
+    },
+    {
+        latex: "\\sqrt{64} + \\sqrt{36}",
+        fallback: "√64 + √36",
+        answer: 14,
+        level: "Nivel 1 · Básico",
+        badgeBg: "#f0fdf4", badgeColor: "#16a34a", badgeBorder: "#bbf7d0",
+        hint: "Resuelve cada raíz por separado: √64 = 8 y √36 = 6. Finalmente suma 8 + 6."
+    },
+    {
+        latex: "\\sqrt[3]{343} - \\sqrt{25}",
+        fallback: "∛343 − √25",
+        answer: 2,
+        level: "Nivel 1 · Básico",
+        badgeBg: "#f0fdf4", badgeColor: "#16a34a", badgeBorder: "#bbf7d0",
+        hint: "Como 7³ = 343, ∛343 = 7. Además √25 = 5. Resta 7 − 5."
+    },
+
+    // NIVEL 2: INTERMEDIO (Raíz cuarta, coeficientes y raíz de producto)
+    {
+        latex: "\\sqrt[4]{16} + \\sqrt{49}",
+        fallback: "⁴√16 + √49",
+        answer: 9,
+        level: "Nivel 2 · Intermedio",
+        badgeBg: "#f0f9ff", badgeColor: "#0284c7", badgeBorder: "#bae6fd",
+        hint: "Para la raíz cuarta busca un número que multiplicado 4 veces dé 16 (2⁴ = 16). Luego suma √49 = 7."
+    },
+    {
+        latex: "3\\sqrt{16} - 2\\sqrt[3]{27}",
+        fallback: "3√16 − 2∛27",
+        answer: 6,
+        level: "Nivel 2 · Intermedio",
+        badgeBg: "#f0f9ff", badgeColor: "#0284c7", badgeBorder: "#bae6fd",
+        hint: "Calcula primero las raíces: √16 = 4 y ∛27 = 3. Sustituye: 3(4) − 2(3) = 12 − 6."
+    },
+    {
+        latex: "\\sqrt{4 \\cdot 36} - 5",
+        fallback: "√(4 · 36) − 5",
+        answer: 7,
+        level: "Nivel 2 · Intermedio",
+        badgeBg: "#f0f9ff", badgeColor: "#0284c7", badgeBorder: "#bae6fd",
+        hint: "Aplica la raíz de un producto: √(4 · 36) = √4 · √36 = 2 · 6 = 12. Después resta 5."
+    },
+    {
+        latex: "\\sqrt[3]{8 \\cdot 27} + 4",
+        fallback: "∛(8 · 27) + 4",
+        answer: 10,
+        level: "Nivel 2 · Intermedio",
+        badgeBg: "#f0f9ff", badgeColor: "#0284c7", badgeBorder: "#bae6fd",
+        hint: "Separa la raíz cúbica del producto: ∛8 · ∛27 = 2 · 3 = 6. Luego suma 6 + 4."
+    },
+
+    // NIVEL 3: INTERMEDIO-ALTO (Raíz de un cociente y raíz de potencia / valor absoluto)
+    {
+        latex: "\\sqrt{\\frac{144}{9}} + \\sqrt{25}",
+        fallback: "√(144 / 9) + √25",
+        answer: 9,
+        level: "Nivel 3 · Intermedio-Alto",
+        badgeBg: "#eef2ff", badgeColor: "#4f46e5", badgeBorder: "#c7d2fe",
+        hint: "Aplica raíz de un cociente: √144 / √9 = 12 / 3 = 4. Después suma √25 = 5."
+    },
+    {
+        latex: "\\sqrt[3]{\\frac{64}{8}} + \\sqrt[4]{81}",
+        fallback: "∛(64 / 8) + ⁴√81",
+        answer: 5,
+        level: "Nivel 3 · Intermedio-Alto",
+        badgeBg: "#eef2ff", badgeColor: "#4f46e5", badgeBorder: "#c7d2fe",
+        hint: "En el cociente: ∛64 / ∛8 = 4 / 2 = 2. Además ⁴√81 = 3 (ya que 3⁴ = 81). Suma 2 + 3."
+    },
+    {
+        latex: "\\sqrt{(-7)^2} + 3",
+        fallback: "√((−7)²) + 3",
+        answer: 10,
+        level: "Nivel 3 · Intermedio-Alto",
+        badgeBg: "#eef2ff", badgeColor: "#4f46e5", badgeBorder: "#c7d2fe",
+        hint: "Recuerda la propiedad de raíz de una potencia par: √((-7)²) = |-7| = 7 (siempre positiva). Suma 7 + 3."
+    },
+    {
+        latex: "\\sqrt{(-8)^2} - \\sqrt[4]{(-2)^4}",
+        fallback: "√((−8)²) − ⁴√((−2)⁴)",
+        answer: 6,
+        level: "Nivel 3 · Intermedio-Alto",
+        badgeBg: "#eef2ff", badgeColor: "#4f46e5", badgeBorder: "#c7d2fe",
+        hint: "Ambos índices son pares, por lo que aplicamos valor absoluto: |-8| − |-2| = 8 − 2."
+    },
+
+    // NIVEL 4: AVANZADO (Integración total de propiedades y jerarquía)
+    {
+        latex: "2\\sqrt{9 \\cdot 16} - \\sqrt{\\frac{100}{4}} + \\sqrt{(-4)^2}",
+        fallback: "2√(9 · 16) − √(100 / 4) + √((−4)²)",
+        answer: 23,
+        level: "Nivel 4 · Avanzado",
+        badgeBg: "#fef2f2", badgeColor: "#dc2626", badgeBorder: "#fecaca",
+        hint: "Resuelve por términos: 2(√9 · √16) = 2(3 · 4) = 24; √100 / √4 = 10 / 2 = 5; √((-4)²) = 4. Opera: 24 − 5 + 4."
+    },
+    {
+        latex: "\\sqrt{16 + \\sqrt{81}} + \\sqrt[3]{\\frac{216}{27}} - \\sqrt{(-3)^2}",
+        fallback: "√(16 + √81) + ∛(216 / 27) − √((−3)²)",
+        answer: 4,
+        level: "Nivel 4 · Avanzado",
+        badgeBg: "#fef2f2", badgeColor: "#dc2626", badgeBorder: "#fecaca",
+        hint: "1) Raíz anidada: √(16 + 9) = √25 = 5. 2) Cociente cúbico: ∛216 / ∛27 = 6 / 3 = 2. 3) Potencia par: |-3| = 3. Calcula: 5 + 2 − 3."
+    }
+];
+
+let q4CurrentIndex = 0;
+let q4Completed = new Array(quiz4Data.length).fill(false);
+let q4Streak = 0;
+
+function renderQuiz4Pills() {
+    const container = document.getElementById("q4PillsContainer");
+    if (!container) return;
+    container.innerHTML = "";
+
+    quiz4Data.forEach((_, idx) => {
+        const pill = document.createElement("button");
+        pill.type = "button";
+        pill.className = "ia-quiz4-pill";
+        if (idx === q4CurrentIndex) pill.classList.add("active");
+        if (q4Completed[idx]) pill.classList.add("completed");
+        pill.innerText = idx + 1;
+        pill.title = `Ir al ejercicio ${idx + 1}`;
+        pill.onclick = () => {
+            q4CurrentIndex = idx;
+            loadQuiz4Question();
+        };
+        container.appendChild(pill);
+    });
+}
+
+function loadQuiz4Question() {
+    const item = quiz4Data[q4CurrentIndex];
+    const total = quiz4Data.length;
+
+    document.getElementById("q4QuestionCounter").innerText = `Ejercicio ${q4CurrentIndex + 1} de ${total}`;
+
+    const diffBadge = document.getElementById("q4DifficultyBadge");
+    diffBadge.innerText = item.level;
+    diffBadge.style.background = item.badgeBg;
+    diffBadge.style.color = item.badgeColor;
+    diffBadge.style.border = `1px solid ${item.badgeBorder}`;
+
+    const mathDisplay = document.getElementById("q4MathDisplay");
+    if (typeof window.katex !== "undefined") {
+        window.katex.render(item.latex, mathDisplay, {
+            throwOnError: false,
+            displayMode: true
+        });
+    } else {
+        mathDisplay.innerHTML = `<strong style="font-size: 1.6rem;">${item.fallback}</strong>`;
+    }
+
+    const input = document.getElementById("q4AnswerInput");
+    input.value = q4Completed[q4CurrentIndex] ? item.answer : "";
+    input.classList.remove("is-correct", "is-wrong");
+    if (q4Completed[q4CurrentIndex]) input.classList.add("is-correct");
+
+    const checkBtn = document.getElementById("q4CheckBtn");
+    const nextBtn = document.getElementById("q4NextBtn");
+    if (q4Completed[q4CurrentIndex]) {
+        checkBtn.style.display = "none";
+        nextBtn.style.display = "inline-flex";
+    } else {
+        checkBtn.style.display = "inline-flex";
+        nextBtn.style.display = "none";
+    }
+
+    const feedbackBox = document.getElementById("q4FeedbackBox");
+    feedbackBox.className = "ia-quiz4-feedback";
+    feedbackBox.style.display = "none";
+
+    const hintBox = document.getElementById("q4HintBox");
+    hintBox.style.display = "none";
+    document.getElementById("q4HintText").innerText = item.hint;
+
+    const completedCount = q4Completed.filter(Boolean).length;
+    document.getElementById("q4CompletedCount").innerText = completedCount;
+    document.getElementById("q4ProgressFill").style.width = `${((q4CurrentIndex + 1) / total) * 100}%`;
+
+    renderQuiz4Pills();
+    input.focus();
+}
+
+function toggleQuiz4Hint() {
+    const hintBox = document.getElementById("q4HintBox");
+    hintBox.style.display = hintBox.style.display === "flex" ? "none" : "flex";
+}
+
+function checkQuiz4Answer() {
+    const input = document.getElementById("q4AnswerInput");
+    const userVal = parseFloat(input.value);
+    const item = quiz4Data[q4CurrentIndex];
+    const feedbackBox = document.getElementById("q4FeedbackBox");
+    const feedbackIcon = document.getElementById("q4FeedbackIcon");
+    const feedbackText = document.getElementById("q4FeedbackText");
+
+    input.classList.remove("is-correct", "is-wrong");
+    void input.offsetWidth; // Reinicia animación CSS
+
+    if (isNaN(userVal)) {
+        playIncorrectSound();
+        input.classList.add("is-wrong");
+        feedbackBox.className = "ia-quiz4-feedback error";
+        feedbackIcon.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`;
+        feedbackText.innerText = "Escribe un resultado numérico antes de verificar.";
+        return;
+    }
+
+    if (userVal === item.answer) {
+        playCorrectSound();
+        input.classList.add("is-correct");
+
+        if (!q4Completed[q4CurrentIndex]) {
+            q4Completed[q4CurrentIndex] = true;
+            q4Streak++;
+            document.getElementById("q4StreakCount").innerText = q4Streak;
+        }
+
+        const completedCount = q4Completed.filter(Boolean).length;
+        document.getElementById("q4CompletedCount").innerText = completedCount;
+
+        feedbackBox.className = "ia-quiz4-feedback success";
+        feedbackIcon.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+        feedbackText.innerHTML = `<strong>¡Excelente!</strong> Respuesta correcta (${item.answer}).`;
+
+        document.getElementById("q4CheckBtn").style.display = "none";
+        const nextBtn = document.getElementById("q4NextBtn");
+        nextBtn.style.display = "inline-flex";
+        nextBtn.innerHTML = completedCount === quiz4Data.length
+            ? `Finalizar práctica <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`
+            : `Siguiente <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+
+        renderQuiz4Pills();
+    } else {
+        playIncorrectSound();
+        q4Streak = 0;
+        document.getElementById("q4StreakCount").innerText = q4Streak;
+        input.classList.add("is-wrong");
+
+        feedbackBox.className = "ia-quiz4-feedback error";
+        feedbackIcon.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`;
+        feedbackText.innerHTML = `<strong>Incorrecto.</strong> Revisa el índice de cada raíz o apóyate en el botón de pista.`;
+    }
+}
+
+function nextQuiz4Question() {
+    const allDone = q4Completed.every(Boolean);
+    if (allDone) {
+        playVictorySound();
+        document.getElementById("q4ActiveBody").style.display = "none";
+        document.getElementById("q4PillsContainer").style.display = "none";
+        document.getElementById("q4ProgressFill").style.width = "100%";
+        document.getElementById("q4VictoryScreen").style.display = "block";
+        return;
+    }
+
+    // Buscar el siguiente ejercicio pendiente o avanzar al siguiente índice
+    if (q4CurrentIndex < quiz4Data.length - 1) {
+        q4CurrentIndex++;
+    } else {
+        q4CurrentIndex = q4Completed.findIndex(done => !done);
+    }
+    loadQuiz4Question();
+}
+
+function restartQuiz4() {
+    q4CurrentIndex = 0;
+    q4Completed = new Array(quiz4Data.length).fill(false);
+    q4Streak = 0;
+    document.getElementById("q4StreakCount").innerText = "0";
+    document.getElementById("q4VictoryScreen").style.display = "none";
+    document.getElementById("q4ActiveBody").style.display = "block";
+    document.getElementById("q4PillsContainer").style.display = "flex";
+    loadQuiz4Question();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("quizSubtema4Container")) {
+        loadQuiz4Question();
+    }
+});
+</script>
+
+<!-- ESTILOS PARA TARJETAS DE INTEGRACIÓN (IDENTIDAD INGENIA & APRENDE) -->
+<style>
+    .ia-pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .ia-pillar-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 18px 18px;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .ia-pillar-card:hover {
+        transform: translateY(-3px);
+        border-color: #0f172a;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .ia-pillar-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        border-radius: 10px;
+        background: #0f172a;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.22s ease;
+    }
+
+    .ia-pillar-card:hover .ia-pillar-icon {
+        transform: scale(1.1) rotate(-4deg);
+        background: #2563eb;
+    }
+
+    .ia-integration-banner {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-left: 4px solid #0f172a;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-top: 22px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        transition: border-left-color 0.25s ease, background-color 0.25s ease;
+    }
+
+    .ia-integration-banner:hover {
+        border-left-color: #2563eb;
+        background: #f1f5f9;
+    }
+
+    .ia-sync-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        border-radius: 10px;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        color: #0f172a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ia-integration-banner:hover .ia-sync-icon svg {
+        animation: iaSpinOnce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        color: #2563eb;
+    }
+
+    @keyframes iaSpinOnce {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(180deg); }
+    }
+</style>
+
+<!-- SECCIÓN 5: OPERACIONES COMBINADAS -->
+<section class="lesson-section animate-on-scroll" style="margin-top: 48px;">
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 24px;">
+        <h2 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin: 0;">
+            5. Operaciones combinadas
+        </h2>
+        <span style="background: #0f172a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.6px;">
+            Síntesis del módulo
+        </span>
+    </div>
+
+    <h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 16px;">
+        5.1 ¿Qué son las operaciones combinadas?
+    </h3>
+    
+    <p style="font-size: 1.05rem; color: #334155; line-height: 1.75; margin-bottom: 14px;">
+        Las operaciones combinadas son expresiones matemáticas que contienen <strong>dos o más operaciones diferentes</strong>.
+    </p>
+
+    <p style="font-size: 1.05rem; color: #334155; line-height: 1.75; margin-bottom: 22px;">
+        Para resolverlas debemos aplicar simultáneamente las reglas de <strong>jerarquía</strong>, <strong>signos de agrupación</strong>, <strong>potencias</strong> y <strong>raíces</strong>.
+    </p>
+
+    <!-- TARJETA PRINCIPAL DE LOS 4 PILARES INTEGRADOS -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);">
+        
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                Reglas simultáneas
+            </span>
+            <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">
+                4 fundamentos clave
+            </span>
+        </div>
+
+        <div class="ia-pillar-grid">
+            <!-- Pilar 1 -->
+            <div class="ia-pillar-card">
+                <div class="ia-pillar-icon">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                </div>
+                <div>
+                    <span style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">Subtema 1</span>
+                    <strong style="font-size: 0.98rem; color: #0f172a; display: block; margin-top: 2px;">Jerarquía</strong>
+                    <span style="font-size: 0.84rem; color: #475569; line-height: 1.4; display: block; margin-top: 3px;">Prioridad estricta en el orden de ejecución.</span>
+                </div>
+            </div>
+
+            <!-- Pilar 2 -->
+            <div class="ia-pillar-card">
+                <div class="ia-pillar-icon">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"></path>
+                        <path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">Subtema 2</span>
+                    <strong style="font-size: 0.98rem; color: #0f172a; display: block; margin-top: 2px;">Agrupación</strong>
+                    <span style="font-size: 0.84rem; color: #475569; line-height: 1.4; display: block; margin-top: 3px;">Paréntesis, corchetes y llaves de adentro hacia afuera.</span>
+                </div>
+            </div>
+
+            <!-- Pilar 3 -->
+            <div class="ia-pillar-card">
+                <div class="ia-pillar-icon">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19L12 11"></path>
+                        <path d="M4 11L12 19"></path>
+                        <path d="M16 5h4v4"></path>
+                        <path d="M16 9l4-4"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">Subtema 3</span>
+                    <strong style="font-size: 0.98rem; color: #0f172a; display: block; margin-top: 2px;">Potencias</strong>
+                    <span style="font-size: 0.84rem; color: #475569; line-height: 1.4; display: block; margin-top: 3px;">Exponentes, leyes de signos y propiedades.</span>
+                </div>
+            </div>
+
+            <!-- Pilar 4 -->
+            <div class="ia-pillar-card">
+                <div class="ia-pillar-icon">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 13h3l3 7 4-15h8"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">Subtema 4</span>
+                    <strong style="font-size: 0.98rem; color: #0f172a; display: block; margin-top: 2px;">Raíces</strong>
+                    <span style="font-size: 0.84rem; color: #475569; line-height: 1.4; display: block; margin-top: 3px;">Radicación exacta, producto, cociente y valor absoluto.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTA DE INTEGRACIÓN -->
+        <div class="ia-integration-banner">
+            <div class="ia-sync-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <polyline points="1 20 1 14 7 14"></polyline>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+            </div>
+            <p style="margin: 0; font-size: 0.96rem; font-weight: 600; color: #0f172a; line-height: 1.5;">
+                Este subtema integra los conocimientos anteriores para resolver expresiones aritméticas completas con precisión.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ESTILOS DE PASOS IDENTIDAD INGENIA & APRENDE (RESPALDO) -->
+<style>
+    .ia-step-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 18px 22px;
+        transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .ia-step-card:hover {
+        transform: translateX(4px);
+        border-color: #cbd5e1;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    .ia-step-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    .ia-step-num {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background: #0f172a;
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .ia-step-card:hover .ia-step-num {
+        transform: scale(1.12);
+        background: #2563eb;
+    }
+
+    .ia-step-final {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 14px;
+        padding: 18px 22px;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .ia-step-final:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(22, 163, 74, 0.08);
+    }
+
+    .ia-step-num-final {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background: #16a34a;
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+    }
+</style>
+
+<!-- SUBSECCIÓN: EJEMPLOS RESUELTOS DE OPERACIONES COMBINADAS -->
+<div class="animate-on-scroll" style="margin-top: 40px;">
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #0f172a; margin: 0;">
+            Ejemplos resueltos paso a paso
+        </h3>
+        <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Dificultad progresiva
+        </span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EJEMPLO 01: OPERACIONES COMBINADAS ENTEROS -->
+    <!-- ========================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 01</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Números enteros</span>
+                <span style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Básico</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 1. Operaciones combinadas con enteros</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$18 + 3^2 \times (10 - 6) - 8$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Resolver los signos de agrupación.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$10 - 6 = 4$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">La expresión queda:</p>
+                <div style="text-align: center;"><span class="math-expr">$$18 + 3^2 \times 4 - 8$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Resolver las potencias.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$3^2 = 9$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Sustituimos:</p>
+                <div style="text-align: center;"><span class="math-expr">$$18 + 9 \times 4 - 8$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Resolver la multiplicación.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$9 \times 4 = 36$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Obtenemos:</p>
+                <div style="text-align: center;"><span class="math-expr">$$18 + 36 - 8$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Resolver sumas y restas de izquierda a derecha.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$18 + 36 = 54 \quad \Rightarrow \quad 54 - 8 = 46$$</span></div>
+                <div style="text-align: center; margin-top: 8px;"><span class="math-expr">$$\boxed{46}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================== -->
+    <!-- EJEMPLO 02: RAÍCES, POTENCIAS Y DECIMALES           -->
+    <!-- =================================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 02</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Raíces, potencias y decimales</span>
+                <span style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Básico</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 2. Operaciones combinadas con raíces, potencias y decimales</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\frac{3.5 + 1.5}{2} + \sqrt{49} \times 2^2$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Resolver la suma del numerador.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$3.5 + 1.5 = 5$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">La expresión queda:</p>
+                <div style="text-align: center;"><span class="math-expr">$$\frac{5}{2} + \sqrt{49} \times 2^2$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Resolver la raíz y la potencia.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$\sqrt{49} = 7 \qquad \text{y} \qquad 2^2 = 4$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Sustituimos:</p>
+                <div style="text-align: center;"><span class="math-expr">$$\frac{5}{2} + 7 \times 4$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Resolver la división y la multiplicación.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$5 \div 2 = 2.5 \qquad \text{y} \qquad 7 \times 4 = 28$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">La expresión queda:</p>
+                <div style="text-align: center;"><span class="math-expr">$$2.5 + 28$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Realizar la suma.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\boxed{30.5}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================== -->
+    <!-- EJEMPLO 03: SIGNOS DE AGRUPACIÓN ANIDADOS (NUEVO)   -->
+    <!-- =================================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 03</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Corchetes y paréntesis</span>
+                <span style="background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Intermedio</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 3. Signos de agrupación anidados y potencias</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver de adentro hacia afuera:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$40 - 2 \times \left[ 15 - (3^2 - 4) \right] + \sqrt{16}$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Resolver el paréntesis interior y su potencia.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$3^2 - 4 = 9 - 4 = 5$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">La expresión queda:</p>
+                <div style="text-align: center;"><span class="math-expr">$$40 - 2 \times [15 - 5] + \sqrt{16}$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Resolver el corchete.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$15 - 5 = 10$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Sustituimos:</p>
+                <div style="text-align: center;"><span class="math-expr">$$40 - 2 \times 10 + \sqrt{16}$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Calcular la raíz y la multiplicación.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$\sqrt{16} = 4 \qquad \text{y} \qquad 2 \times 10 = 20$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Obtenemos:</p>
+                <div style="text-align: center;"><span class="math-expr">$$40 - 20 + 4$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Resolver sumas y restas de izquierda a derecha.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$40 - 20 = 20 \quad \Rightarrow \quad 20 + 4 = 24$$</span></div>
+                <div style="text-align: center; margin-top: 8px;"><span class="math-expr">$$\boxed{24}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================== -->
+    <!-- EJEMPLO 04: POTENCIAS CON BASE NEGATIVA Y RAÍZ 3    -->
+    <!-- =================================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 04</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Signos en potencias y raíz cúbica</span>
+                <span style="background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Intermedio</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 4. Potencias con base negativa y raíz cúbica</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver cuidando los signos de cada potencia:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$(-3)^2 + \sqrt[3]{64} \times (12 \div 4) - 5^2$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Resolver el paréntesis de división.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$12 \div 4 = 3$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Evaluar las potencias y la raíz cúbica.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 8px 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Observa que en el primer término el signo negativo está dentro del paréntesis, mientras que en el último término el signo resta a la potencia:
+                </p>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$(-3)^2 = 9, \qquad \sqrt[3]{64} = 4, \qquad 5^2 = 25$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">La expresión queda:</p>
+                <div style="text-align: center;"><span class="math-expr">$$9 + 4 \times 3 - 25$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Resolver la multiplicación.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$4 \times 3 = 12$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Sustituimos:</p>
+                <div style="text-align: center;"><span class="math-expr">$$9 + 12 - 25$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Resolver sumas y restas de izquierda a derecha.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$9 + 12 = 21 \quad \Rightarrow \quad 21 - 25 = -4$$</span></div>
+                <div style="text-align: center; margin-top: 8px;"><span class="math-expr">$$\boxed{-4}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================== -->
+    <!-- EJEMPLO 05: PROPIEDADES DE POTENCIAS Y RAÍCES       -->
+    <!-- =================================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 05</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Leyes de exponentes y radicales</span>
+                <span style="background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Intermedio-Alto</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 5. Simplificación usando propiedades de potencias y raíces</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver aplicando propiedades algebraicas:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\frac{2^5}{2^3} + \sqrt{9 \cdot 16} - \left(\frac{1}{2}\right)^{-2}$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Aplicar división de potencias con la misma base.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\frac{2^5}{2^3} = 2^{5-3} = 2^2 = 4$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Aplicar la raíz de un producto en el segundo término.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$\sqrt{9 \cdot 16} = \sqrt{9} \cdot \sqrt{16} = 3 \cdot 4 = 12$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Resolver la potencia con exponente negativo.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 8px 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Invertimos la fracción para convertir el exponente a positivo:
+                </p>
+                <div style="text-align: center;"><span class="math-expr">$$\left(\frac{1}{2}\right)^{-2} = 2^2 = 4$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Sustituir y simplificar de izquierda a derecha.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$4 + 12 - 4 = 16 - 4 = 12$$</span></div>
+                <div style="text-align: center; margin-top: 8px;"><span class="math-expr">$$\boxed{12}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================== -->
+    <!-- EJEMPLO 06: LLAVES, CORCHETES Y VALOR ABSOLUTO      -->
+    <!-- =================================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); margin-bottom: 24px;">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 06</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Triple agrupación y raíces</span>
+                <span style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Avanzado</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 6. Llaves, corchetes, paréntesis y raíz de potencia par</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver paso a paso desde el nivel más interno:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$3 \times \left\{ 2^3 + \left[ \sqrt{81} - (2 + 1)^2 \right] + \sqrt{(-5)^2} \right\}$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Resolver el paréntesis interior y las raíces directas.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$(2 + 1)^2 = 3^2 = 9, \qquad \sqrt{81} = 9, \qquad \sqrt{(-5)^2} = |-5| = 5$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">La expresión queda:</p>
+                <div style="text-align: center;"><span class="math-expr">$$3 \times \left\{ 2^3 + [9 - 9] + 5 \right\}$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Resolver el corchete y la potencia cúbica.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$[9 - 9] = 0 \qquad \text{y} \qquad 2^3 = 8$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">Sustituimos dentro de las llaves:</p>
+                <div style="text-align: center;"><span class="math-expr">$$3 \times \{ 8 + 0 + 5 \}$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Sumar el contenido de las llaves.</span>
+                </div>
+                <div style="text-align: center; margin-top: 6px;"><span class="math-expr">$$8 + 0 + 5 = 13$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Multiplicar por el factor exterior.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$3 \times 13 = 39$$</span></div>
+                <div style="text-align: center; margin-top: 8px;"><span class="math-expr">$$\boxed{39}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================== -->
+    <!-- EJEMPLO 07: EXPRESIÓN FRACCIONARIA INTEGRADORA      -->
+    <!-- =================================================== -->
+    <div class="example-box animate-on-scroll" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);">
+        <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+            <span class="example-number-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">EJEMPLO 07</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Reto integrador</span>
+                <span style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Nivel Avanzado</span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Ejemplo 7. Expresión fraccionaria con raíces anidadas, decimales y signos</h4>
+        <p style="font-size: 0.95rem; color: #475569; margin: 0 0 14px 0;">Resolver integrando todas las reglas del módulo:</p>
+
+        <div class="example-math-display" style="text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+            <span class="math-expr">$$\frac{\sqrt{19 + \sqrt{36}} + 3.5 \times 2}{7 - 2^2} + \sqrt[3]{-27} \times (-2)$$</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">1</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 1. Simplificar el numerador (raíz anidada y producto decimal).</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$\sqrt{19 + \sqrt{36}} = \sqrt{19 + 6} = \sqrt{25} = 5 \qquad \text{y} \qquad 3.5 \times 2 = 7$$</span></div>
+                <p style="color: #475569; margin: 4px 0 6px 40px; font-size: 0.95rem;">El numerador vale:</p>
+                <div style="text-align: center;"><span class="math-expr">$$5 + 7 = 12$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">2</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 2. Simplificar el denominador y dividir la fracción.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$7 - 2^2 = 7 - 4 = 3 \quad \Rightarrow \quad \frac{12}{3} = 4$$</span></div>
+            </div>
+
+            <div class="ia-step-card animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num">3</span>
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.98rem;">Paso 3. Resolver la raíz cúbica negativa y aplicar ley de signos.</span>
+                </div>
+                <p style="color: #475569; margin: 0 0 8px 40px; font-size: 0.95rem; line-height: 1.6;">
+                    Como el índice es impar (3), la raíz conserva el signo negativo:
+                </p>
+                <div style="text-align: center;"><span class="math-expr">$$\sqrt[3]{-27} = -3 \quad \Rightarrow \quad (-3) \times (-2) = +6$$</span></div>
+            </div>
+
+            <div class="ia-step-final animate-on-scroll">
+                <div class="ia-step-header">
+                    <span class="ia-step-num-final">4</span>
+                    <span style="font-weight: 700; color: #166534; font-size: 0.98rem;">Paso 4. Sumar ambos términos finales.</span>
+                </div>
+                <div style="text-align: center; margin: 8px 0;"><span class="math-expr">$$4 + 6 = 10$$</span></div>
+                <div style="text-align: center; margin-top: 8px;"><span class="math-expr">$$\boxed{10}$$</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================================================================== -->
+<!-- PRÁCTICA INTERACTIVA DEL SUBTEMA 5: OPERACIONES COMBINADAS (15 REAC.) -->
+<!-- ===================================================================== -->
+<style>
+    .ia-quiz5-wrapper {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 32px;
+        margin-top: 44px;
+        box-shadow: 0 8px 28px rgba(15, 23, 42, 0.05);
+        font-family: inherit;
+    }
+
+    .ia-q5-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 18px;
+        margin-bottom: 22px;
+    }
+
+    .ia-q5-title-group {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .ia-q5-badge-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        border-radius: 12px;
+        background: #0f172a;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease;
+    }
+
+    .ia-quiz5-wrapper:hover .ia-q5-badge-icon {
+        transform: rotate(-6deg) scale(1.06);
+        background: #2563eb;
+    }
+
+    .ia-q5-stats {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .ia-q5-stat-pill {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #0f172a;
+        font-size: 0.84rem;
+        font-weight: 700;
+        padding: 6px 14px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* Barra de progreso */
+    .ia-q5-progress-track {
+        width: 100%;
+        height: 8px;
+        background: #f1f5f9;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .ia-q5-progress-fill {
+        height: 100%;
+        width: 6.66%;
+        background: linear-gradient(90deg, #0f172a 0%, #2563eb 100%);
+        border-radius: 999px;
+        transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Selector rápido de reactivos 1 - 15 */
+    .ia-q5-pills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .ia-q5-pill {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        color: #334155;
+        font-size: 0.84rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .ia-q5-pill:hover {
+        transform: translateY(-2px);
+        border-color: #0f172a;
+    }
+
+    .ia-q5-pill.active {
+        background: #0f172a;
+        color: #ffffff;
+        border-color: #0f172a;
+        transform: scale(1.08);
+        box-shadow: 0 3px 10px rgba(15, 23, 42, 0.22);
+    }
+
+    .ia-q5-pill.correct {
+        background: #f0fdf4;
+        color: #16a34a;
+        border-color: #86efac;
+    }
+
+    .ia-q5-pill.correct.active {
+        background: #16a34a;
+        color: #ffffff;
+        border-color: #16a34a;
+    }
+
+    .ia-q5-pill.incorrect {
+        background: #fef2f2;
+        color: #dc2626;
+        border-color: #fca5a5;
+    }
+
+    .ia-q5-pill.incorrect.active {
+        background: #dc2626;
+        color: #ffffff;
+        border-color: #dc2626;
+    }
+
+    /* Tarjeta de ejercicio actual */
+    .ia-q5-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 24px;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .ia-q5-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .ia-q5-math-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 24px 18px;
+        text-align: center;
+        margin-bottom: 20px;
+        min-height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .ia-q5-input-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .ia-q5-input {
+        flex: 1;
+        min-width: 190px;
+        padding: 13px 16px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        background: #ffffff;
+        border: 2px solid #cbd5e1;
+        border-radius: 12px;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ia-q5-input:focus {
+        border-color: #0f172a;
+        box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+    }
+
+    .ia-q5-input:disabled {
+        background: #f8fafc;
+        color: #64748b;
+    }
+
+    .ia-q5-btn-primary {
+        background: #0f172a;
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        padding: 13px 22px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ia-q5-btn-primary:hover:not(:disabled) {
+        background: #2563eb;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .ia-q5-btn-primary:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .ia-q5-btn-secondary {
+        background: #ffffff;
+        color: #334155;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 13px 18px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        transition: all 0.2s ease;
+    }
+
+    .ia-q5-btn-secondary:hover {
+        border-color: #0f172a;
+        color: #0f172a;
+        background: #f8fafc;
+    }
+
+    .ia-q5-hint-box {
+        margin-top: 14px;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 12px;
+        padding: 12px 16px;
+        color: #1e3a8a;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        display: none;
+    }
+
+    /* Retroalimentación con pasos identidad Ingenia & Aprende */
+    .ia-q5-feedback {
+        margin-top: 22px;
+        border-radius: 16px;
+        padding: 22px;
+        display: none;
+        animation: iaFadeSlideUp 0.32s ease forwards;
+    }
+
+    .ia-q5-feedback.is-correct {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+    }
+
+    .ia-q5-feedback.is-incorrect {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+    }
+
+    .ia-q5-feedback-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .ia-q5-steps-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Resumen final */
+    .ia-q5-summary {
+        display: none;
+        text-align: center;
+        padding: 20px 10px;
+        animation: iaFadeSlideUp 0.35s ease forwards;
+    }
+
+    .ia-q5-trophy {
+        width: 68px;
+        height: 68px;
+        margin: 0 auto 16px auto;
+        border-radius: 20px;
+        background: #0f172a;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
+        animation: iaPopBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .ia-q5-review-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+        text-align: left;
+        margin: 24px 0;
+    }
+
+    .ia-q5-review-item {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 0.88rem;
+    }
+
+    @keyframes iaFadeSlideUp {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes iaPopBounce {
+        0% { transform: scale(0.6); }
+        70% { transform: scale(1.12); }
+        100% { transform: scale(1); }
+    }
+</style>
+
+<div id="quiz5-container" class="ia-quiz5-wrapper">
+    <!-- ENCABEZADO DEL QUIZ -->
+    <div class="ia-q5-header">
+        <div class="ia-q5-title-group">
+            <div class="ia-q5-badge-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 11l3 3L22 4"></path>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+            </div>
+            <div>
+                <span style="display: block; font-size: 0.75rem; font-weight: 800; color: #2563eb; text-transform: uppercase; letter-spacing: 0.6px;">
+                    Práctica del Subtema 5
+                </span>
+                <h3 style="margin: 2px 0 0 0; font-size: 1.35rem; font-weight: 800; color: #0f172a;">
+                    Quiz: Operaciones combinadas
+                </h3>
+            </div>
+        </div>
+
+        <div class="ia-q5-stats">
+            <span class="ia-q5-stat-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="q5-counter-text">Reactivo 1 de 15</span>
+            </span>
+            <span class="ia-q5-stat-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span id="q5-score-text">Aciertos: 0 / 15</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- BARRA DE PROGRESO -->
+    <div class="ia-q5-progress-track">
+        <div id="q5-progress-bar" class="ia-q5-progress-fill"></div>
+    </div>
+
+    <!-- NAVEGADOR DE 15 PREGUNTAS -->
+    <div id="q5-pills" class="ia-q5-pills-grid" role="navigation" aria-label="Selector de preguntas"></div>
+
+    <!-- ÁREA ACTIVA DE LA PREGUNTA -->
+    <div id="q5-active-area" class="ia-q5-card">
+        <div class="ia-q5-card-top">
+            <span id="q5-q-badge" style="background: #0f172a; color: #ffffff; font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.4px;">
+                EJERCICIO 01
+            </span>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <span id="q5-topic-tag" style="font-size: 0.84rem; font-weight: 600; color: #64748b;">Jerarquía básica</span>
+                <span id="q5-level-badge" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">
+                    Nivel Básico
+                </span>
+            </div>
+        </div>
+
+        <p style="font-size: 0.96rem; color: #475569; margin: 0 0 12px 0; font-weight: 600;">
+            Calcula el valor exacto de la siguiente expresión:
+        </p>
+
+        <div id="q5-expression" class="ia-q5-math-box"></div>
+
+        <div class="ia-q5-input-row">
+            <input
+                type="text"
+                id="q5-answer-input"
+                class="ia-q5-input"
+                placeholder="Escribe tu resultado numérico (ej. 20 o -5)..."
+                autocomplete="off"
+                inputmode="decimal"
+            />
+            <button type="button" id="q5-check-btn" class="ia-q5-btn-primary">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Comprobar
+            </button>
+            <button type="button" id="q5-hint-btn" class="ia-q5-btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Pista
+            </button>
+        </div>
+
+        <div id="q5-hint-box" class="ia-q5-hint-box"></div>
+
+        <!-- PANEL DE RETROALIMENTACIÓN PASO A PASO -->
+        <div id="q5-feedback" class="ia-q5-feedback">
+            <div class="ia-q5-feedback-banner">
+                <div id="q5-feedback-title" style="font-weight: 800; font-size: 1.05rem;"></div>
+                <button type="button" id="q5-next-btn" class="ia-q5-btn-primary" style="padding: 9px 18px; font-size: 0.88rem;">
+                    Siguiente ejercicio →
+                </button>
+            </div>
+            <div id="q5-steps-container" class="ia-q5-steps-list"></div>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE RESULTADOS FINALES -->
+    <div id="q5-summary-area" class="ia-q5-summary">
+        <div class="ia-q5-trophy">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+            </svg>
+        </div>
+
+        <span id="q5-rank-badge" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.6px;">
+            Módulo completado
+        </span>
+        <h4 id="q5-final-heading" style="font-size: 1.55rem; font-weight: 800; color: #0f172a; margin: 12px 0 6px 0;">
+            ¡Excelente trabajo!
+        </h4>
+        <p id="q5-final-subtext" style="font-size: 1rem; color: #475569; margin: 0;">
+            Has completado los 15 reactivos de operaciones combinadas.
+        </p>
+
+        <div id="q5-review-grid" class="ia-q5-review-grid"></div>
+
+        <button type="button" id="q5-restart-btn" class="ia-q5-btn-primary" style="margin-top: 8px;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+            Reiniciar práctica completa
+        </button>
+    </div>
+</div>
+
+<script>
+(function () {
+    // Respaldo de efectos de sonido Web Audio API si no están ya definidos globalmente
+    function triggerSound(type) {
+        try {
+            if (type === "correct" && typeof window.playCorrectSound === "function") {
+                window.playCorrectSound();
+                return;
+            }
+            if (type === "incorrect" && typeof window.playIncorrectSound === "function") {
+                window.playIncorrectSound();
+                return;
+            }
+            if (type === "victory" && typeof window.playVictorySound === "function") {
+                window.playVictorySound();
+                return;
+            }
+
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) return;
+            const ctx = new AudioCtx();
+            const now = ctx.currentTime;
+
+            if (type === "correct") {
+                [523.25, 659.25].forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = "sine";
+                    osc.frequency.setValueAtTime(freq, now + idx * 0.09);
+                    gain.gain.setValueAtTime(0.14, now + idx * 0.09);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.25);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(now + idx * 0.09);
+                    osc.stop(now + idx * 0.09 + 0.26);
+                });
+            } else if (type === "incorrect") {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = "triangle";
+                osc.frequency.setValueAtTime(220, now);
+                osc.frequency.linearRampToValueAtTime(165, now + 0.28);
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.31);
+            } else if (type === "victory") {
+                [523.25, 659.25, 783.99, 1046.5].forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = "sine";
+                    osc.frequency.setValueAtTime(freq, now + idx * 0.11);
+                    gain.gain.setValueAtTime(0.15, now + idx * 0.11);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.11 + 0.35);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(now + idx * 0.11);
+                    osc.stop(now + idx * 0.11 + 0.36);
+                });
+            }
+        } catch (e) {}
+    }
+
+    // Banco de 15 ejercicios progresivos (1-5 adjuntos + 6-15 progresivos)
+    const quiz5Data = [
+        {
+            id: 1,
+            topic: "Potencia y división",
+            level: "Nivel Básico",
+            badgeStyle: "background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;",
+            latex: "12 + 4^2 \\div 2",
+            answer: 20,
+            hint: "Resuelve primero la potencia 4², después divide entre 2 y al final suma 12.",
+            steps: [
+                { title: "Resolver la potencia.", math: "4^2 = 16 \\quad \\Rightarrow \\quad 12 + 16 \\div 2" },
+                { title: "Realizar la división antes que la suma.", math: "16 \\div 2 = 8 \\quad \\Rightarrow \\quad 12 + 8" },
+                { title: "Sumar para obtener el resultado final.", math: "\\boxed{20}", final: true }
+            ]
+        },
+        {
+            id: 2,
+            topic: "Paréntesis y producto",
+            level: "Nivel Básico",
+            badgeStyle: "background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;",
+            latex: "30 - (5 + 3) \\times 2",
+            answer: 14,
+            hint: "Calcula primero lo que está dentro del paréntesis, luego multiplica por 2 y resta ese valor a 30.",
+            steps: [
+                { title: "Resolver la suma dentro del paréntesis.", math: "5 + 3 = 8 \\quad \\Rightarrow \\quad 30 - 8 \\times 2" },
+                { title: "Multiplicar antes de restar.", math: "8 \\times 2 = 16 \\quad \\Rightarrow \\quad 30 - 16" },
+                { title: "Realizar la resta final.", math: "\\boxed{14}", final: true }
+            ]
+        },
+        {
+            id: 3,
+            topic: "Raíz, potencia y producto",
+            level: "Nivel Básico",
+            badgeStyle: "background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;",
+            latex: "\\sqrt{100} + 3^2 \\times 2",
+            answer: 28,
+            hint: "Evalúa √100 y 3² al mismo nivel jerárquico, luego multiplica 9 × 2 y suma al final.",
+            steps: [
+                { title: "Calcular la raíz cuadrada y la potencia.", math: "\\sqrt{100} = 10 \\qquad \\text{y} \\qquad 3^2 = 9" },
+                { title: "Sustituir y resolver la multiplicación.", math: "10 + 9 \\times 2 = 10 + 18" },
+                { title: "Sumar ambos términos.", math: "\\boxed{28}", final: true }
+            ]
+        },
+        {
+            id: 4,
+            topic: "Decimales y paréntesis",
+            level: "Nivel Básico",
+            badgeStyle: "background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;",
+            latex: "5.5 + 2.5 \\times (8 - 4)",
+            answer: 15.5,
+            hint: "Resta 8 - 4 primero; luego multiplica 2.5 por 4 (que da entero) y suma 5.5.",
+            steps: [
+                { title: "Resolver el paréntesis.", math: "8 - 4 = 4 \\quad \\Rightarrow \\quad 5.5 + 2.5 \\times 4" },
+                { title: "Multiplicar el decimal por 4.", math: "2.5 \\times 4 = 10 \\quad \\Rightarrow \\quad 5.5 + 10" },
+                { title: "Realizar la suma final.", math: "\\boxed{15.5}", final: true }
+            ]
+        },
+        {
+            id: 5,
+            topic: "Llaves, potencia y raíz",
+            level: "Nivel Intermedio",
+            badgeStyle: "background:#f0f9ff;color:#0284c7;border:1px solid #bae6fd;",
+            latex: "\\{24 \\div (3 + 1)\\}^2 - \\sqrt{64}",
+            answer: 28,
+            hint: "Resuelve (3 + 1), divide 24 entre ese resultado, eleva al cuadrado y resta √64.",
+            steps: [
+                { title: "Resolver el paréntesis interior.", math: "3 + 1 = 4 \\quad \\Rightarrow \\quad \\{24 \\div 4\\}^2 - \\sqrt{64}" },
+                { title: "Dividir dentro de las llaves y calcular la raíz.", math: "24 \\div 4 = 6 \\qquad \\text{y} \\qquad \\sqrt{64} = 8" },
+                { title: "Elevar al cuadrado y restar.", math: "6^2 - 8 = 36 - 8 = \\boxed{28}", final: true }
+            ]
+        },
+        {
+            id: 6,
+            topic: "Agrupación anidada",
+            level: "Nivel Intermedio",
+            badgeStyle: "background:#f0f9ff;color:#0284c7;border:1px solid #bae6fd;",
+            latex: "45 - 3 \\times \\left[ 12 - (2^3 - 3) \\right]",
+            answer: 24,
+            hint: "Empieza dentro del paréntesis calculando 2³ - 3 = 5, luego resuelve el corchete [12 - 5].",
+            steps: [
+                { title: "Resolver la potencia y el paréntesis interior.", math: "2^3 - 3 = 8 - 3 = 5" },
+                { title: "Resolver el corchete.", math: "12 - 5 = 7 \\quad \\Rightarrow \\quad 45 - 3 \\times 7" },
+                { title: "Multiplicar y restar al final.", math: "45 - 21 = \\boxed{24}", final: true }
+            ]
+        },
+        {
+            id: 7,
+            topic: "Fracción decimal y raíz cúbica",
+            level: "Nivel Intermedio",
+            badgeStyle: "background:#f0f9ff;color:#0284c7;border:1px solid #bae6fd;",
+            latex: "\\frac{4.8 + 3.2}{4} + \\sqrt[3]{27} \\times 3",
+            answer: 11,
+            hint: "Suma el numerador (4.8 + 3.2 = 8) antes de dividir entre 4, y calcula ³√27 = 3.",
+            steps: [
+                { title: "Simplificar el numerador y dividir.", math: "\\frac{4.8 + 3.2}{4} = \\frac{8}{4} = 2" },
+                { title: "Calcular la raíz cúbica y multiplicar.", math: "\\sqrt[3]{27} = 3 \\quad \\Rightarrow \\quad 3 \\times 3 = 9" },
+                { title: "Sumar ambos resultados.", math: "2 + 9 = \\boxed{11}", final: true }
+            ]
+        },
+        {
+            id: 8,
+            topic: "Base negativa vs signo externo",
+            level: "Nivel Intermedio",
+            badgeStyle: "background:#f0f9ff;color:#0284c7;border:1px solid #bae6fd;",
+            latex: "(-4)^2 + \\sqrt{81} \\div 3 - 2^3",
+            answer: 11,
+            hint: "Recuerda que (-4)² = +16 porque el signo está dentro del paréntesis, mientras que -2³ resta 8.",
+            steps: [
+                { title: "Evaluar potencias y raíz cuadrada.", math: "(-4)^2 = 16, \\qquad \\sqrt{81} = 9, \\qquad 2^3 = 8" },
+                { title: "Resolver la división.", math: "16 + (9 \\div 3) - 8 = 16 + 3 - 8" },
+                { title: "Operar de izquierda a derecha.", math: "19 - 8 = \\boxed{11}", final: true }
+            ]
+        },
+        {
+            id: 9,
+            topic: "Propiedades de potencias y raíces",
+            level: "Nivel Intermedio-Alto",
+            badgeStyle: "background:#eef2ff;color:#4f46e5;border:1px solid #c7d2fe;",
+            latex: "\\sqrt{16 \\cdot 9} + \\frac{3^4}{3^2} - 15",
+            answer: 6,
+            hint: "Aplica √(16·9) = √16 · √9 y resta los exponentes en 3⁴ / 3² = 3².",
+            steps: [
+                { title: "Aplicar raíz de un producto.", math: "\\sqrt{16 \\cdot 9} = \\sqrt{16} \\cdot \\sqrt{9} = 4 \\cdot 3 = 12" },
+                { title: "Aplicar cociente de potencias de igual base.", math: "\\frac{3^4}{3^2} = 3^{4-2} = 3^2 = 9" },
+                { title: "Sustituir y simplificar.", math: "12 + 9 - 15 = 21 - 15 = \\boxed{6}", final: true }
+            ]
+        },
+        {
+            id: 10,
+            topic: "Triple nivel de agrupación",
+            level: "Nivel Intermedio-Alto",
+            badgeStyle: "background:#eef2ff;color:#4f46e5;border:1px solid #c7d2fe;",
+            latex: "2 \\times \\left\\{ 18 - \\left[ 4^2 - (5 + \\sqrt{49}) \\right] \\right\\}",
+            answer: 28,
+            hint: "Resuelve de adentro hacia afuera: primero (5 + √49), luego el corchete [16 - 12], después las llaves.",
+            steps: [
+                { title: "Resolver el paréntesis más interno.", math: "5 + \\sqrt{49} = 5 + 7 = 12" },
+                { title: "Resolver el corchete.", math: "4^2 - 12 = 16 - 12 = 4" },
+                { title: "Resolver las llaves y multiplicar por 2.", math: "2 \\times \\{18 - 4\\} = 2 \\times 14 = \\boxed{28}", final: true }
+            ]
+        },
+        {
+            id: 11,
+            topic: "Valor absoluto y cubo negativo",
+            level: "Nivel Intermedio-Alto",
+            badgeStyle: "background:#eef2ff;color:#4f46e5;border:1px solid #c7d2fe;",
+            latex: "\\sqrt{(-7)^2} - \\sqrt{\\frac{144}{9}} + (-2)^3",
+            answer: -5,
+            hint: "Para índice par, √((-7)²) = |-7| = 7. En cambio, (-2)³ conserva su signo negativo (-8).",
+            steps: [
+                { title: "Aplicar raíz de potencia par y raíz de cociente.", math: "\\sqrt{(-7)^2} = |-7| = 7 \\qquad \\text{y} \\qquad \\sqrt{\\frac{144}{9}} = \\frac{12}{3} = 4" },
+                { title: "Calcular la potencia cúbica negativa.", math: "(-2)^3 = -8" },
+                { title: "Sustituir y sumar algebraicamente.", math: "7 - 4 + (-8) = 3 - 8 = \\boxed{-5}", final: true }
+            ]
+        },
+        {
+            id: 12,
+            topic: "Exponente negativo y cero",
+            level: "Nivel Avanzado",
+            badgeStyle: "background:#fef2f2;color:#dc2626;border:1px solid #fecaca;",
+            latex: "\\left(\\frac{1}{3}\\right)^{-2} + \\sqrt[4]{81} \\times (10 - 3^2) - 6^0",
+            answer: 11,
+            hint: "Invierte (1/3)⁻² para obtener 3² = 9, recuerda que ⁴√81 = 3 y que todo número distinto de cero elevado a 0 vale 1.",
+            steps: [
+                { title: "Resolver exponente negativo y exponente cero.", math: "\\left(\\frac{1}{3}\\right)^{-2} = 3^2 = 9 \\qquad \\text{y} \\qquad 6^0 = 1" },
+                { title: "Evaluar raíz cuarta y paréntesis.", math: "\\sqrt[4]{81} = 3 \\qquad \\text{y} \\qquad 10 - 3^2 = 10 - 9 = 1" },
+                { title: "Sustituir y calcular.", math: "9 + 3(1) - 1 = 9 + 3 - 1 = \\boxed{11}", final: true }
+            ]
+        },
+        {
+            id: 13,
+            topic: "Raíz anidada y fracción",
+            level: "Nivel Avanzado",
+            badgeStyle: "background:#fef2f2;color:#dc2626;border:1px solid #fecaca;",
+            latex: "\\frac{\\sqrt{21 + \\sqrt{16}} + 2.5 \\times 6}{9 - 2^2} + \\sqrt[3]{-8}",
+            answer: 2,
+            hint: "Calcula √16 = 4 para obtener √25 = 5 en el numerador, divide entre (9 - 4) = 5 y suma ³√(-8) = -2.",
+            steps: [
+                { title: "Simplificar la raíz anidada y el producto del numerador.", math: "\\sqrt{21 + \\sqrt{16}} = \\sqrt{25} = 5, \\qquad 2.5 \\times 6 = 15 \\quad \\Rightarrow \\quad 5 + 15 = 20" },
+                { title: "Calcular el denominador y dividir la fracción.", math: "9 - 2^2 = 9 - 4 = 5 \\quad \\Rightarrow \\quad \\frac{20}{5} = 4" },
+                { title: "Resolver la raíz cúbica negativa y sumar.", math: "\\sqrt[3]{-8} = -2 \\quad \\Rightarrow \\quad 4 + (-2) = \\boxed{2}", final: true }
+            ]
+        },
+        {
+            id: 14,
+            topic: "Llaves, corchetes y radicales",
+            level: "Nivel Avanzado",
+            badgeStyle: "background:#fef2f2;color:#dc2626;border:1px solid #fecaca;",
+            latex: "50 - 2 \\times \\left\\{ 3^2 + \\left[ \\sqrt{36 \\cdot 4} - (-2)^2 \\right] \\right\\}",
+            answer: 16,
+            hint: "Dentro del corchete calcula √(36·4) = 6·2 = 12 y réstale (-2)² = 4; luego suma 3² = 9 dentro de las llaves.",
+            steps: [
+                { title: "Resolver el contenido del corchete.", math: "\\sqrt{36 \\cdot 4} = 6 \\cdot 2 = 12, \\quad (-2)^2 = 4 \\quad \\Rightarrow \\quad [12 - 4] = 8" },
+                { title: "Resolver las llaves.", math: "\\{3^2 + 8\\} = \\{9 + 8\\} = 17" },
+                { title: "Multiplicar por 2 y restar a 50.", math: "50 - 2 \\times 17 = 50 - 34 = \\boxed{16}", final: true }
+            ]
+        },
+        {
+            id: 15,
+            topic: "Reto maestro integrador",
+            level: "Nivel Avanzado",
+            badgeStyle: "background:#fef2f2;color:#dc2626;border:1px solid #fecaca;",
+            latex: "\\frac{2^6 \\div 2^3 + \\sqrt{(-6)^2}}{\\sqrt[3]{64} - \\sqrt{\\frac{36}{9}}} + \\left[ \\sqrt{13 + \\sqrt{9}} \\right]^2",
+            answer: 23,
+            hint: "Simplifica numerador (8 + 6 = 14) y denominador (4 - 2 = 2) de la fracción; en el segundo término resuelve √(13 + 3) y elévalo al cuadrado.",
+            steps: [
+                { title: "Simplificar el numerador de la fracción.", math: "2^6 \\div 2^3 + \\sqrt{(-6)^2} = 2^3 + |-6| = 8 + 6 = 14" },
+                { title: "Simplificar el denominador y dividir.", math: "\\sqrt[3]{64} - \\sqrt{\\frac{36}{9}} = 4 - \\frac{6}{3} = 4 - 2 = 2 \\quad \\Rightarrow \\quad \\frac{14}{2} = 7" },
+                { title: "Resolver el corchete con raíz anidada al cuadrado.", math: "\\left[ \\sqrt{13 + \\sqrt{9}} \\right]^2 = \\left[ \\sqrt{16} \\right]^2 = 4^2 = 16" },
+                { title: "Sumar ambos términos para el resultado maestro.", math: "7 + 16 = \\boxed{23}", final: true }
+            ]
+        }
+    ];
+
+    let q5Index = 0;
+    const q5State = quiz5Data.map(() => ({ answered: false, correct: false, userVal: "" }));
+
+    const pillsContainer = document.getElementById("q5-pills");
+    const counterText = document.getElementById("q5-counter-text");
+    const scoreText = document.getElementById("q5-score-text");
+    const progressBar = document.getElementById("q5-progress-bar");
+    const qBadge = document.getElementById("q5-q-badge");
+    const topicTag = document.getElementById("q5-topic-tag");
+    const levelBadge = document.getElementById("q5-level-badge");
+    const exprBox = document.getElementById("q5-expression");
+    const answerInput = document.getElementById("q5-answer-input");
+    const checkBtn = document.getElementById("q5-check-btn");
+    const hintBtn = document.getElementById("q5-hint-btn");
+    const hintBox = document.getElementById("q5-hint-box");
+    const feedbackBox = document.getElementById("q5-feedback");
+    const feedbackTitle = document.getElementById("q5-feedback-title");
+    const stepsContainer = document.getElementById("q5-steps-container");
+    const nextBtn = document.getElementById("q5-next-btn");
+    const activeArea = document.getElementById("q5-active-area");
+    const summaryArea = document.getElementById("q5-summary-area");
+    const reviewGrid = document.getElementById("q5-review-grid");
+    const restartBtn = document.getElementById("q5-restart-btn");
+
+    function renderMath(el, latexStr, displayMode = true) {
+        if (window.katex && typeof window.katex.render === "function") {
+            window.katex.render(latexStr, el, { throwOnError: false, displayMode: displayMode });
+        } else {
+            el.textContent = latexStr;
+        }
+    }
+
+    function updateHeaderStats() {
+        const correctCount = q5State.filter(s => s.correct).length;
+        counterText.textContent = `Reactivo ${q5Index + 1} de ${quiz5Data.length}`;
+        scoreText.textContent = `Aciertos: ${correctCount} / ${quiz5Data.length}`;
+        progressBar.style.width = `${((q5Index + 1) / quiz5Data.length) * 100}%`;
+    }
+
+    function renderPills() {
+        pillsContainer.innerHTML = "";
+        quiz5Data.forEach((item, idx) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "ia-q5-pill";
+            btn.textContent = item.id;
+            if (idx === q5Index) btn.classList.add("active");
+            if (q5State[idx].answered) {
+                btn.classList.add(q5State[idx].correct ? "correct" : "incorrect");
+            }
+            btn.addEventListener("click", () => {
+                q5Index = idx;
+                loadQuestion(true);
+            });
+            pillsContainer.appendChild(btn);
+        });
+    }
+
+    function renderFeedbackSteps(item, isCorrect, userVal) {
+        feedbackBox.className = `ia-q5-feedback ${isCorrect ? "is-correct" : "is-incorrect"}`;
+        feedbackBox.style.display = "block";
+
+        if (isCorrect) {
+            feedbackTitle.innerHTML = `<span style="color:#166534;">✓ ¡Correcto! El resultado es ${item.answer}.</span>`;
+        } else {
+            feedbackTitle.innerHTML = `<span style="color:#991b1b;">✕ Respuesta ingresada: ${userVal} — El resultado correcto es ${item.answer}.</span>`;
+        }
+
+        const allAnswered = q5State.every(s => s.answered);
+        nextBtn.textContent = allAnswered ? "Ver resumen final →" : "Siguiente ejercicio →";
+
+        stepsContainer.innerHTML = "";
+        item.steps.forEach((st, idx) => {
+            const stepDiv = document.createElement("div");
+            stepDiv.className = st.final ? "ia-step-final" : "ia-step-card";
+
+            const header = document.createElement("div");
+            header.className = "ia-step-header";
+
+            const numBadge = document.createElement("span");
+            numBadge.className = st.final ? "ia-step-num-final" : "ia-step-num";
+            numBadge.textContent = idx + 1;
+
+            const titleSpan = document.createElement("span");
+            titleSpan.style.fontWeight = "700";
+            titleSpan.style.fontSize = "0.95rem";
+            titleSpan.style.color = st.final ? "#166534" : "#0f172a";
+            titleSpan.textContent = `Paso ${idx + 1}. ${st.title}`;
+
+            header.appendChild(numBadge);
+            header.appendChild(titleSpan);
+
+            const mathDiv = document.createElement("div");
+            mathDiv.style.textAlign = "center";
+            mathDiv.style.marginTop = "6px";
+            renderMath(mathDiv, st.math, true);
+
+            stepDiv.appendChild(header);
+            stepDiv.appendChild(mathDiv);
+            stepsContainer.appendChild(stepDiv);
+        });
+    }
+
+    function loadQuestion(shouldFocus = false) {
+        activeArea.style.display = "block";
+        summaryArea.style.display = "none";
+
+        const item = quiz5Data[q5Index];
+        const st = q5State[q5Index];
+
+        qBadge.textContent = `EJERCICIO ${String(item.id).padStart(2, "0")}`;
+        topicTag.textContent = item.topic;
+        levelBadge.textContent = item.level;
+        levelBadge.setAttribute("style", `${item.badgeStyle} font-size:0.75rem; font-weight:700; padding:3px 10px; border-radius:12px;`);
+
+        exprBox.innerHTML = "";
+        renderMath(exprBox, item.latex, true);
+
+        hintBox.style.display = "none";
+        hintBox.innerHTML = `<strong>Pista:</strong> ${item.hint}`;
+
+        if (st.answered) {
+            answerInput.value = st.userVal;
+            answerInput.disabled = true;
+            checkBtn.disabled = true;
+            renderFeedbackSteps(item, st.correct, st.userVal);
+        } else {
+            answerInput.value = "";
+            answerInput.disabled = false;
+            checkBtn.disabled = false;
+            feedbackBox.style.display = "none";
+            if (shouldFocus) {
+                answerInput.focus({ preventScroll: true });
+            }
+        }
+
+        updateHeaderStats();
+        renderPills();
+    }
+
+    function checkCurrentAnswer() {
+        const item = quiz5Data[q5Index];
+        if (q5State[q5Index].answered) return;
+
+        const raw = answerInput.value.trim().replace(",", ".");
+        if (raw === "" || isNaN(Number(raw))) {
+            answerInput.style.borderColor = "#dc2626";
+            answerInput.focus({ preventScroll: true });
+            return;
+        }
+
+        answerInput.style.borderColor = "#cbd5e1";
+        const numericVal = parseFloat(raw);
+        const isCorrect = Math.abs(numericVal - item.answer) < 1e-6;
+
+        q5State[q5Index] = {
+            answered: true,
+            correct: isCorrect,
+            userVal: raw
+        };
+
+        answerInput.disabled = true;
+        checkBtn.disabled = true;
+
+        triggerSound(isCorrect ? "correct" : "incorrect");
+        renderFeedbackSteps(item, isCorrect, raw);
+        updateHeaderStats();
+        renderPills();
+    }
+
+    function showSummary() {
+        activeArea.style.display = "none";
+        summaryArea.style.display = "block";
+        triggerSound("victory");
+
+        const correctCount = q5State.filter(s => s.correct).length;
+        const pct = Math.round((correctCount / quiz5Data.length) * 100);
+
+        const rankBadge = document.getElementById("q5-rank-badge");
+        const heading = document.getElementById("q5-final-heading");
+        const subtext = document.getElementById("q5-final-subtext");
+
+        if (pct >= 90) {
+            rankBadge.textContent = "Dominio sobresaliente · " + pct + "%";
+            heading.textContent = "¡Dominas las operaciones combinadas!";
+        } else if (pct >= 70) {
+            rankBadge.textContent = "Buen desempeño · " + pct + "%";
+            heading.textContent = "¡Muy buen avance en el módulo!";
+        } else {
+            rankBadge.textContent = "En entrenamiento · " + pct + "%";
+            heading.textContent = "Sigue practicando la jerarquía";
+        }
+
+        subtext.textContent = `Obtuviste ${correctCount} de ${quiz5Data.length} aciertos totales.`;
+
+        reviewGrid.innerHTML = "";
+        quiz5Data.forEach((item, idx) => {
+            const st = q5State[idx];
+            const card = document.createElement("div");
+            card.className = "ia-q5-review-item";
+            card.style.borderLeft = st.correct ? "4px solid #16a34a" : "4px solid #dc2626";
+            card.innerHTML = `
+                <div>
+                    <strong style="color:#0f172a;">Reactivo ${item.id}</strong>
+                    <div style="font-size:0.78rem; color:#64748b;">${item.level}</div>
+                </div>
+                <div style="text-align:right;">
+                    <span style="font-weight:800; color:${st.correct ? "#16a34a" : "#dc2626"};">
+                        ${st.correct ? "✓ " + item.answer : "✕ " + (st.userVal || "—") + " (" + item.answer + ")"}
+                    </span>
+                </div>
+            `;
+            reviewGrid.appendChild(card);
+        });
+    }
+
+    checkBtn.addEventListener("click", checkCurrentAnswer);
+
+    answerInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            if (!q5State[q5Index].answered) {
+                checkCurrentAnswer();
+            } else {
+                nextBtn.click();
+            }
+        }
+    });
+
+    hintBtn.addEventListener("click", () => {
+        hintBox.style.display = hintBox.style.display === "block" ? "none" : "block";
+    });
+
+    nextBtn.addEventListener("click", () => {
+        const nextUnanswered = q5State.findIndex((s, i) => i > q5Index && !s.answered);
+        if (nextUnanswered !== -1) {
+            q5Index = nextUnanswered;
+            loadQuestion(true);
+            return;
+        }
+        const firstUnanswered = q5State.findIndex(s => !s.answered);
+        if (firstUnanswered !== -1) {
+            q5Index = firstUnanswered;
+            loadQuestion(true);
+            return;
+        }
+        showSummary();
+    });
+
+    restartBtn.addEventListener("click", () => {
+        for (let i = 0; i < q5State.length; i++) {
+            q5State[i] = { answered: false, correct: false, userVal: "" };
+        }
+        q5Index = 0;
+        loadQuestion(true);
+    });
+
+    // Inicialización limpia sin robar el foco ni saltar el scroll
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => loadQuestion(false));
+    } else {
+        loadQuestion(false);
+    }
+})();
+</script>
+
+<!-- ===================================================================== -->
+<!-- SECCIÓN 7: RESUMEN Y CIERRE (IDENTIDAD INGENIA & APRENDE)             -->
+<!-- ===================================================================== -->
+<style>
+    .ia-summary-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+        margin-bottom: 24px;
+    }
+
+    .ia-summary-table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        margin-top: 16px;
+    }
+
+    .ia-summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.96rem;
+    }
+
+    .ia-summary-table thead {
+        background: #0f172a;
+        color: #ffffff;
+    }
+
+    .ia-summary-table th {
+        padding: 14px 20px;
+        font-weight: 700;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .ia-summary-table tbody tr {
+        border-bottom: 1px solid #f1f5f9;
+        background: #ffffff;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .ia-summary-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .ia-summary-table tbody tr:hover {
+        background: #f8fafc;
+    }
+
+    .ia-summary-table td {
+        padding: 15px 20px;
+        color: #334155;
+        vertical-align: middle;
+    }
+
+    .ia-concept-cell {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: #0f172a;
+    }
+
+    .ia-concept-badge {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        border-radius: 50%;
+        background: #0f172a;
+        color: #ffffff;
+        font-size: 0.8rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .ia-summary-table tbody tr:hover .ia-concept-badge {
+        transform: scale(1.12);
+        background: #2563eb;
+    }
+
+    /* Tarjeta de Aplicación en Ingeniería */
+    .ia-eng-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-left: 5px solid #0f172a;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+        transition: border-left-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .ia-eng-card:hover {
+        border-left-color: #2563eb;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .ia-eng-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .ia-eng-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        border-radius: 12px;
+        background: #0f172a;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.16);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease;
+    }
+
+    .ia-eng-card:hover .ia-eng-icon {
+        transform: rotate(-6deg) scale(1.08);
+        background: #2563eb;
+    }
+
+    .ia-eng-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .ia-eng-tag {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #0f172a;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 20px;
+        transition: all 0.2s ease;
+    }
+
+    .ia-eng-tag:hover {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+        color: #2563eb;
+    }
+</style>
+
+<section class="lesson-section" style="margin-top: 48px;">
+
+    <!-- ENCABEZADO DE SECCIÓN -->
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 24px;">
+        <h2 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin: 0;">
+            7. Resumen y cierre
+        </h2>
+        <span style="background: #0f172a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.6px;">
+            Cierre del tema
+        </span>
+    </div>
+
+    <!-- TARJETA DE CONOCIMIENTOS PRINCIPALES -->
+    <div class="ia-summary-card example-box animate-on-scroll">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 16px;">
+            <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                Síntesis conceptual
+            </span>
+            <span style="font-size: 0.85rem; font-weight: 600; color: #64748b;">
+                6 reglas clave
+            </span>
+        </div>
+
+        <p style="font-size: 1.04rem; color: #334155; line-height: 1.7; margin: 0 0 10px 0;">
+            En este tema estudiamos las reglas necesarias para resolver expresiones matemáticas que contienen diferentes operaciones.
+        </p>
+        <p style="font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0;">
+            Los conocimientos principales son:
+        </p>
+
+        <div class="ia-summary-table-wrap">
+            <table class="ia-summary-table">
+                <thead>
+                    <tr>
+                        <th style="width: 38%;">Concepto</th>
+                        <th>Regla fundamental</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="ia-concept-cell">
+                                <span class="ia-concept-badge">1</span>
+                                <span>Agrupación</span>
+                            </div>
+                        </td>
+                        <td>Resolver del interior al exterior</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ia-concept-cell">
+                                <span class="ia-concept-badge">2</span>
+                                <span>Potencias</span>
+                            </div>
+                        </td>
+                        <td>Resolver antes de multiplicaciones y sumas</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ia-concept-cell">
+                                <span class="ia-concept-badge">3</span>
+                                <span>Raíces</span>
+                            </div>
+                        </td>
+                        <td>Resolver antes de multiplicaciones y sumas</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ia-concept-cell">
+                                <span class="ia-concept-badge">4</span>
+                                <span>Multiplicación y división</span>
+                            </div>
+                        </td>
+                        <td>Resolver de izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ia-concept-cell">
+                                <span class="ia-concept-badge">5</span>
+                                <span>Suma y resta</span>
+                            </div>
+                        </td>
+                        <td>Resolver de izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ia-concept-cell">
+                                <span class="ia-concept-badge">6</span>
+                                <span>Operaciones combinadas</span>
+                            </div>
+                        </td>
+                        <td>Respetar todos los niveles de prioridad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- TARJETA DE APLICACIÓN EN INGENIERÍA -->
+    <div class="ia-eng-card example-box animate-on-scroll">
+        <div class="ia-eng-header">
+            <div class="ia-eng-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 3h6"></path>
+                    <path d="M10 9V3"></path>
+                    <path d="M14 9V3"></path>
+                    <path d="M6.864 18.364 10 9h4l3.136 9.364A2 2 0 0 1 15.24 21H8.76a2 2 0 0 1-1.896-2.636Z"></path>
+                    <path d="M8.5 15h7"></path>
+                </svg>
+            </div>
+            <div>
+                <span style="display: block; font-size: 0.74rem; font-weight: 800; color: #2563eb; text-transform: uppercase; letter-spacing: 0.6px;">
+                    Enfoque profesional
+                </span>
+                <h3 style="margin: 2px 0 0 0; font-size: 1.28rem; font-weight: 800; color: #0f172a;">
+                    Aplicación en ingeniería
+                </h3>
+            </div>
+        </div>
+
+        <p style="font-size: 1.02rem; color: #334155; line-height: 1.75; margin: 0 0 14px 0;">
+            La jerarquía de operaciones no es solamente una regla escolar. Es una herramienta indispensable para desarrollar expresiones matemáticas, sustituir valores en fórmulas, calcular propiedades físicas y químicas y trabajar con modelos matemáticos.
+        </p>
+
+        <p style="font-size: 1.02rem; color: #334155; line-height: 1.75; margin: 0;">
+            Por ejemplo, en <strong>Ingeniería Química Industrial</strong> será necesaria al calcular concentraciones, balances de materia, propiedades de sustancias y diferentes relaciones entre variables.
+        </p>
+
+        <div class="ia-eng-tags">
+            <span class="ia-eng-tag">Concentraciones</span>
+            <span class="ia-eng-tag">Balances de materia</span>
+            <span class="ia-eng-tag">Propiedades de sustancias</span>
+            <span class="ia-eng-tag">Modelos matemáticos</span>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===================================================================== -->
+<!-- TARJETA DE CONTINUACIÓN: SIGUIENTE TEMA DEL MÓDULO 0                  -->
+<!-- ===================================================================== -->
+<style>
+    .ia-next-topic-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: 28px 30px;
+        margin-top: 32px;
+        margin-bottom: 24px;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .ia-next-topic-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0f172a 0%, #16a34a 100%);
+    }
+
+    .ia-next-topic-card:hover {
+        transform: translateY(-3px);
+        border-color: #cbd5e1;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .ia-next-topic-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .ia-next-topic-title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .ia-next-topic-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        border-radius: 12px;
+        background: #0f172a;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.16);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease;
+    }
+
+    .ia-next-topic-card:hover .ia-next-topic-icon {
+        transform: translateX(3px) scale(1.06);
+        background: #16a34a;
+    }
+
+    .ia-next-topic-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .ia-next-topic-pill {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #334155;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .ia-next-topic-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #0f172a;
+    }
+</style>
+
+<div class="ia-next-topic-card example-box animate-on-scroll">
+    <div class="ia-next-topic-top">
+        <div class="ia-next-topic-title-wrap">
+            <div class="ia-next-topic-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </div>
+            <div>
+                <span style="display: block; font-size: 0.74rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;">
+                    Módulo 0 · Progreso del curso
+                </span>
+                <h3 style="margin: 2px 0 0 0; font-size: 1.32rem; font-weight: 800; color: #0f172a;">
+                    Siguiente tema del Módulo 0
+                </h3>
+            </div>
+        </div>
+
+        <span style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; font-size: 0.78rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; letter-spacing: 0.3px;">
+            Continuación del curso
+        </span>
+    </div>
+
+    <p style="font-size: 1.08rem; font-weight: 800; color: #0f172a; margin: 0 0 10px 0; line-height: 1.5;">
+        Fracciones: simplificación, suma, resta, multiplicación y división.
+    </p>
+
+    <p style="font-size: 1rem; color: #475569; line-height: 1.72; margin: 0;">
+        Estudiaremos los conceptos de numerador y denominador, fracciones propias e impropias, equivalencias, simplificación y operaciones con fracciones, con ejemplos resueltos y cinco ejercicios de práctica al finalizar cada subtema.
+    </p>
+
+    <div class="ia-next-topic-pills">
+        <span class="ia-next-topic-pill"><span class="ia-next-topic-dot"></span>Numerador y denominador</span>
+        <span class="ia-next-topic-pill"><span class="ia-next-topic-dot"></span>Propias e impropias</span>
+        <span class="ia-next-topic-pill"><span class="ia-next-topic-dot"></span>Equivalencias y simplificación</span>
+        <span class="ia-next-topic-pill"><span class="ia-next-topic-dot"></span>Operaciones básicas</span>
+    </div>
+</div>
+
 
 
         <!-- NAVEGACIÓN ENTRE TEMAS (ANTERIOR / SIGUIENTE) -->
@@ -2185,6 +5757,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedEls = document.querySelectorAll(".animate-on-scroll");
+
+    const safeObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                entry.target.classList.add("visible", "is-visible", "active");
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.01,
+        rootMargin: "0px 0px -20px 0px"
+    });
+
+    animatedEls.forEach(el => {
+        // Si el contenedor es más alto que la ventana, mostrarlo de inmediato
+        if (el.offsetHeight > window.innerHeight * 0.9) {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            el.classList.add("visible", "is-visible", "active");
+        } else {
+            safeObserver.observe(el);
+        }
+    });
+});
 </script>
 </body>
 </html>
