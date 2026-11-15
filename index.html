@@ -1,417 +1,240 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Principal -->
+    <title>Ingenia y Aprende | Cursos de Precálculo y Cálculo para Ingeniería</title>
+    <meta name="description" content="Plataforma educativa para estudiantes de ingeniería. Aprende precálculo, cálculo diferencial e integral y mecánica clásica paso a paso desde cero, sin memorizar fórmulas.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ingenia-web.pages.dev/">
 
-    <title>Ingenia y Aprende</title>
+    <!-- Open Graph / Vista previa al compartir en WhatsApp, Facebook y redes -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ingenia y Aprende">
+    <meta property="og:title" content="Ingenia & Aprende | Cursos para Estudiantes de Ingeniería">
+    <meta property="og:description" content="Explicaciones paso a paso desde cero, ejercicios resueltos y guías de precálculo, cálculo y ciencias básicas.">
+    <meta property="og:url" content="https://ingenia-web.pages.dev/">
+    <meta property="og:image" content="https://ingenia-web.pages.dev/LOGO%20INGENIA%20Y%20APRENDE.png">
+
+    <!-- Datos Estructurados Schema.org para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Ingenia y Aprende",
+      "url": "https://ingenia-web.pages.dev/",
+      "logo": "https://ingenia-web.pages.dev/LOGO%20INGENIA%20Y%20APRENDE.png",
+      "description": "Plataforma educativa para estudiantes de Ingeniería enfocada en enseñar desde cero mediante el razonamiento lógico y la aplicación real.",
+      "sameAs": [
+        "https://www.youtube.com/@IngeniaAprende-e6x",
+        "https://www.tiktok.com/@ingenia_aprende",
+        "https://www.instagram.com/ingeniayaprende",
+        "https://www.facebook.com/profile.php?id=61585189825325"
+      ]
+    }
+    </script>
 
     <!-- Vinculamos la hoja de estilos -->
-
     <link rel="stylesheet" href="styles.css">
-
+    
     <!-- Fuente elegante y limpia de Google Fonts -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
-
 <body>
 
-
-
     <!-- Barra de Navegación -->
-
     <nav class="navbar" id="navbar">
-
         <div class="logo-container">
-
             <a href="#inicio">
-
                 <img src="LOGO INGENIA Y APRENDE.png" alt="Logo Ingenia y Aprende" class="logo">
-
             </a>
-
         </div>
-
-
 
         <!-- Botón Hamburguesa para pantallas pequeñas -->
-
         <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-
             <span class="bar"></span>
-
             <span class="bar"></span>
-
             <span class="bar"></span>
-
         </button>
 
-
-
         <!-- Enlaces de navegación -->
-
         <ul class="nav-links" id="nav-menu">
-
             <li><a href="#inicio">Inicio</a></li>
-
             <li><a href="#beneficios">Pilares</a></li>
-
             <li><a href="#cursos">Cursos</a></li>
-
             <li><a href="#comunidad">Comunidad</a></li>
-
             <li><a href="#contacto" class="btn-outline">Contacto</a></li>
-
         </ul>
-
     </nav>
 
-
-
     <!-- Sección Principal (Hero) -->
-
     <header id="inicio" class="hero">
-
         <div class="hero-content">
-
-            <h1>Ingenia & Aprende. <br><span>Cursos para estudiantes de Ingeniería.</span></h1>
-
+            <h1>Ingenia &amp; Aprende. <br><span>Cursos para estudiantes de Ingeniería.</span></h1>
             <p>Plataforma educativa para estudiantes de Ingeniería, con el propósito de enseñar desde cero y comprender temas de verdad y no solo memorizar fórmulas.</p>
-
             <a href="#cursos" class="btn-solid">Empezar ahora</a>
-
         </div>
-
     </header>
 
-
-
     <!-- Sección de Beneficios / Pilares -->
-
     <section id="beneficios" class="features">
-
         <div class="feature-box">
-
             <h3>Desde Cero</h3>
-
             <p>Explicaciones paso a paso sin dar nada por sentado. Construimos bases sólidas para que domines cualquier materia.</p>
-
         </div>
-
         <div class="feature-box">
-
             <h3>Comprende, no memorices</h3>
-
             <p>Nos enfocamos en el razonamiento lógico detrás de cada concepto de ingeniería para que realmente lo interiorices.</p>
-
         </div>
-
         <div class="feature-box">
-
             <h3>Aplicación Real</h3>
-
             <p>Ejercicios y problemas enfocados en situaciones reales que te preparan para los retos de la industria.</p>
-
         </div>
-
     </section>
-
-
 
     <!-- Sección de Cursos -->
-
     <section id="cursos" class="courses-section">
-
         <div class="section-title">
-
             <h2>Rutas de Aprendizaje</h2>
-
             <p>Contenido estructurado para estudiantes de ingeniería que buscan dominar las bases.</p>
-
         </div>
-
-
 
         <div class="courses-grid">
-
             <!-- Curso 1 -->
-
-<article class="course-card">
-
-    <div class="course-image">
-
-        <img src="PORTADA PRECALCULO.jpg" alt="Portada del curso de Precálculo">
-
-    </div>
-
-    <div class="course-content">
-
-        <span class="tag">Básico</span>
-
-        <h3>Precálculo</h3>
-
-        <p>Fortalece tus bases matemáticas y prepárate para comprender el cálculo diferencial e integral.</p>
-
-        <a href="precalculo.html" class="btn-outline btn-small">Ver temario</a>
-
-    </div>
-
-</article>
-
-
+            <article class="course-card">
+                <div class="course-image">
+                    <img src="PORTADA PRECALCULO.jpg" alt="Portada del curso de Precálculo" loading="lazy">
+                </div>
+                <div class="course-content">
+                    <span class="tag">Básico</span>
+                    <h3>Precálculo</h3>
+                    <p>Fortalece tus bases matemáticas y prepárate para comprender el cálculo diferencial e integral.</p>
+                    <a href="precalculo.html" class="btn-outline btn-small">Ver temario</a>
+                </div>
+            </article>
 
             <!-- Curso 2 -->
-
             <article class="course-card">
-
                 <div class="course-image placeholder-img">
-
                     <span>Portada del Curso</span>
-
                 </div>
-
                 <div class="course-content">
-
                     <span class="tag">Intermedio</span>
-
                     <h3>Mecánica Clásica</h3>
-
                     <p>Comprende el comportamiento de las estructuras y fuerzas con aplicaciones a problemas reales.</p>
-
-                    <a href="#" class="btn-outline btn-small">Ver temario</a>
-
+                    <a href="#cursos" class="btn-outline btn-small" aria-disabled="true">Próximamente</a>
                 </div>
-
             </article>
-
-
 
             <!-- Curso 3 -->
-
             <article class="course-card">
-
                 <div class="course-image placeholder-img">
-
                     <span>Portada del Curso</span>
-
                 </div>
-
                 <div class="course-content">
-
                     <span class="tag">Intermedio</span>
-
                     <h3>Cálculo Diferencial e Integral</h3>
-
                     <p>Domina las técnicas de cálculo para resolver problemas en ingeniería y ciencias.</p>
-
-                    <a href="#" class="btn-outline btn-small">Ver temario</a>
-
+                    <a href="#cursos" class="btn-outline btn-small" aria-disabled="true">Próximamente</a>
                 </div>
-
             </article>
-
         </div>
-
     </section>
 
-<!-- Sección de Comunidad -->
-
+    <!-- Sección de Comunidad -->
     <section id="comunidad" class="community-section">
-
         <div class="community-box">
-
             <h2>Únete a nuestra Comunidad</h2>
-
             <p>Forma parte de nuestro canal de WhatsApp. Recibe avisos, recursos exclusivos, aportaciones y mantente al tanto de los nuevos contenidos para dominar tu carrera.</p>
-
-            <!-- Cambia el # por el link de tu canal de WhatsApp cuando lo tengas -->
-
-            <a href="https://chat.whatsapp.com/BagZ3MLlOzRJbMEnUu4EBl" class="btn-white" target="_blank">Unirme al Canal</a>
-
+            <a href="https://chat.whatsapp.com/BagZ3MLlOzRJbMEnUu4EBl" class="btn-white" target="_blank" rel="noopener noreferrer">Unirme al Canal</a>
         </div>
-
     </section>
 
     <!-- Pie de Página (Footer) -->
-
     <footer id="contacto" class="site-footer">
-
         <div class="footer-content">
-
             <!-- Columna 1: Marca -->
-
             <div class="footer-col">
-
-                <h3 class="footer-logo-text">Ingenia & Aprende</h3>
-
+                <h3 class="footer-logo-text">Ingenia &amp; Aprende</h3>
                 <p>Educación para estudiantes de ingeniería enfocada en el razonamiento y la aplicación real.</p>
-
             </div>
-
            
-
             <!-- Columna 2: Enlaces rápidos -->
-
             <div class="footer-col">
-
                 <h4>Explora</h4>
-
                 <ul>
-
                     <li><a href="#inicio">Inicio</a></li>
-
                     <li><a href="#beneficios">Beneficios</a></li>
-
                     <li><a href="#cursos">Cursos</a></li>
-
                 </ul>
-
             </div>
-
            
-
             <!-- Columna 3: Redes Sociales -->
-
             <div class="footer-col">
-
                 <h4>Síguenos</h4>
-
                 <ul class="social-links">
-
-                    <li><a href="http://www.youtube.com/@IngeniaAprende-e6x" target="_blank">YouTube</a></li>
-
-                    <li><a href="https://www.tiktok.com/@ingenia_aprende?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
-
-                    <li><a href="https://www.instagram.com/ingeniayaprende?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
-
-                    <li><a href="https://www.facebook.com/profile.php?id=61585189825325" target="_blank">Facebook</a></li>
-
+                    <li><a href="https://www.youtube.com/@IngeniaAprende-e6x" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    <li><a href="https://www.tiktok.com/@ingenia_aprende?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                    <li><a href="https://www.instagram.com/ingeniayaprende?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61585189825325" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                 </ul>
-
             </div>
-
         </div>
-
        
-
         <!-- Línea final de derechos -->
-
         <div class="footer-bottom">
-
-            <p>&copy; 2026 Ingenia & Aprende. Todos los derechos reservados.</p>
-
+            <p>&copy; 2026 Ingenia &amp; Aprende. Todos los derechos reservados.</p>
         </div>
-
     </footer>
 
-
-
     <!-- Script para animaciones al hacer scroll -->
-
     <script>
-
-        // Seleccionamos todos los elementos que queremos animar
-
         const animatedElements = document.querySelectorAll('.feature-box, .course-card, .site-footer, .community-box');
 
-
-
-        // Configuramos el observador
-
         const observer = new IntersectionObserver((entries) => {
-
             entries.forEach((entry) => {
-
-                // Si el elemento entra en la pantalla del usuario
-
                 if (entry.isIntersecting) {
-
                     entry.target.classList.add('visible');
-
                 }
-
             });
-
         }, {
-
-            threshold: 0.15 // Se activa cuando al menos el 15% del elemento es visible
-
+            threshold: 0.15
         });
 
-
-
-        // Le decimos al observador que vigile cada uno de los elementos
-
         animatedElements.forEach((el) => {
-
             observer.observe(el);
-
         });
 
         // === INTERACTIVIDAD DEL MENÚ ===
-
         const navbar = document.getElementById('navbar');
-
         const hamburger = document.getElementById('hamburger');
-
         const navMenu = document.getElementById('nav-menu');
-
         const navLinks = document.querySelectorAll('.nav-links a');
 
-
-
-        // Sombra / Ajuste al hacer scroll
-
         window.addEventListener('scroll', () => {
-
             if (window.scrollY > 30) {
-
                 navbar.classList.add('scrolled');
-
             } else {
-
                 navbar.classList.remove('scrolled');
-
             }
-
         });
-
-
-
-        // Abrir/Cerrar menú móvil
 
         hamburger.addEventListener('click', () => {
-
             hamburger.classList.toggle('active');
-
             navMenu.classList.toggle('active');
-
         });
-
-
-
-        // Cerrar el menú al hacer clic en cualquier opción
 
         navLinks.forEach(link => {
-
             link.addEventListener('click', () => {
-
                 hamburger.classList.remove('active');
-
                 navMenu.classList.remove('active');
-
             });
-
         });
-
     </script>
 
 </body>
-
-</html> 
+</html>
