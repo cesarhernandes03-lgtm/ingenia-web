@@ -11,7 +11,7 @@
     <meta name="google-site-verification" content="iMwYRKRksUBGC4zjC7XADyJjQ9bQVH4DYBpXtKliJLs" />
     <link rel="canonical" href="https://ingenia-web.pages.dev/">
 
-    <!-- Open Graph / Vista previa al compartir en WhatsApp, Facebook y redes -->
+    <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ingenia y Aprende">
     <meta property="og:title" content="Ingenia & Aprende | Cursos para Estudiantes de Ingeniería">
@@ -19,31 +19,214 @@
     <meta property="og:url" content="https://ingenia-web.pages.dev/">
     <meta property="og:image" content="https://ingenia-web.pages.dev/LOGO%20INGENIA%20Y%20APRENDE.png">
 
-    <!-- Datos Estructurados Schema.org para Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Ingenia y Aprende",
-      "url": "https://ingenia-web.pages.dev/",
-      "logo": "https://ingenia-web.pages.dev/LOGO%20INGENIA%20Y%20APRENDE.png",
-      "description": "Plataforma educativa para estudiantes de Ingeniería enfocada en enseñar desde cero mediante el razonamiento lógico y la aplicación real.",
-      "sameAs": [
-        "https://www.youtube.com/@IngeniaAprende-e6x",
-        "https://www.tiktok.com/@ingenia_aprende",
-        "https://www.instagram.com/ingeniayaprende",
-        "https://www.facebook.com/profile.php?id=61585189825325"
-      ]
-    }
-    </script>
-
-    <!-- Vinculamos la hoja de estilos -->
+    <!-- Vinculamos la hoja de estilos base y fuentes -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Fuente elegante y limpia de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos Pro Consistentes con Jerarquía de Operaciones -->
+    <style>
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: -50px auto 60px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .feature-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-4px);
+            border-color: #0f172a;
+            box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.08);
+        }
+
+        .feature-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .feature-box p {
+            color: #475569;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .courses-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #475569;
+            font-size: 1.05rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .course-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .course-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            border-color: #cbd5e1;
+            box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.08);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .course-card:hover .course-image img {
+            transform: scale(1.03);
+        }
+
+        .placeholder-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .course-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .course-content .tag {
+            display: inline-block;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .course-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .course-content p {
+            color: #475569;
+            font-size: 0.96rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .community-section {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .community-box {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .community-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .community-box h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+
+        .community-box p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 28px auto;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
 
@@ -83,15 +266,15 @@
 
     <!-- Sección de Beneficios / Pilares -->
     <section id="beneficios" class="features">
-        <div class="feature-box">
+        <div class="feature-box animate-on-scroll">
             <h3>Desde Cero</h3>
             <p>Explicaciones paso a paso sin dar nada por sentado. Construimos bases sólidas para que domines cualquier materia.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-box animate-on-scroll">
             <h3>Comprende, no memorices</h3>
             <p>Nos enfocamos en el razonamiento lógico detrás de cada concepto de ingeniería para que realmente lo interiorices.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-box animate-on-scroll">
             <h3>Aplicación Real</h3>
             <p>Ejercicios y problemas enfocados en situaciones reales que te preparan para los retos de la industria.</p>
         </div>
@@ -106,7 +289,7 @@
 
         <div class="courses-grid">
             <!-- Curso 1 -->
-            <article class="course-card">
+            <article class="course-card animate-on-scroll">
                 <div class="course-image">
                     <img src="PORTADA PRECALCULO.jpg" alt="Portada del curso de Precálculo" loading="lazy">
                 </div>
@@ -114,33 +297,33 @@
                     <span class="tag">Básico</span>
                     <h3>Precálculo</h3>
                     <p>Fortalece tus bases matemáticas y prepárate para comprender el cálculo diferencial e integral.</p>
-                    <a href="precalculo.html" class="btn-outline btn-small">Ver temario</a>
+                    <a href="precalculo.html" style="background: #0f172a; color: #ffffff; padding: 10px 18px; border-radius: 10px; font-weight: 600; text-decoration: none; display: inline-block; font-size: 0.9rem; transition: background 0.2s;">Ver temario</a>
                 </div>
             </article>
 
             <!-- Curso 2 -->
-            <article class="course-card">
+            <article class="course-card animate-on-scroll">
                 <div class="course-image placeholder-img">
-                    <span>Portada del Curso</span>
+                    <span>Próximamente</span>
                 </div>
                 <div class="course-content">
                     <span class="tag">Intermedio</span>
                     <h3>Mecánica Clásica</h3>
                     <p>Comprende el comportamiento de las estructuras y fuerzas con aplicaciones a problemas reales.</p>
-                    <a href="#cursos" class="btn-outline btn-small" aria-disabled="true">Próximamente</a>
+                    <a href="#cursos" class="btn-outline btn-small" aria-disabled="true" style="opacity: 0.6; cursor: not-allowed;">Próximamente</a>
                 </div>
             </article>
 
             <!-- Curso 3 -->
-            <article class="course-card">
+            <article class="course-card animate-on-scroll">
                 <div class="course-image placeholder-img">
-                    <span>Portada del Curso</span>
+                    <span>Próximamente</span>
                 </div>
                 <div class="course-content">
                     <span class="tag">Intermedio</span>
                     <h3>Cálculo Diferencial e Integral</h3>
                     <p>Domina las técnicas de cálculo para resolver problemas en ingeniería y ciencias.</p>
-                    <a href="#cursos" class="btn-outline btn-small" aria-disabled="true">Próximamente</a>
+                    <a href="#cursos" class="btn-outline btn-small" aria-disabled="true" style="opacity: 0.6; cursor: not-allowed;">Próximamente</a>
                 </div>
             </article>
         </div>
@@ -148,10 +331,10 @@
 
     <!-- Sección de Comunidad -->
     <section id="comunidad" class="community-section">
-        <div class="community-box">
+        <div class="community-box animate-on-scroll">
             <h2>Únete a nuestra Comunidad</h2>
             <p>Forma parte de nuestro canal de WhatsApp. Recibe avisos, recursos exclusivos, aportaciones y mantente al tanto de los nuevos contenidos para dominar tu carrera.</p>
-            <a href="https://chat.whatsapp.com/BagZ3MLlOzRJbMEnUu4EBl" class="btn-white" target="_blank" rel="noopener noreferrer">Unirme al Canal</a>
+            <a href="https://chat.whatsapp.com/BagZ3MLlOzRJbMEnUu4EBl" target="_blank" rel="noopener noreferrer" style="background: #ffffff; color: #0f172a; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.2s ease;">Unirme al Canal</a>
         </div>
     </section>
 
@@ -169,7 +352,7 @@
                 <h4>Explora</h4>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#beneficios">Pilares</a></li>
                     <li><a href="#cursos">Cursos</a></li>
                 </ul>
             </div>
@@ -192,7 +375,7 @@
         </div>
     </footer>
 
-    <!-- Script para animaciones al hacer scroll -->
+    <!-- Scripts de Animaciones -->
     <script>
         const animatedElements = document.querySelectorAll('.feature-box, .course-card, .site-footer, .community-box');
 
@@ -236,6 +419,5 @@
             });
         });
     </script>
-
 </body>
 </html>

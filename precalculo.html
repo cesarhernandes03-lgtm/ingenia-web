@@ -5,19 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precálculo | Ingenia y Aprende</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Estilos integrados para los estados de cada tema -->
+    <!-- Estilos Pro mejorados para el acordeón y el temario (Consistentes con jerarquia-operaciones.html) -->
     <style>
+        .syllabus-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #475569;
+            font-size: 1.05rem;
+        }
+
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Tarjeta de Módulo / Acordeón Pro */
+        .accordion-item {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .accordion-item:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+        }
+
+        .accordion-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 24px;
+            background: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0f172a;
+            text-align: left;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: #f8fafc;
+        }
+
+        .module-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .module-badge {
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.3px;
+        }
+
+        .accordion-icon {
+            width: 32px;
+            height: 32px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(45deg);
+            background: #e2e8f0;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            background: #ffffff;
+            border-top: 1px solid transparent;
+        }
+
+        .accordion-item.active .accordion-content {
+            border-top: 1px solid #f1f5f9;
+        }
+
+        /* Lista de Temas */
         .topic-list {
             list-style: none;
-            padding: 0;
+            padding: 16px 20px;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .topic-item {
-            border-bottom: 1px solid #f1f5f9;
-            margin: 4px 0;
+            border-bottom: 1px solid #f8fafc;
         }
 
         .topic-item:last-child {
@@ -29,21 +146,25 @@
             align-items: center;
             justify-content: space-between;
             padding: 14px 16px;
-            color: #0f172a;
+            color: #1e293b;
             text-decoration: none;
             font-size: 0.98rem;
+            font-weight: 500;
             gap: 16px;
-            border-radius: 10px;
-            transition: background 0.2s ease, transform 0.15s ease;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .topic-link:hover:not(.disabled) {
             background-color: #f8fafc;
+            border-color: #e2e8f0;
+            transform: translateY(-1px);
         }
 
         /* Tema deshabilitado / No disponible */
         .topic-link.disabled {
-            opacity: 0.6;
+            opacity: 0.55;
             cursor: not-allowed;
             user-select: none;
             background-color: #fafafa;
@@ -52,14 +173,25 @@
         .topic-name {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .topic-arrow {
+            color: #94a3b8;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .topic-link:hover:not(.disabled) .topic-arrow {
+            transform: translateX(4px);
+            color: #0f172a;
         }
 
         /* Badges de estado */
         .status-badge {
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 4px 12px;
+            padding: 5px 12px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -71,19 +203,19 @@
         }
 
         .status-badge.completed {
-            background-color: #dcfce7;
-            color: #15803d;
+            background-color: #f0fdf4;
+            color: #166534;
             border: 1px solid #bbf7d0;
         }
 
         .status-badge.in-progress {
-            background-color: #fef3c7;
-            color: #b45309;
-            border: 1px solid #fde68a;
+            background-color: #fefce8;
+            color: #854d0e;
+            border: 1px solid #fde047;
         }
 
         .status-badge.locked {
-            background-color: #f1f5f9;
+            background-color: #f8fafc;
             color: #64748b;
             border: 1px solid #e2e8f0;
         }
@@ -124,15 +256,21 @@
             <!-- Módulo 0 -->
             <div class="accordion-item active">
                 <button class="accordion-header active">
-                    Módulo 0: Fundamentos Matemáticos
-                    <span class="icon">+</span>
+                    <div class="module-title-wrapper">
+                        <span class="module-badge">Módulo 0</span>
+                        <span>Fundamentos Matemáticos</span>
+                    </div>
+                    <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content" style="max-height: 1000px;">
                     <ul class="topic-list">
                         <!-- TEMA 1: COMPLETADO -->
                         <li class="topic-item">
                             <a href="operaciones-basicas.html" class="topic-link">
-                                <span class="topic-name">→ Operaciones básicas con números naturales, enteros y decimales.</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Operaciones básicas con números naturales, enteros y decimales.</span>
+                                </span>
                                 <span class="status-badge completed">✓ Completado</span>
                             </a>
                         </li>
@@ -140,7 +278,10 @@
                         <!-- TEMA 2: COMPLETADO -->
                         <li class="topic-item">
                             <a href="jerarquia-operaciones.html" class="topic-link">
-                                <span class="topic-name">→ Jerarquía de operaciones y uso de paréntesis.</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Jerarquía de operaciones y uso de paréntesis.</span>
+                                </span>
                                 <span class="status-badge completed">✓ Completado</span>
                             </a>
                         </li>
@@ -148,7 +289,10 @@
                         <!-- TEMA 3: FRACCIONES (PRÓXIMAMENTE / NO DISPONIBLE) -->
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Fracciones: simplificación, suma, resta, multiplicación y división.</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Fracciones: simplificación, suma, resta, multiplicación y división.</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
@@ -156,35 +300,50 @@
                         <!-- TEMAS RESTANTES (BLOQUEADOS) -->
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Números positivos y negativos.</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Números positivos y negativos.</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
 
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Mínimo común múltiplo (MCM) y máximo común divisor (MCD).</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Mínimo común múltiplo (MCM) y máximo común divisor (MCD).</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
 
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Razones, proporciones y regla de tres.</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Razones, proporciones y regla de tres.</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
 
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Conversión de unidades y notación científica.</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Conversión de unidades y notación científica.</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
 
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Potencias, raíces y propiedades de los exponentes.</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Potencias, raíces y propiedades de los exponentes.</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
@@ -195,26 +354,38 @@
             <!-- Módulo 1 -->
             <div class="accordion-item">
                 <button class="accordion-header">
-                    Módulo 1: Introducción a las Funciones
-                    <span class="icon">+</span>
+                    <div class="module-title-wrapper">
+                        <span class="module-badge">Módulo 1</span>
+                        <span>Introducción a las Funciones</span>
+                    </div>
+                    <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
                     <ul class="topic-list">
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ ¿Qué es realmente una función? (Concepto y gráficas)</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>¿Qué es realmente una función? (Concepto y gráficas)</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Dominio y Rango: Cómo encontrarlos sin sufrir</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Dominio y Rango: Cómo encontrarlos sin sufrir</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
                         <li class="topic-item">
                             <div class="topic-link disabled">
-                                <span class="topic-name">→ Funciones lineales y cuadráticas</span>
+                                <span class="topic-name">
+                                    <span class="topic-arrow">→</span>
+                                    <span>Funciones lineales y cuadráticas</span>
+                                </span>
                                 <span class="status-badge locked">🔒 Próximamente</span>
                             </div>
                         </li>
@@ -264,13 +435,6 @@
                 
                 this.classList.toggle('active');
                 parentItem.classList.toggle('active');
-                
-                const icon = this.querySelector('.icon');
-                if (this.classList.contains('active')) {
-                    icon.style.transform = 'rotate(45deg) scale(1.1)';
-                } else {
-                    icon.style.transform = 'rotate(0) scale(1)';
-                }
 
                 const content = this.nextElementSibling;
                 if (content.style.maxHeight) {
